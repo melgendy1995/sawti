@@ -54,6 +54,10 @@ jobs:
         working-directory: app
         run: npm test
 
+      - name: Voice-spike plan tests
+        # Pure helpers only (job list, cache key, SSML). No Azure call and no MP3s.
+        run: node --test scripts/voice-spike/render.test.mjs
+
       - name: Production build
         working-directory: app
         run: npm run build

@@ -29,11 +29,11 @@ describe('Speak (shell placeholder)', () => {
     expect(bdi?.textContent?.trim()).toBe(TEST_SENTENCE);
   });
 
-  it('links to the audio board, diagnostics, and storage', async () => {
+  it('links to the audio board, diagnostics, storage, and voice rating', async () => {
     const fixture = TestBed.createComponent(Speak);
     await fixture.whenStable();
     const el = fixture.nativeElement as HTMLElement;
     const hrefs = [...el.querySelectorAll('a')].map((anchor) => anchor.getAttribute('href'));
-    expect(hrefs).toEqual(['/audio', '/audio/diagnostics', '/storage']);
+    expect(hrefs).toEqual(['/audio', '/audio/diagnostics', '/storage', '/voice']);
   });
 });
