@@ -30,21 +30,23 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/styles.scss"]
+            "styles": ["src/styles.scss"],
+            "externalDependencies": ["fonts/*.woff2", "./fonts/*.woff2"]
           },
           "configurations": {
             "production": {
+              "baseHref": "/app/",
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "650kB",
-                  "maximumError": "750kB"
+                  "maximumWarning": "250kB",
+                  "maximumError": "300kB"
                 },
                 {
                   "type": "bundle",
                   "name": "speak",
-                  "maximumWarning": "300kB",
-                  "maximumError": "360kB"
+                  "maximumWarning": "120kB",
+                  "maximumError": "150kB"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -53,7 +55,16 @@
                 }
               ],
               "outputHashing": "all",
-              "serviceWorker": "ngsw-config.json"
+              "serviceWorker": "ngsw-config.json",
+              "optimization": {
+                "scripts": true,
+                "styles": {
+                  "minify": true,
+                  "inlineCritical": false,
+                  "removeSpecialComments": true
+                },
+                "fonts": true
+              }
             },
             "development": {
               "optimization": false,

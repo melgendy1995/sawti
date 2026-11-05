@@ -1,0 +1,48 @@
+# Cloudflare Pages headers for Sawti. Source of truth; scripts/build-pages.sh copies this
+# to dist/pages/_headers. Pages joins duplicate header names with a comma, so
+# Cache-Control is set only on patterns that do not overlap.
+#
+# Hashed Angular bundles use these prefixes (outputHashing: all). Unhashed files
+# (index.html, ngsw-worker.js, safety-worker.js, worker-basic.min.js, ngsw.json,
+# fonts, icons) are not matched, so a font update at a stable name is not frozen
+# for a year. ngsw-worker.js must stay no-cache or clients keep a stale worker.
+
+/app/main-*
+  Cache-Control: public, max-age=31536000, immutable
+
+/app/chunk-*
+  Cache-Control: public, max-age=31536000, immutable
+
+/app/styles-*
+  Cache-Control: public, max-age=31536000, immutable
+
+/app/polyfills-*
+  Cache-Control: public, max-age=31536000, immutable
+
+/app/index.html
+  Cache-Control: no-cache
+
+/app/ngsw.json
+  Cache-Control: no-cache
+
+/app/ngsw-worker.js
+  Cache-Control: no-cache
+
+/app/safety-worker.js
+  Cache-Control: no-cache
+
+/app/worker-basic.min.js
+  Cache-Control: no-cache
+
+# Strict CSP for the PWA. style-src allows 'unsafe-inline' because Angular
+# inserts component styles as <style> elements at runtime (no per-request nonce
+# on static Pages). script-src stays 'self' with no inline scripts
+# (inlineCritical CSS is off, so Beasties does not inject a loader script).
+# Trusted Types are not enabled: @angular/service-worker registers
+# ngsw-worker.js with a plain string, which Chrome rejects when
+# require-trusted-types-for 'script' is set. See docs/p0.3-notes.md.
+/app/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer
+  X-Frame-Options: DENY
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: blob:; connect-src 'self'; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; frame-ancestors 'none'

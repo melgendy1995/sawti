@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Sawti</string>
+    <string name="title_activity_main">Sawti</string>
+    <string name="package_name">app.sawti</string>
+    <string name="custom_url_scheme">app.sawti</string>
+</resources>

@@ -1,7 +1,11 @@
 // Global styles for Sawti (P0.3 shell).
 // RTL-first: logical properties only. No physical left/right or text-align:left|right.
 
-// --- Self-hosted fonts (OFL). No Google Fonts / CDN. Files ship at /fonts/*.woff2.
+// --- Self-hosted fonts (OFL). No Google Fonts / CDN.
+// Relative urls resolve against the stylesheet: /fonts/ on `ng serve`, and
+// /app/fonts/ when the production CSS is served under /app/. The files are the
+// copies from public/fonts/ (not a second bundled font). `externalDependencies`
+// keeps the bundler from rewriting these urls.
 // IBM Plex Sans Arabic is the primary face (complete, non-subset build: keeps all
 // Arabic ranges, Presentation Forms-A/B and GSUB/GPOS shaping features).
 @font-face {
@@ -9,14 +13,14 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('/fonts/IBMPlexSansArabic-Regular.woff2') format('woff2');
+  src: url('fonts/IBMPlexSansArabic-Regular.woff2') format('woff2');
 }
 @font-face {
   font-family: 'IBM Plex Sans Arabic';
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url('/fonts/IBMPlexSansArabic-Medium.woff2') format('woff2');
+  src: url('fonts/IBMPlexSansArabic-Medium.woff2') format('woff2');
 }
 
 // Noto Sans Arabic is the fallback for any glyph Plex lacks. This is the Arabic
@@ -27,14 +31,14 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('/fonts/NotoSansArabic-Regular.woff2') format('woff2');
+  src: url('fonts/NotoSansArabic-Regular.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Noto Sans Arabic';
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url('/fonts/NotoSansArabic-Medium.woff2') format('woff2');
+  src: url('fonts/NotoSansArabic-Medium.woff2') format('woff2');
 }
 
 :root {
