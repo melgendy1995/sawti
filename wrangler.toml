@@ -1,0 +1,3 @@
+# Local Pages build pointer only. No account id, no tokens, no deploy.
+name = "sawti"
+pages_build_output_dir = "dist/pages"

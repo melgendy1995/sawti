@@ -1,0 +1,12 @@
+# Pinned support targets (plan v1.1 §3.1, Q6). Do NOT replace with an unbounded
+# `defaults` — the targets below set the syntax/transpile floor on purpose.
+#
+# Android 10+ (API 29) is the APK/PWA minimum: the System WebView on Android 8-9
+# no longer receives Chrome updates. Chrome 80 shipped with Android 10's WebView
+# and is the practical floor for devices that have never updated WebView.
+# iOS/Safari 16.4+ matches the supported iOS floor.
+Safari >= 16.4
+iOS >= 16.4
+Chrome >= 80
+ChromeAndroid >= 80
+Android >= 80
