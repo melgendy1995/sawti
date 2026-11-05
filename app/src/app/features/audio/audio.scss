@@ -1,0 +1,40 @@
+.audio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+@media (min-width: 48rem) {
+  .audio-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.audio-cell {
+  touch-action: manipulation;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  min-block-size: 5.5rem;
+  padding-block: 0.75rem;
+  padding-inline: 0.5rem;
+  border: 1px solid #d7e4e1;
+  border-radius: 12px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+  font-size: 1.6rem;
+  font-weight: 500;
+
+  &--gap {
+    border-color: #9a3412;
+  }
+
+  &__gap {
+    color: #9a3412;
+    font-size: 0.95rem;
+    font-weight: 400;
+  }
+}

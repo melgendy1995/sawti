@@ -1,0 +1,42 @@
+<section class="spike-page">
+  <h1 class="spike-page__title">تجربة الصوت</h1>
+  <p class="spike-page__note">
+    عشرون زراً. الصوت نغمة قصيرة وليست كلاماً. يُفك الضغط عند فتح الصفحة، والضغط يشغّل المقطع الجاهز.
+    <bdi>Twenty cells. Each clip is a short tone, not speech. Decoding finishes when the board opens.</bdi>
+  </p>
+
+  <nav class="spike-page__links" aria-label="صفحات التجربة">
+    <a class="spike-page__link" routerLink="/speak">الكلام</a>
+    <a class="spike-page__link" routerLink="/audio/diagnostics">تشخيص الصوت</a>
+  </nav>
+
+  <app-hearing-banner
+    [warnings]="warnings()"
+    [hearing]="hearing()"
+    (hearingChange)="chooseHearing($event)"
+  />
+
+  @if (phase() === 'decoding') {
+    <p class="spike-page__status" role="status">
+      يجري تجهيز الأصوات…
+      <bdi>Decoding…</bdi>
+    </p>
+  } @else {
+    <div class="audio-grid">
+      @for (cell of cells; track cell.id) {
+        <button
+          type="button"
+          class="audio-cell"
+          [class.audio-cell--gap]="failedIds().has(cell.id)"
+          (pointerup)="onCellPointerUp($event, cell.id)"
+          (keydown)="onCellKeydown($event, cell.id)"
+        >
+          <span class="audio-cell__label">{{ cell.label }}</span>
+          @if (failedIds().has(cell.id)) {
+            <span class="audio-cell__gap">لا صوت <bdi>No voice</bdi></span>
+          }
+        </button>
+      }
+    </div>
+  }
+</section>

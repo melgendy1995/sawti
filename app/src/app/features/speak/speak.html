@@ -2,6 +2,12 @@
   <h1 class="speak-shell__title">صوتي</h1>
   <p class="speak-shell__subtitle">هيكل التطبيق — شاشة مؤقتة</p>
 
+  <nav class="speak-shell__links" aria-label="صفحات التجربة">
+    <a class="speak-shell__link" routerLink="/audio">تجربة الصوت</a>
+    <a class="speak-shell__link" routerLink="/audio/diagnostics">تشخيص الصوت</a>
+    <a class="speak-shell__link" routerLink="/storage">التخزين</a>
+  </nav>
+
   <!-- Egyptian test sentence, isolated so mixed scripts/digits never reorder it. -->
   <p class="speak-shell__sentence" data-testid="test-sentence">
     <bdi>{{ testSentence }}</bdi>

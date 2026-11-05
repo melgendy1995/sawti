@@ -1,0 +1,47 @@
+.hearing {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  &__text {
+    margin-block: 0;
+    padding-block: 0.85rem;
+    padding-inline: 1rem;
+    border-inline-start: 4px solid var(--color-accent);
+    border-radius: 12px;
+    background: var(--color-surface);
+    font-size: 1.2rem;
+    line-height: 1.7;
+
+    &--alert {
+      border-inline-start-color: #9a3412;
+      background: #fff4f0;
+      font-size: 1.45rem;
+    }
+  }
+
+  &__en {
+    display: block;
+    margin-block-start: 0.25rem;
+    color: var(--color-muted);
+    font-size: 0.95rem;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  &__choice {
+    touch-action: manipulation;
+    padding-block: 0.7rem;
+    padding-inline: 1rem;
+    border: 1px solid #d7e4e1;
+    border-radius: 999px;
+    background: var(--color-surface);
+    color: var(--color-text);
+    font: inherit;
+    font-size: 1.05rem;
+  }
+}

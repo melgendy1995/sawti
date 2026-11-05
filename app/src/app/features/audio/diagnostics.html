@@ -1,0 +1,97 @@
+<section class="spike-page">
+  <h1 class="spike-page__title">تشخيص الصوت</h1>
+  <p class="spike-page__note">
+    ثلاثون ضغطة على مقطع جاهز. كل قياس من رفع الإصبع حتى
+    <bdi dir="ltr">AudioBufferSourceNode.start()</bdi>.
+    هذا ليس زمن الأذن؛ زمن الأذن يُقاس بكاميرا الهاتف.
+    <bdi>Thirty taps. Each sample is pointerup until start(). Ear latency is a separate phone-camera check.</bdi>
+  </p>
+
+  <nav class="spike-page__links" aria-label="صفحات التجربة">
+    <a class="spike-page__link" routerLink="/audio">تجربة الصوت</a>
+    <a class="spike-page__link" routerLink="/speak">الكلام</a>
+  </nav>
+
+  <app-hearing-banner
+    [warnings]="warnings()"
+    [hearing]="hearing()"
+    (hearingChange)="chooseHearing($event)"
+  />
+
+  @if (phase() === 'decoding') {
+    <p class="spike-page__status" role="status">
+      يجري تجهيز المقطع…
+      <bdi>Decoding…</bdi>
+    </p>
+  }
+
+  <button
+    type="button"
+    class="tap-target"
+    [disabled]="phase() !== 'ready' || samples().length >= tapGoal"
+    (pointerup)="onMeasurePointerUp($event)"
+    (keydown)="onMeasureKeydown($event)"
+  >
+    {{ cell.label }}
+    <span class="tap-target__count"><bdi>{{ samples().length }} / {{ tapGoal }}</bdi></span>
+  </button>
+
+  @if (rejected()) {
+    <p class="spike-page__status" role="alert">
+      لم تُحسب هذه الضغطة لأن التشغيل لم يبدأ.
+      <bdi>That tap was not counted because playback did not start.</bdi>
+    </p>
+  }
+
+  <dl class="meter">
+    <div>
+      <dt>p50</dt>
+      <dd><bdi>{{ numberText(median()) }} ms</bdi></dd>
+    </div>
+    <div>
+      <dt>p95</dt>
+      <dd><bdi>{{ numberText(tail()) }} ms</bdi></dd>
+    </div>
+    <div>
+      <dt><bdi>baseLatency</bdi></dt>
+      <dd><bdi>{{ numberText(meter().baseLatencyMs) }} ms</bdi></dd>
+    </div>
+    <div>
+      <dt><bdi>outputLatency</bdi></dt>
+      <dd><bdi>{{ numberText(meter().outputLatencyMs) }} ms</bdi></dd>
+    </div>
+  </dl>
+
+  <p class="verdict" [class.verdict--pass]="verdict() === 'pass'" [class.verdict--fail]="verdict() === 'fail'">
+    @switch (verdict()) {
+      @case ('pass') {
+        ناجح. p95 ضمن {{ budgetMs }} ملي ثانية.
+        <bdi>Pass. p95 is within {{ budgetMs }} ms.</bdi>
+      }
+      @case ('fail') {
+        فشل. p95 أبطأ من {{ budgetMs }} ملي ثانية.
+        <bdi>Fail. p95 is slower than {{ budgetMs }} ms.</bdi>
+      }
+      @default {
+        الحكم بعد {{ tapGoal }} ضغطة نجحت.
+        <bdi>Verdict after {{ tapGoal }} counted taps.</bdi>
+      }
+    }
+  </p>
+
+  <div class="report-actions">
+    <button type="button" (click)="copyReport()">انسخ التقرير <bdi>Copy report</bdi></button>
+    <button type="button" (click)="reset()">ابدأ من جديد <bdi>Reset</bdi></button>
+  </div>
+  @if (copyNote() === 'copied') {
+    <p class="spike-page__status" role="status">تم النسخ. <bdi>Copied.</bdi></p>
+  }
+  @if (copyNote() === 'manual') {
+    <p class="spike-page__status" role="status">
+      تعذّر النسخ الآلي. حدّد النص أدناه وانسخه.
+      <bdi>Clipboard was blocked. Select the report below and copy it.</bdi>
+    </p>
+  }
+
+  <textarea class="report" dir="ltr" readonly aria-label="تقرير التشخيص">{{ report() }}</textarea>
+</section>
