@@ -1,0 +1,193 @@
+<section class="soak-page">
+  <h1 class="soak-page__title">تجربة التخزين — Storage soak</h1>
+
+  <p class="soak-page__warn" role="note">
+    <strong>تحذير:</strong> حذف أيقونة الشاشة الرئيسية على آيفون (أو إلغاء تثبيت
+    تطبيق أندرويد) يحذف كل اللوحات والصور والتسجيلات. تخزين تبويب سفاري منفصل عن
+    تطبيق الشاشة الرئيسية.
+    <bdi dir="ltr">Deleting the iOS Home Screen icon (or uninstalling the Android
+    app) deletes all boards, photos and recordings. Safari-tab storage is separate
+    from the Home Screen app.</bdi>
+  </p>
+
+  <nav class="soak-page__links" aria-label="صفحات التجربة">
+    <a class="soak-page__link" routerLink="/speak">الكلام</a>
+    <a class="soak-page__link" routerLink="/audio">تجربة الصوت</a>
+  </nav>
+
+  <h2 class="soak-page__h2">الإعداد — Environment &amp; persistence</h2>
+  <dl class="soak-meter">
+    <div>
+      <dt><bdi>display-mode: standalone</bdi></dt>
+      <dd><bdi>{{ displayStandalone }}</bdi></dd>
+    </div>
+    <div>
+      <dt><bdi>navigator.standalone</bdi></dt>
+      <dd><bdi>{{ navStandalone === null ? 'n/a' : navStandalone }}</bdi></dd>
+    </div>
+    <div>
+      <dt><bdi>persist() granted</bdi></dt>
+      <dd><bdi>{{ persistGranted() === null ? 'n/a' : persistGranted() }}</bdi></dd>
+    </div>
+    <div>
+      <dt><bdi>persisted()</bdi></dt>
+      <dd><bdi>{{ persisted() === null ? 'n/a' : persisted() }}</bdi></dd>
+    </div>
+    <div>
+      <dt><bdi>estimate usage</bdi></dt>
+      <dd><bdi>{{ bytesText(usage()) }}</bdi></dd>
+    </div>
+    <div>
+      <dt><bdi>estimate quota</bdi></dt>
+      <dd><bdi>{{ bytesText(quota()) }}</bdi></dd>
+    </div>
+  </dl>
+
+  <div class="soak-actions">
+    <button type="button" (click)="requestPersist()" [disabled]="busy()">
+      اطلب الثبات <bdi>persist()</bdi>
+    </button>
+    <button type="button" (click)="readPersistState()" [disabled]="busy()">
+      اقرأ الحالة <bdi>persisted() + estimate()</bdi>
+    </button>
+  </div>
+  <h2 class="soak-page__h2">الواجهة الخلفية — Backend</h2>
+  <div class="soak-backend" role="group" aria-label="اختيار الواجهة الخلفية">
+    <button
+      type="button"
+      class="soak-backend__btn"
+      [class.soak-backend__btn--on]="backend() === 'idb'"
+      [attr.aria-pressed]="backend() === 'idb'"
+      [disabled]="busy() || !idbSupported"
+      (click)="setBackend('idb')"
+    >
+      <bdi>IndexedDB</bdi>
+      @if (!idbSupported) { <span class="soak-backend__na">غير مدعوم / n/a</span> }
+    </button>
+    <button
+      type="button"
+      class="soak-backend__btn"
+      [class.soak-backend__btn--on]="backend() === 'opfs'"
+      [attr.aria-pressed]="backend() === 'opfs'"
+      [disabled]="busy() || !opfsSupported"
+      (click)="setBackend('opfs')"
+    >
+      <bdi>OPFS</bdi>
+      @if (!opfsSupported) { <span class="soak-backend__na">غير مدعوم / n/a</span> }
+    </button>
+  </div>
+
+  <p class="soak-page__note">
+    الخطة: {{ plan.chunkCount }} قطعة × {{ bytesText(plan.chunkBytes) }} ≈
+    {{ bytesText(plan.totalBytes) }}. تُولَّد البيانات على الجهاز وقت التشغيل
+    (ليست ملفات محفوظة، وليست وسائط لأي شخص).
+    <bdi dir="ltr">{{ plan.chunkCount }} chunks × {{ bytesText(plan.chunkBytes) }}
+    ≈ {{ bytesText(plan.totalBytes) }}, generated on device at runtime.</bdi>
+  </p>
+
+  <div class="soak-actions">
+    <button type="button" (click)="runSelfTest()" [disabled]="busy()">
+      فحص ذاتي <bdi>Self-test (few KB)</bdi>
+    </button>
+    <button type="button" (click)="runWrite()" [disabled]="busy()">
+      اكتب ~200 م.ب <bdi>Write ~200 MB</bdi>
+    </button>
+    <button type="button" (click)="loadExisting()" [disabled]="busy()">
+      حمِّل المحفوظ <bdi>Load existing</bdi>
+    </button>
+    <button type="button" (click)="runVerify()" [disabled]="busy() || !manifest()">
+      تحقّق <bdi>Verify</bdi>
+    </button>
+    <button type="button" class="soak-actions__danger" (click)="clearStore()" [disabled]="busy()">
+      امسح <bdi>Clear</bdi>
+    </button>
+  </div>
+
+  @if (busy()) {
+    <p class="soak-page__status" role="status">
+      {{ phase() === 'writing' ? 'يجري الكتابة' : 'يجري التحقق' }}…
+      <bdi dir="ltr">{{ progress() }} / {{ plan.chunkCount }} ({{ progressPct() }}%)</bdi>
+    </p>
+    <div class="soak-bar" role="progressbar" [attr.aria-valuenow]="progressPct()" aria-valuemin="0" aria-valuemax="100">
+      <span class="soak-bar__fill" [style.inline-size.%]="progressPct()"></span>
+    </div>
+  }
+  @if (manifest(); as m) {
+    <h2 class="soak-page__h2">النتيجة — Results</h2>
+    <dl class="soak-meter">
+      <div>
+        <dt><bdi>backend</bdi></dt>
+        <dd><bdi>{{ m.backend }}</bdi></dd>
+      </div>
+      <div>
+        <dt><bdi>chunks written</bdi></dt>
+        <dd><bdi>{{ m.chunks.length }} / {{ plan.chunkCount }}</bdi></dd>
+      </div>
+      <div>
+        <dt><bdi>total bytes</bdi></dt>
+        <dd><bdi>{{ bytesText(m.totalBytes) }}</bdi></dd>
+      </div>
+      <div>
+        <dt><bdi>hashOfHashes</bdi></dt>
+        <dd class="soak-meter__mono"><bdi>{{ hoh() ?? 'n/a' }}</bdi></dd>
+      </div>
+    </dl>
+    @if (m.quotaError) {
+      <p class="soak-page__status soak-page__status--warn" role="alert">
+        توقّفت الكتابة بسبب امتلاء المساحة. انسخ هذا التقرير ولا تُعد المحاولة.
+        <bdi dir="ltr">Write stopped on quota: {{ m.quotaError }}. Copy this report; do not retry.</bdi>
+      </p>
+    }
+  }
+
+  @if (verifySummary(); as v) {
+    <p
+      class="soak-verdict"
+      [class.soak-verdict--pass]="v.allMatch"
+      [class.soak-verdict--fail]="!v.allMatch"
+      role="status"
+    >
+      @if (v.allMatch) {
+        نجح التحقق: كل القطع متطابقة ({{ v.matched }}/{{ v.total }}).
+        <bdi dir="ltr">Verify passed: all {{ v.total }} chunks match.</bdi>
+      } @else {
+        فشل التحقق: مطابق {{ v.matched }}، مختلف {{ v.mismatched }}، مفقود
+        {{ v.missing }}، خطأ {{ v.errored }} من {{ v.total }}.
+        <bdi dir="ltr">Verify failed: {{ v.matched }} match, {{ v.mismatched }}
+        mismatch, {{ v.missing }} missing, {{ v.errored }} error of {{ v.total }}.</bdi>
+      }
+    </p>
+    @if (!v.allMatch) {
+      <ul class="soak-bad" aria-label="القطع الفاشلة">
+        @for (result of verifyResults(); track result.key) {
+          @if (result.status !== 'match') {
+            <li><bdi dir="ltr">{{ result.key }}: {{ result.status }}{{ result.error ? ' — ' + result.error : '' }}</bdi></li>
+          }
+        }
+      </ul>
+    }
+  }
+
+  @if (errors().length > 0) {
+    <ul class="soak-errors" aria-label="رسائل">
+      @for (message of errors(); track $index) {
+        <li><bdi dir="ltr">{{ message }}</bdi></li>
+      }
+    </ul>
+  }
+
+  <h2 class="soak-page__h2">التقرير — Report</h2>
+  <div class="soak-actions">
+    <button type="button" (click)="copyReport()">انسخ التقرير <bdi>Copy report</bdi></button>
+  </div>
+  @if (copyNote() === 'copied') {
+    <p class="soak-page__status" role="status">تم النسخ. <bdi>Copied.</bdi></p>
+  }
+  @if (copyNote() === 'manual') {
+    <p class="soak-page__status" role="status">
+      تعذّر النسخ الآلي. حدّد النص أدناه وانسخه.
+      <bdi>Clipboard was blocked. Select the report below and copy it.</bdi>
+    </p>
+  }
+  <textarea class="soak-report" dir="ltr" readonly aria-label="تقرير التخزين">{{ report() }}</textarea>
+</section>

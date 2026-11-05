@@ -1,0 +1,196 @@
+// P0.6 storage soak page. Logical properties only (RTL-first), shared palette.
+
+.soak-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-inline-size: 52rem;
+  margin-inline: auto;
+  padding-block: 1.25rem;
+  padding-inline: 1rem;
+
+  &__title {
+    margin-block: 0;
+    color: var(--color-accent);
+    font-size: 2rem;
+  }
+
+  &__h2 {
+    margin-block: 0.5rem 0;
+    font-size: 1.3rem;
+  }
+
+  &__warn {
+    margin-block: 0;
+    padding-block: 0.75rem;
+    padding-inline: 1rem;
+    border-inline-start: 4px solid #9a3412;
+    border-radius: 12px;
+    background: #fff4ed;
+    color: #7c2d12;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  &__note,
+  &__status {
+    margin-block: 0;
+    color: var(--color-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+
+    &--warn {
+      color: #7c2d12;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+  }
+
+  &__link {
+    color: var(--color-accent);
+    font-size: 1.05rem;
+  }
+}
+
+.soak-meter {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-block: 0;
+
+  div {
+    padding-block: 0.6rem;
+    padding-inline: 0.75rem;
+    border-radius: 12px;
+    background: var(--color-surface);
+    overflow-wrap: anywhere;
+  }
+
+  dt {
+    color: var(--color-muted);
+    font-size: 0.9rem;
+  }
+
+  dd {
+    margin-inline: 0;
+    font-size: 1.2rem;
+  }
+
+  &__mono {
+    font-family: ui-monospace, monospace;
+    font-size: 0.8rem;
+  }
+}
+
+.soak-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+
+  button {
+    touch-action: manipulation;
+    padding-block: 0.7rem;
+    padding-inline: 1rem;
+    border: 1px solid #d7e4e1;
+    border-radius: 999px;
+    background: var(--color-surface);
+    font: inherit;
+    font-size: 1.05rem;
+
+    &:disabled {
+      opacity: 0.55;
+    }
+  }
+
+  &__danger {
+    color: #9a3412;
+  }
+}
+
+.soak-backend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+
+  &__btn {
+    touch-action: manipulation;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding-block: 0.7rem;
+    padding-inline: 1.25rem;
+    border: 1px solid #d7e4e1;
+    border-radius: 12px;
+    background: var(--color-surface);
+    font: inherit;
+    font-size: 1.1rem;
+
+    &--on {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+      font-weight: 500;
+    }
+
+    &:disabled {
+      opacity: 0.55;
+    }
+  }
+
+  &__na {
+    color: var(--color-muted);
+    font-size: 0.8rem;
+  }
+}
+
+.soak-bar {
+  block-size: 0.6rem;
+  border-radius: 999px;
+  background: #e2ecea;
+  overflow: hidden;
+
+  &__fill {
+    display: block;
+    block-size: 100%;
+    background: var(--color-accent);
+    transition: inline-size 0.15s linear;
+  }
+}
+
+.soak-verdict {
+  margin-block: 0;
+  font-size: 1.25rem;
+  line-height: 1.6;
+
+  &--pass {
+    color: var(--color-accent);
+  }
+
+  &--fail {
+    color: #9a3412;
+  }
+}
+
+.soak-bad,
+.soak-errors {
+  margin-block: 0;
+  padding-inline-start: 1.25rem;
+  color: #7c2d12;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.soak-report {
+  inline-size: 100%;
+  min-block-size: 16rem;
+  padding-block: 0.75rem;
+  padding-inline: 0.75rem;
+  border: 1px solid #d7e4e1;
+  border-radius: 12px;
+  font-family: ui-monospace, monospace;
+  font-size: 0.8rem;
+  text-align: start;
+}
