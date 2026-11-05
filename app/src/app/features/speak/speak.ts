@@ -1,10 +1,12 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { AudioService } from '../../core/audio/audio-service';
+import type { SpeakableCell } from '../../core/audio/audio-ports';
 import { BoardSession } from './board-session';
 import { SentenceStrip } from './sentence-strip';
 import { SpeakBoard } from './speak-board';
 import { SpeakController } from './speak-controller';
-import type { CellPhase } from './speak-contract';
+import { spokenText, type CellPhase } from './speak-contract';
 
 /**
  * Speak screen (P1.7). The grid is positioned from the board document.
@@ -21,6 +23,20 @@ import type { CellPhase } from './speak-contract';
 export class Speak {
   protected readonly session = inject(BoardSession);
   protected readonly controller = inject(SpeakController);
+  protected readonly audio = inject(AudioService);
+
+  constructor() {
+    effect(() => {
+      const board = this.session.board();
+      const cells: SpeakableCell[] = Object.entries(board.cells).map(([id, cell]) => ({
+        id,
+        label: cell.label,
+        text: spokenText(cell),
+        vocabKey: cell.vocabKey,
+      }));
+      void this.audio.prefetch(cells);
+    });
+  }
 
   /** Exact Egyptian test sentence required by the P0.3 acceptance criteria. */
   protected readonly testSentence =

@@ -1,9 +1,10 @@
 import { Injectable, InjectionToken, inject, signal } from '@angular/core';
+import { AudioCellSpeaker } from './audio-cell-speaker';
 import type { CellSpeaker, SpokenPart } from './speak-contract';
 
 /**
- * Narrow speak port for P1.7. Records what would be spoken.
- * Clip playback and the fallback chain are P1.8 — this does not play audio.
+ * Test double for the speak port. Records what would be spoken and plays nothing.
+ * Production taps use {@link AudioCellSpeaker} through `CELL_SPEAKER`.
  */
 @Injectable({ providedIn: 'root' })
 export class MemoryCellSpeaker implements CellSpeaker {
@@ -24,5 +25,5 @@ export class MemoryCellSpeaker implements CellSpeaker {
 
 export const CELL_SPEAKER = new InjectionToken<CellSpeaker>('CELL_SPEAKER', {
   providedIn: 'root',
-  factory: () => inject(MemoryCellSpeaker),
+  factory: () => inject(AudioCellSpeaker),
 });

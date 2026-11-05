@@ -12,6 +12,15 @@
     (phase)="onPhase($event)"
   />
 
+  @if (audio.fallbackBanner()) {
+    <p class="speak-shell__fallback" role="status" data-testid="no-voice-banner">
+      {{ audio.fallbackBanner() }}
+    </p>
+    <p class="speak-shell__fallback-text" data-testid="spoken-fallback">
+      <bdi>{{ audio.spokenFallbackText() }}</bdi>
+    </p>
+  }
+
   <nav class="speak-shell__links" aria-label="صفحات التجربة">
     <a class="speak-shell__link" routerLink="/audio">تجربة الصوت</a>
     <a class="speak-shell__link" routerLink="/audio/diagnostics">تشخيص الصوت</a>

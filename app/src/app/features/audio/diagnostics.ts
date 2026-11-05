@@ -9,6 +9,7 @@ import {
 } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { AudioEngine } from '../../core/audio/audio-engine';
+import { AudioService } from '../../core/audio/audio-service';
 import {
   DIAGNOSTIC_TAP_COUNT,
   TAP_TO_START_BUDGET_MS,
@@ -31,6 +32,8 @@ import { HearingBanner } from './hearing-banner';
 export class AudioDiagnostics implements OnInit {
   private readonly engine = inject(AudioEngine);
   private alive = true;
+
+  protected readonly chain = inject(AudioService);
 
   protected readonly cell = DIAGNOSTIC_CELL;
   protected readonly tapGoal = DIAGNOSTIC_TAP_COUNT;
@@ -59,6 +62,7 @@ export class AudioDiagnostics implements OnInit {
 
   ngOnInit(): void {
     void this.load();
+    void this.chain.refreshVoices();
   }
 
   protected chooseHearing(choice: HearingChoice): void {
