@@ -1,0 +1,48 @@
+# CodeQL for JavaScript and TypeScript.
+#
+# On a private repository, GitHub Code Security (Advanced Security) is
+# required before this workflow can upload results. A free private plan
+# may skip or reject the analysis until the repo is public or Advanced
+# Security is enabled. The workflow is still here because the plan asks
+# for it.
+#
+# Job token permissions, beyond the workflow default of contents: read:
+# - security-events: write — upload the SARIF result (required by CodeQL)
+# - actions: read — read this workflow file on a private repository
+
+name: CodeQL
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 6 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@33d7b85da1a04171e211befe2c739303b9a4c066 # v4.39.3
+        with:
+          languages: javascript-typescript
+
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@33d7b85da1a04171e211befe2c739303b9a4c066 # v4.39.3
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@33d7b85da1a04171e211befe2c739303b9a4c066 # v4.39.3
+        with:
+          category: "/language:javascript-typescript"

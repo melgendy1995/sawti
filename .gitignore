@@ -1,24 +1,67 @@
-# Created before P0.3 so generated junk cannot be committed by accident.
-# P0.2 (CI agent) will expand this to the full ignore set.
+# Generated output and local secrets. Android sources under app/android/,
+# lockfiles, and app/public/fonts/ are tracked.
+
+# OS
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editors (repo-root only for .vscode / .idea so app/.vscode stays tracked)
+/.idea/
+/.vscode/
+*.iml
+*.swp
+*.swo
+*~
+.history/
+
+# Node / Angular
 node_modules/
 dist/
 .angular/
-.DS_Store
+coverage/
+*.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm/
+.sass-cache/
+
+# Env files
+.env
+.env.*
 *.env
 *.env.*
 !.env.example
+
+# Playwright (not configured yet; ignore the usual artifacts)
+/playwright-report/
+/test-results/
+/blob-report/
+playwright-report/
+test-results/
+blob-report/
+playwright/.cache/
+
+# Signing keys. Never commit these.
 *.jks
 *.p12
 *.keystore
+
+# Android / Capacitor build outputs. Do not ignore app/android/ sources
+# or the Gradle wrapper. cap sync copies are also listed in
+# app/android/.gitignore.
 *.apk
 *.aab
 *.ap_
-android/local.properties
-android/.gradle/
-android/app/build/
-android/build/
-android/captures/
-# Capacitor project is app/android (sources are committed; build outputs are not).
+*.aar
+*.dex
+local.properties
+**/.gradle/
+**/captures/
+**/.cxx/
+**/.externalNativeBuild/
 app/android/local.properties
 app/android/.gradle/
 app/android/app/build/
@@ -28,6 +71,7 @@ app/android/.idea/
 app/android/**/*.iml
 app/android/.cxx/
 app/android/app/.cxx/
-coverage/
-test-results/
-playwright-report/
+app/android/app/src/main/assets/public/
+app/android/app/src/main/assets/capacitor.config.json
+app/android/app/src/main/assets/capacitor.plugins.json
+app/android/app/src/main/res/xml/config.xml
