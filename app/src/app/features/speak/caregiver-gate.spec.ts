@@ -11,7 +11,8 @@ import { CaregiverPinStore } from '../../core/access/caregiver-pin-store';
 import { SAWTI_DB } from '../../core/storage/db-token';
 import { SawtiDb } from '../../core/storage/sawti-db';
 import { SETTING_CAREGIVER_PIN } from '../../core/settings/setting-keys';
-import { CELL_WATER } from './demo-boards';
+import { BoardSession } from './board-session';
+import { CELL_WATER, HOME_BOARD_ID } from './demo-boards';
 import { Speak } from './speak';
 
 function pointer(
@@ -58,6 +59,7 @@ describe('Caregiver gate', () => {
   });
 
   async function setup(): Promise<{ fixture: ReturnType<typeof TestBed.createComponent<Speak>>; el: HTMLElement }> {
+    TestBed.inject(BoardSession).open(HOME_BOARD_ID);
     const fixture = TestBed.createComponent(Speak);
     fixture.detectChanges();
     await fixture.whenStable();

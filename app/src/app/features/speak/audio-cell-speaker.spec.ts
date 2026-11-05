@@ -2,8 +2,9 @@ import { TestBed } from '@angular/core/testing';
 import { AudioService } from '../../core/audio/audio-service';
 import type { ChainSource, SpeakableCell } from '../../core/audio/audio-ports';
 import { AudioCellSpeaker } from './audio-cell-speaker';
+import { BoardSession } from './board-session';
 import { CELL_SPEAKER, MemoryCellSpeaker } from './cell-speaker';
-import { CELL_WATER } from './demo-boards';
+import { CELL_WATER, HOME_BOARD_ID } from './demo-boards';
 
 describe('CELL_SPEAKER wiring', () => {
   const spoken: SpeakableCell[] = [];
@@ -25,6 +26,7 @@ describe('CELL_SPEAKER wiring', () => {
     TestBed.configureTestingModule({
       providers: [{ provide: AudioService, useValue: audio }],
     });
+    TestBed.inject(BoardSession).open(HOME_BOARD_ID);
   });
 
   it('uses AudioCellSpeaker and keeps MemoryCellSpeaker as a separate double', () => {
