@@ -1,0 +1,43 @@
+// Grid is LTR so column 1 is the physical left. Document columns are mapped
+// by cssGridColumn (default RTL), not by the UI language.
+.speak-board {
+  direction: ltr;
+  display: grid;
+  inline-size: 100%;
+  gap: 0.35rem;
+}
+
+.speak-board__slot {
+  min-inline-size: 0;
+  min-block-size: 0;
+}
+
+.speak-board__button {
+  inline-size: 100%;
+  block-size: 100%;
+  min-inline-size: 0;
+  min-block-size: 2.75rem;
+  overflow-inline: hidden;
+  overflow-block: hidden;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  touch-action: manipulation;
+  user-select: none;
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-accent);
+  border-radius: 12px;
+  font: inherit;
+  padding: 0.35rem;
+}
+
+.speak-board__label {
+  unicode-bidi: isolate;
+  display: block;
+}
+
+.speak-board__symbol {
+  display: block;
+  font-size: 0.8rem;
+}

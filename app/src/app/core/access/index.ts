@@ -1,2 +1,6 @@
-// Placeholder for the core/access module (P0.3 skeleton).
-export {};
+export {
+  ACCESS_TIMING,
+  DEFAULT_ACCESS_TIMING,
+  PointerAccessFilter,
+} from './pointer-filter';
+export type { AccessTiming } from './pointer-filter';

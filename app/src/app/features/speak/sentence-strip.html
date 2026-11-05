@@ -1,0 +1,34 @@
+<div class="sentence-strip" data-testid="sentence-strip">
+  <div class="sentence-strip__modes" role="group" aria-label="وضع الكلام">
+    <button
+      type="button"
+      data-testid="mode-tap"
+      [attr.aria-pressed]="controller.mode() === 'tap' ? 'true' : 'false'"
+      (click)="controller.setMode('tap')"
+    >
+      نطق مباشر
+    </button>
+    <button
+      type="button"
+      data-testid="mode-sentence"
+      [attr.aria-pressed]="controller.mode() === 'sentence' ? 'true' : 'false'"
+      (click)="controller.setMode('sentence')"
+    >
+      جملة
+    </button>
+  </div>
+
+  <p class="sentence-strip__words">
+    @for (part of controller.sentence(); track $index) {
+      <bdi class="sentence-strip__word" data-testid="sentence-word">{{ part.label }}</bdi>
+    }
+  </p>
+
+  <div class="sentence-strip__actions">
+    <button type="button" data-testid="sentence-speak" (click)="controller.speakSentence()">انطق</button>
+    <button type="button" data-testid="sentence-delete" (click)="controller.deleteLast()">
+      احذف الأخير
+    </button>
+    <button type="button" data-testid="sentence-clear" (click)="controller.clearSentence()">امسح</button>
+  </div>
+</div>

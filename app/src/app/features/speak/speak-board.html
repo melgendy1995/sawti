@@ -1,0 +1,39 @@
+<div
+  class="speak-board"
+  data-testid="speak-grid"
+  [style.grid-template-rows]="'repeat(' + board().rows + ', minmax(0, 1fr))'"
+  [style.grid-template-columns]="'repeat(' + board().cols + ', minmax(0, 1fr))'"
+>
+  @for (cell of cells(); track cell.id) {
+    <div
+      class="speak-board__slot"
+      data-testid="cell-slot"
+      [attr.data-cell-id]="cell.id"
+      [attr.data-row]="cell.row"
+      [attr.data-col]="cell.col"
+      [attr.data-hidden]="cell.hidden ? 'true' : 'false'"
+      [style.grid-row]="cssGridRow(cell.row)"
+      [style.grid-column]="cssGridColumn(cell.col, board().cols)"
+      [attr.aria-hidden]="cell.hidden ? 'true' : null"
+    >
+      @if (!cell.hidden) {
+        <button
+          type="button"
+          class="speak-board__button"
+          data-testid="cell-button"
+          dir="rtl"
+          (pointerdown)="onPointerDown($event, cell.id)"
+          (pointerup)="onPointerUp(cell.id)"
+          (pointercancel)="onPointerCancel(cell.id)"
+          (pointerleave)="onPointerCancel(cell.id)"
+          (contextmenu)="onContextMenu($event)"
+        >
+          @if (cell.symbol) {
+            <span class="speak-board__symbol" data-testid="cell-symbol">{{ cell.symbol.key }}</span>
+          }
+          <bdi class="speak-board__label" data-testid="cell-label">{{ cell.label }}</bdi>
+        </button>
+      }
+    </div>
+  }
+</div>
