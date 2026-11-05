@@ -1,0 +1,103 @@
+# CI for the Angular app. No Cloudflare deploy, no Android signing,
+# no production environment.
+#
+# Playwright smoke (Chromium + WebKit) is not configured. app/e2e/ is a
+# placeholder; those tests land in a later task. This workflow does not
+# install Playwright.
+#
+# Content license gate lands with P1.5. content/ has no assets yet, so
+# this workflow does not fail on it.
+
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+# Default token can read the repo. No step needs a broader token.
+# Gitleaks comments and SARIF upload are turned off so this stays true.
+permissions:
+  contents: read
+
+jobs:
+  app:
+    name: lint, test, build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Setup Node.js
+        # No app/.nvmrc. Local Homebrew Node is 26; CI uses Node 22 LTS.
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+
+      - name: Install dependencies
+        working-directory: app
+        run: npm ci
+
+      - name: Lint
+        working-directory: app
+        run: npm run lint
+
+      - name: Stylelint
+        working-directory: app
+        run: npm run stylelint
+
+      - name: Unit tests
+        # Vitest through `ng test`. It exits on its own. Do not pass
+        # --browsers=ChromeHeadless; that flag needs extra Vitest packages.
+        working-directory: app
+        run: npm test
+
+      - name: Production build
+        working-directory: app
+        run: npm run build
+
+      - name: Pages output
+        run: scripts/build-pages.sh
+
+      - name: Reject /packs/ URLs in ngsw.json (E5)
+        # Fail only when a produced ngsw.json lists a /packs/ URL.
+        # Missing ngsw.json is not a failure (the check is a no-op then).
+        run: |
+          set -euo pipefail
+          mapfile -d '' files < <(find dist/pages/app app/dist -name ngsw.json -type f -print0 2>/dev/null || true)
+          if [ "${#files[@]}" -eq 0 ]; then
+            echo "No ngsw.json produced; E5 check skipped."
+            exit 0
+          fi
+          failed=0
+          for f in "${files[@]}"; do
+            if grep -nF '/packs/' "$f"; then
+              echo "E5: ${f} lists a /packs/ URL. The service worker must not precache packs."
+              failed=1
+            else
+              echo "E5 ok: ${f}"
+            fi
+          done
+          exit "${failed}"
+
+  gitleaks:
+    name: gitleaks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+
+      - name: Gitleaks
+        # Personal-account repos do not need GITLEAKS_LICENSE.
+        # An organization-owned repo does; adding that secret is a human task.
+        # Comments and artifact upload are off so contents: read is enough
+        # (commenting would need pull-requests: write).
+        uses: gitleaks/gitleaks-action@e0c47f4f8be36e29cdc102c57e68cb5cbf0e8d1e # v3.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITLEAKS_ENABLE_COMMENTS: "false"
+          GITLEAKS_ENABLE_UPLOAD_ARTIFACT: "false"
