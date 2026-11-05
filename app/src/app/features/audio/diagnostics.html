@@ -12,6 +12,51 @@
     <a class="spike-page__link" routerLink="/speak">الكلام</a>
   </nav>
 
+  <section data-testid="chain-status">
+    <p class="spike-page__status">
+      النطق الآلي:
+      @if (chain.ttsAvailable()) {
+        نعم
+        <bdi>Yes</bdi>
+      } @else {
+        لا
+        <bdi>No</bdi>
+      }
+    </p>
+    <p class="spike-page__status">
+      الصوت المختار:
+      @if (chain.selectedVoice(); as voice) {
+        <bdi dir="ltr">{{ voice.name }} ({{ voice.lang }})</bdi>
+      } @else {
+        لا يوجد صوت عربي
+        <bdi>No Arabic voice</bdi>
+      }
+    </p>
+    <p class="spike-page__status">
+      آخر مصدر:
+      @if (chain.lastSource(); as source) {
+        <bdi dir="ltr">{{ source }}</bdi>
+      } @else {
+        —
+      }
+      <bdi>Last source</bdi>
+    </p>
+    <p class="spike-page__status">
+      عدد الأصوات:
+      <bdi dir="ltr">{{ chain.voices().length }}</bdi>
+      <bdi>Voices</bdi>
+    </p>
+    <p class="spike-page__status">
+      جلسة الصوت:
+      @if (meter().audioSessionSupported) {
+        <bdi dir="ltr">{{ meter().audioSessionType }}</bdi>
+      } @else {
+        غير مدعوم
+        <bdi>unsupported</bdi>
+      }
+    </p>
+  </section>
+
   <app-hearing-banner
     [warnings]="warnings()"
     [hearing]="hearing()"

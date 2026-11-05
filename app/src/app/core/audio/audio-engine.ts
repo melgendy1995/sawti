@@ -101,6 +101,40 @@ export class AudioEngine {
     return this.record(cellId, pointerUpMs, true, null);
   }
 
+  /** Same gesture resume the spike uses. Public so AudioService can call it on a tap. */
+  unlock(): void {
+    this.resumeFromGesture();
+  }
+
+  /**
+   * Start an already-decoded buffer on the shared context.
+   * Does not stop a previous spike tone. Returns the node, or null if there is
+   * no context or start() throws a DOMException.
+   */
+  playReady(buffer: AudioBuffer): AudioBufferSourceNode | null {
+    this.resumeFromGesture();
+    const context = this.context;
+    if (!context) return null;
+    try {
+      return startBuffer(context, buffer);
+    } catch (error) {
+      if (error instanceof DOMException) return null;
+      throw error;
+    }
+  }
+
+  /** decodeAudioData on a copy of `bytes` (`bytes.slice(0)`). DOMException → null. */
+  async decodeBytes(bytes: ArrayBuffer): Promise<AudioBuffer | null> {
+    const context = this.ensureContext();
+    if (!context) return null;
+    try {
+      return await context.decodeAudioData(bytes.slice(0));
+    } catch (error) {
+      if (error instanceof DOMException) return null;
+      throw error;
+    }
+  }
+
   reportInput(tapMs: readonly number[], recordedAtIso: string, userAgent: string): DiagnosticsReportInput {
     const context = this.context;
     const session = readAudioSession(navigator);

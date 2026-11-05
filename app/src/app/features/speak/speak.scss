@@ -41,6 +41,21 @@
     font-size: 1.05rem;
   }
 
+  &__fallback {
+    margin-block: 0;
+    color: #9a3412;
+    font-size: 1.25rem;
+    line-height: 1.5;
+  }
+
+  &__fallback-text {
+    margin-block: 0;
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 1.45;
+    unicode-bidi: isolate;
+  }
+
   &__sentence {
     // Isolate the Arabic run so neighbouring Latin/digits can't reorder it.
     unicode-bidi: isolate;

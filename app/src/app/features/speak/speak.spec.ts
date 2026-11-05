@@ -1,7 +1,9 @@
 import { TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
 import { ACCESS_TIMING } from '../../core/access';
-import { MemoryCellSpeaker } from './cell-speaker';
+import { AudioService } from '../../core/audio/audio-service';
+import { TTS_ADAPTER, type TtsAdapter } from '../../core/audio/tts';
+import { CELL_SPEAKER, MemoryCellSpeaker } from './cell-speaker';
 import {
   CELL_BACK,
   CELL_FOOD,
@@ -49,7 +51,7 @@ describe('Speak screen', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [Speak],
-      providers: [provideRouter([])],
+      providers: [provideRouter([]), { provide: CELL_SPEAKER, useExisting: MemoryCellSpeaker }],
     }).compileComponents();
   });
 
@@ -249,6 +251,7 @@ describe('Speak screen access timing', () => {
       imports: [Speak],
       providers: [
         provideRouter([]),
+        { provide: CELL_SPEAKER, useExisting: MemoryCellSpeaker },
         { provide: ACCESS_TIMING, useValue: { holdMs: 300, debounceMs: 400, activation: 'release' } },
       ],
     }).compileComponents();
@@ -336,5 +339,42 @@ describe('SentenceStrip', () => {
     expect(el.querySelector('[data-testid="sentence-speak"]')?.textContent?.trim()).toBe('انطق');
     expect(el.querySelector('[data-testid="sentence-delete"]')?.textContent?.trim()).toBe('احذف الأخير');
     expect(el.querySelector('[data-testid="sentence-clear"]')?.textContent?.trim()).toBe('امسح');
+  });
+});
+
+describe('Speak no-voice banner', () => {
+  const silentTts: TtsAdapter = {
+    isAvailable: () => false,
+    detectVoices: async () => [],
+    speak: async () => false,
+    cancel: () => undefined,
+  };
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [Speak],
+      providers: [
+        provideRouter([]),
+        { provide: CELL_SPEAKER, useExisting: MemoryCellSpeaker },
+        { provide: TTS_ADAPTER, useValue: silentTts },
+      ],
+    }).compileComponents();
+  });
+
+  it('shows لا يوجد صوت and the spoken text when no source can play', async () => {
+    const fixture = TestBed.createComponent(Speak);
+    fixture.detectChanges();
+    await TestBed.inject(AudioService).speak({
+      id: 'none',
+      label: 'مية',
+      text: 'ماء',
+      vocabKey: null,
+    });
+    fixture.detectChanges();
+
+    const el = fixture.nativeElement as HTMLElement;
+    expect(el.querySelector('[data-testid="no-voice-banner"]')?.textContent).toContain('لا يوجد صوت');
+    expect(el.querySelector('[data-testid="spoken-fallback"] bdi')?.textContent?.trim()).toBe('ماء');
+    expect(el.querySelector('[data-testid="test-sentence"] bdi')?.textContent).toContain('السَّلام عليكم');
   });
 });
