@@ -14,7 +14,8 @@
           "/*.css",
           "/*.js",
           "/fonts/*.woff2",
-          "/icons/*.png"
+          "/icons/*.png",
+          "/vocab/*.json"
         ]
       }
     }

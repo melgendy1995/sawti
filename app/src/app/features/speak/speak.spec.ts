@@ -3,6 +3,7 @@ import { provideRouter } from '@angular/router';
 import { ACCESS_TIMING } from '../../core/access';
 import { AudioService } from '../../core/audio/audio-service';
 import { TTS_ADAPTER, type TtsAdapter } from '../../core/audio/tts';
+import { BoardSession } from './board-session';
 import { CELL_SPEAKER, MemoryCellSpeaker } from './cell-speaker';
 import {
   CELL_BACK,
@@ -12,6 +13,7 @@ import {
   CELL_LINK,
   CELL_MIXED,
   CELL_WATER,
+  HOME_BOARD_ID,
   PARKED_ID,
   longLabelBoard,
 } from './demo-boards';
@@ -47,6 +49,11 @@ function buttonFor(root: ParentNode, id: string): HTMLButtonElement {
   return button;
 }
 
+/** P1.7 coverage stays on the fixture board. Core vocab is a different catalog entry. */
+function showDemoBoard(): void {
+  TestBed.inject(BoardSession).open(HOME_BOARD_ID);
+}
+
 describe('Speak screen', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -56,6 +63,7 @@ describe('Speak screen', () => {
   });
 
   async function setup(): Promise<{ fixture: ReturnType<typeof TestBed.createComponent<Speak>>; el: HTMLElement }> {
+    showDemoBoard();
     const fixture = TestBed.createComponent(Speak);
     await fixture.whenStable();
     fixture.detectChanges();
@@ -256,6 +264,7 @@ describe('Speak screen access timing', () => {
       ],
     }).compileComponents();
 
+    showDemoBoard();
     const fixture = TestBed.createComponent(Speak);
     fixture.detectChanges();
     const el = fixture.nativeElement as HTMLElement;
@@ -362,6 +371,7 @@ describe('Speak no-voice banner', () => {
   });
 
   it('shows لا يوجد صوت and the spoken text when no source can play', async () => {
+    showDemoBoard();
     const fixture = TestBed.createComponent(Speak);
     fixture.detectChanges();
     await TestBed.inject(AudioService).speak({

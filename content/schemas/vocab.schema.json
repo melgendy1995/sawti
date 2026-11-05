@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://sawti.app/schemas/vocab.schema.json",
+  "title": "Sawti core vocabulary",
+  "description": "Dialect vocabulary document. Items are the source list for core boards. ssml is optional and omitted on the ai-draft.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "dialect", "reviewStatus", "items"],
+  "properties": {
+    "schemaVersion": { "type": "integer", "const": 1 },
+    "dialect": { "type": "string", "const": "ar-EG" },
+    "reviewStatus": { "type": "string", "const": "ai-draft" },
+    "items": {
+      "type": "array",
+      "minItems": 380,
+      "maxItems": 420,
+      "items": { "$ref": "#/$defs/item" }
+    }
+  },
+  "$defs": {
+    "mf": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["m", "f"],
+      "properties": {
+        "m": { "type": "string", "minLength": 1 },
+        "f": { "type": "string", "minLength": 1 }
+      }
+    },
+    "item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "vocabKey",
+        "category",
+        "color",
+        "gloss_en",
+        "agreement",
+        "display",
+        "speak",
+        "board",
+        "row",
+        "col",
+        "reviewStatus"
+      ],
+      "properties": {
+        "vocabKey": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+        "category": {
+          "enum": ["person", "verb", "descriptor", "noun", "social", "function", "question"]
+        },
+        "color": {
+          "enum": [
+            "fitz-person",
+            "fitz-verb",
+            "fitz-descriptor",
+            "fitz-noun",
+            "fitz-social",
+            "fitz-function",
+            "fitz-question"
+          ]
+        },
+        "gloss_en": { "type": "string", "minLength": 1 },
+        "agreement": { "type": "boolean" },
+        "display": { "$ref": "#/$defs/mf" },
+        "speak": { "$ref": "#/$defs/mf" },
+        "ssml": { "$ref": "#/$defs/mf" },
+        "board": { "type": "string", "minLength": 1 },
+        "row": { "type": "integer", "minimum": 0 },
+        "col": { "type": "integer", "minimum": 0 },
+        "reviewStatus": { "type": "string", "const": "ai-draft" }
+      }
+    }
+  }
+}

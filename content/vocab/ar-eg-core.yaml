@@ -1,0 +1,4415 @@
+schemaVersion: 1
+dialect: ar-EG
+reviewStatus: ai-draft
+items:
+  - vocabKey: i
+    category: person
+    color: fitz-person
+    gloss_en: I
+    agreement: false
+    display: { m: "أنا", f: "أنا" }
+    speak: { m: "أنا", f: "أنا" }
+    board: home
+    row: 0
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: you
+    category: person
+    color: fitz-person
+    gloss_en: you
+    agreement: true
+    display: { m: "إنتَ", f: "إنتي" }
+    speak: { m: "إنتَ", f: "إنتي" }
+    board: home
+    row: 0
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: we
+    category: person
+    color: fitz-person
+    gloss_en: we
+    agreement: false
+    display: { m: "إحنا", f: "إحنا" }
+    speak: { m: "إحنا", f: "إحنا" }
+    board: home
+    row: 0
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: he
+    category: person
+    color: fitz-person
+    gloss_en: he
+    agreement: false
+    display: { m: "هو", f: "هو" }
+    speak: { m: "هو", f: "هو" }
+    board: home
+    row: 0
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: she
+    category: person
+    color: fitz-person
+    gloss_en: she
+    agreement: false
+    display: { m: "هي", f: "هي" }
+    speak: { m: "هي", f: "هي" }
+    board: home
+    row: 0
+    col: 4
+    reviewStatus: ai-draft
+  - vocabKey: they
+    category: person
+    color: fitz-person
+    gloss_en: they
+    agreement: false
+    display: { m: "هما", f: "هما" }
+    speak: { m: "هما", f: "هما" }
+    board: home
+    row: 0
+    col: 5
+    reviewStatus: ai-draft
+  - vocabKey: this
+    category: person
+    color: fitz-person
+    gloss_en: this
+    agreement: true
+    display: { m: "ده", f: "دي" }
+    speak: { m: "ده", f: "دي" }
+    board: home
+    row: 1
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: that
+    category: person
+    color: fitz-person
+    gloss_en: that
+    agreement: true
+    display: { m: "أهو", f: "أهي" }
+    speak: { m: "أهو", f: "أهي" }
+    board: home
+    row: 1
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: my
+    category: person
+    color: fitz-person
+    gloss_en: mine
+    agreement: true
+    display: { m: "بتاعي", f: "بتاعتي" }
+    speak: { m: "بتاعي", f: "بتاعتي" }
+    board: home
+    row: 1
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: yes
+    category: function
+    color: fitz-function
+    gloss_en: "yes"
+    agreement: false
+    display: { m: "أيوه", f: "أيوه" }
+    speak: { m: "أيوه", f: "أيوه" }
+    board: home
+    row: 1
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: no
+    category: function
+    color: fitz-function
+    gloss_en: "no"
+    agreement: false
+    display: { m: "لأ", f: "لأ" }
+    speak: { m: "لأ", f: "لأ" }
+    board: home
+    row: 1
+    col: 4
+    reviewStatus: ai-draft
+  - vocabKey: not
+    category: function
+    color: fitz-function
+    gloss_en: not
+    agreement: false
+    display: { m: "مش", f: "مش" }
+    speak: { m: "مش", f: "مش" }
+    board: home
+    row: 1
+    col: 5
+    reviewStatus: ai-draft
+  - vocabKey: and
+    category: function
+    color: fitz-function
+    gloss_en: and
+    agreement: false
+    display: { m: "و", f: "و" }
+    speak: { m: "و", f: "و" }
+    board: home
+    row: 2
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: more
+    category: function
+    color: fitz-function
+    gloss_en: more
+    agreement: false
+    display: { m: "كمان", f: "كمان" }
+    speak: { m: "كمان", f: "كمان" }
+    board: home
+    row: 2
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: stop
+    category: function
+    color: fitz-function
+    gloss_en: "stop / enough"
+    agreement: false
+    display: { m: "خلاص", f: "خلاص" }
+    speak: { m: "خلاص", f: "خلاص" }
+    board: home
+    row: 2
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: help
+    category: verb
+    color: fitz-verb
+    gloss_en: "help me"
+    agreement: false
+    display: { m: "ساعدني", f: "ساعدني" }
+    speak: { m: "ساعدني", f: "ساعدني" }
+    board: home
+    row: 2
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: go
+    category: verb
+    color: fitz-verb
+    gloss_en: "I go"
+    agreement: false
+    display: { m: "أروح", f: "أروح" }
+    speak: { m: "أروح", f: "أروح" }
+    board: home
+    row: 2
+    col: 4
+    reviewStatus: ai-draft
+  - vocabKey: come
+    category: verb
+    color: fitz-verb
+    gloss_en: "I come"
+    agreement: false
+    display: { m: "أجي", f: "أجي" }
+    speak: { m: "أجي", f: "أجي" }
+    board: home
+    row: 2
+    col: 5
+    reviewStatus: ai-draft
+  - vocabKey: please
+    category: social
+    color: fitz-social
+    gloss_en: please
+    agreement: true
+    display: { m: "لو سمحت", f: "لو سمحتِ" }
+    speak: { m: "لو سمحت", f: "لو سمحتِ" }
+    board: home
+    row: 3
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: thanks
+    category: social
+    color: fitz-social
+    gloss_en: thanks
+    agreement: false
+    display: { m: "شكراً", f: "شكراً" }
+    speak: { m: "شكراً", f: "شكراً" }
+    board: home
+    row: 3
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: now
+    category: function
+    color: fitz-function
+    gloss_en: now
+    agreement: false
+    display: { m: "دلوقتي", f: "دلوقتي" }
+    speak: { m: "دلوقتي", f: "دلوقتي" }
+    board: home
+    row: 3
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: here
+    category: function
+    color: fitz-function
+    gloss_en: here
+    agreement: false
+    display: { m: "هنا", f: "هنا" }
+    speak: { m: "هنا", f: "هنا" }
+    board: home
+    row: 3
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: there
+    category: function
+    color: fitz-function
+    gloss_en: there
+    agreement: false
+    display: { m: "هناك", f: "هناك" }
+    speak: { m: "هناك", f: "هناك" }
+    board: home
+    row: 3
+    col: 4
+    reviewStatus: ai-draft
+  - vocabKey: all
+    category: function
+    color: fitz-function
+    gloss_en: "all of it"
+    agreement: false
+    display: { m: "كله", f: "كله" }
+    speak: { m: "كله", f: "كله" }
+    board: home
+    row: 3
+    col: 5
+    reviewStatus: ai-draft
+  - vocabKey: water
+    category: noun
+    color: fitz-noun
+    gloss_en: water
+    agreement: false
+    display: { m: "ميّة", f: "ميّة" }
+    speak: { m: "ميّة", f: "ميّة" }
+    board: food
+    row: 0
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: food
+    category: noun
+    color: fitz-noun
+    gloss_en: food
+    agreement: false
+    display: { m: "أكل", f: "أكل" }
+    speak: { m: "أكل", f: "أكل" }
+    board: food
+    row: 0
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: bread
+    category: noun
+    color: fitz-noun
+    gloss_en: bread
+    agreement: false
+    display: { m: "عيش", f: "عيش" }
+    speak: { m: "عيش", f: "عيش" }
+    board: food
+    row: 0
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: rice
+    category: noun
+    color: fitz-noun
+    gloss_en: rice
+    agreement: false
+    display: { m: "رز", f: "رز" }
+    speak: { m: "رز", f: "رز" }
+    board: food
+    row: 0
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: chicken
+    category: noun
+    color: fitz-noun
+    gloss_en: chicken
+    agreement: false
+    display: { m: "فراخ", f: "فراخ" }
+    speak: { m: "فراخ", f: "فراخ" }
+    board: food
+    row: 0
+    col: 4
+    reviewStatus: ai-draft
+  - vocabKey: banana
+    category: noun
+    color: fitz-noun
+    gloss_en: banana
+    agreement: false
+    display: { m: "موز", f: "موز" }
+    speak: { m: "موز", f: "موز" }
+    board: food
+    row: 1
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: apple
+    category: noun
+    color: fitz-noun
+    gloss_en: apple
+    agreement: false
+    display: { m: "تفّاح", f: "تفّاح" }
+    speak: { m: "تفّاح", f: "تفّاح" }
+    board: food
+    row: 1
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: egg
+    category: noun
+    color: fitz-noun
+    gloss_en: egg
+    agreement: false
+    display: { m: "بيضة", f: "بيضة" }
+    speak: { m: "بيضة", f: "بيضة" }
+    board: food
+    row: 1
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: cheese
+    category: noun
+    color: fitz-noun
+    gloss_en: cheese
+    agreement: false
+    display: { m: "جبنة", f: "جبنة" }
+    speak: { m: "جبنة", f: "جبنة" }
+    board: food
+    row: 1
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: meat
+    category: noun
+    color: fitz-noun
+    gloss_en: meat
+    agreement: false
+    display: { m: "لحمة", f: "لحمة" }
+    speak: { m: "لحمة", f: "لحمة" }
+    board: food
+    row: 1
+    col: 4
+    reviewStatus: ai-draft
+  - vocabKey: fish
+    category: noun
+    color: fitz-noun
+    gloss_en: fish
+    agreement: false
+    display: { m: "سمك", f: "سمك" }
+    speak: { m: "سمك", f: "سمك" }
+    board: food
+    row: 2
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: soup
+    category: noun
+    color: fitz-noun
+    gloss_en: soup
+    agreement: false
+    display: { m: "شربة", f: "شربة" }
+    speak: { m: "شربة", f: "شربة" }
+    board: food
+    row: 2
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: salad
+    category: noun
+    color: fitz-noun
+    gloss_en: salad
+    agreement: false
+    display: { m: "سلطة", f: "سلطة" }
+    speak: { m: "سلطة", f: "سلطة" }
+    board: food
+    row: 2
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: beans
+    category: noun
+    color: fitz-noun
+    gloss_en: "fava beans"
+    agreement: false
+    display: { m: "فول", f: "فول" }
+    speak: { m: "فول", f: "فول" }
+    board: food
+    row: 2
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: falafel
+    category: noun
+    color: fitz-noun
+    gloss_en: falafel
+    agreement: false
+    display: { m: "طعمية", f: "طعمية" }
+    speak: { m: "طعمية", f: "طعمية" }
+    board: food
+    row: 2
+    col: 4
+    reviewStatus: ai-draft
+  - vocabKey: sweet
+    category: noun
+    color: fitz-noun
+    gloss_en: sweet
+    agreement: false
+    display: { m: "حلو", f: "حلو" }
+    speak: { m: "حلو", f: "حلو" }
+    board: food
+    row: 3
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: biscuit
+    category: noun
+    color: fitz-noun
+    gloss_en: biscuit
+    agreement: false
+    display: { m: "بسكويت", f: "بسكويت" }
+    speak: { m: "بسكويت", f: "بسكويت" }
+    board: food
+    row: 3
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: yogurt
+    category: noun
+    color: fitz-noun
+    gloss_en: yogurt
+    agreement: false
+    display: { m: "زبادي", f: "زبادي" }
+    speak: { m: "زبادي", f: "زبادي" }
+    board: food
+    row: 3
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: sandwich
+    category: noun
+    color: fitz-noun
+    gloss_en: sandwich
+    agreement: false
+    display: { m: "سندوتش", f: "سندوتش" }
+    speak: { m: "سندوتش", f: "سندوتش" }
+    board: food
+    row: 3
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: milk
+    category: noun
+    color: fitz-noun
+    gloss_en: milk
+    agreement: false
+    display: { m: "لبن", f: "لبن" }
+    speak: { m: "لبن", f: "لبن" }
+    board: drinks
+    row: 0
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: juice
+    category: noun
+    color: fitz-noun
+    gloss_en: juice
+    agreement: false
+    display: { m: "عصير", f: "عصير" }
+    speak: { m: "عصير", f: "عصير" }
+    board: drinks
+    row: 0
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: drink
+    category: noun
+    color: fitz-noun
+    gloss_en: "a drink"
+    agreement: false
+    display: { m: "شراب", f: "شراب" }
+    speak: { m: "شراب", f: "شراب" }
+    board: drinks
+    row: 0
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: tea
+    category: noun
+    color: fitz-noun
+    gloss_en: tea
+    agreement: false
+    display: { m: "شاي", f: "شاي" }
+    speak: { m: "شاي", f: "شاي" }
+    board: drinks
+    row: 0
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: cocoa
+    category: noun
+    color: fitz-noun
+    gloss_en: cocoa
+    agreement: false
+    display: { m: "كاكاو", f: "كاكاو" }
+    speak: { m: "كاكاو", f: "كاكاو" }
+    board: drinks
+    row: 1
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: cane
+    category: noun
+    color: fitz-noun
+    gloss_en: "sugar-cane juice"
+    agreement: false
+    display: { m: "قصب", f: "قصب" }
+    speak: { m: "قصب", f: "قصب" }
+    board: drinks
+    row: 1
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: soda
+    category: noun
+    color: fitz-noun
+    gloss_en: soda
+    agreement: false
+    display: { m: "غازية", f: "غازية" }
+    speak: { m: "غازية", f: "غازية" }
+    board: drinks
+    row: 1
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: rayeb
+    category: noun
+    color: fitz-noun
+    gloss_en: buttermilk
+    agreement: false
+    display: { m: "رايب", f: "رايب" }
+    speak: { m: "رايب", f: "رايب" }
+    board: drinks
+    row: 1
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: anise
+    category: noun
+    color: fitz-noun
+    gloss_en: anise
+    agreement: false
+    display: { m: "ينسون", f: "ينسون" }
+    speak: { m: "ينسون", f: "ينسون" }
+    board: drinks
+    row: 2
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: sahlab
+    category: noun
+    color: fitz-noun
+    gloss_en: sahlab
+    agreement: false
+    display: { m: "سحلب", f: "سحلب" }
+    speak: { m: "سحلب", f: "سحلب" }
+    board: drinks
+    row: 2
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: coffee
+    category: noun
+    color: fitz-noun
+    gloss_en: coffee
+    agreement: false
+    display: { m: "قهوة", f: "قهوة" }
+    speak: { m: "قهوة", f: "قهوة" }
+    board: drinks
+    row: 2
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: mama
+    category: person
+    color: fitz-person
+    gloss_en: mom
+    agreement: false
+    display: { m: "ماما", f: "ماما" }
+    speak: { m: "ماما", f: "ماما" }
+    board: people
+    row: 0
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: baba
+    category: person
+    color: fitz-person
+    gloss_en: dad
+    agreement: false
+    display: { m: "بابا", f: "بابا" }
+    speak: { m: "بابا", f: "بابا" }
+    board: people
+    row: 0
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: friend
+    category: person
+    color: fitz-person
+    gloss_en: friend
+    agreement: true
+    display: { m: "صاحبي", f: "صاحبتي" }
+    speak: { m: "صاحبي", f: "صاحبتي" }
+    board: people
+    row: 0
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: teacher
+    category: person
+    color: fitz-person
+    gloss_en: teacher
+    agreement: true
+    display: { m: "معلّم", f: "معلّمة" }
+    speak: { m: "معلّم", f: "معلّمة" }
+    board: people
+    row: 0
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: doctor
+    category: person
+    color: fitz-person
+    gloss_en: doctor
+    agreement: true
+    display: { m: "دكتور", f: "دكتورة" }
+    speak: { m: "دكتور", f: "دكتورة" }
+    board: people
+    row: 0
+    col: 4
+    reviewStatus: ai-draft
+  - vocabKey: boy
+    category: person
+    color: fitz-person
+    gloss_en: boy
+    agreement: false
+    display: { m: "ولد", f: "ولد" }
+    speak: { m: "ولد", f: "ولد" }
+    board: people
+    row: 1
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: girl
+    category: person
+    color: fitz-person
+    gloss_en: girl
+    agreement: false
+    display: { m: "بنت", f: "بنت" }
+    speak: { m: "بنت", f: "بنت" }
+    board: people
+    row: 1
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: man
+    category: person
+    color: fitz-person
+    gloss_en: man
+    agreement: false
+    display: { m: "راجل", f: "راجل" }
+    speak: { m: "راجل", f: "راجل" }
+    board: people
+    row: 1
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: woman
+    category: person
+    color: fitz-person
+    gloss_en: woman
+    agreement: false
+    display: { m: "ست", f: "ست" }
+    speak: { m: "ست", f: "ست" }
+    board: people
+    row: 1
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: baby
+    category: person
+    color: fitz-person
+    gloss_en: baby
+    agreement: false
+    display: { m: "بيبي", f: "بيبي" }
+    speak: { m: "بيبي", f: "بيبي" }
+    board: people
+    row: 1
+    col: 4
+    reviewStatus: ai-draft
+  - vocabKey: child
+    category: person
+    color: fitz-person
+    gloss_en: kid
+    agreement: false
+    display: { m: "عيل", f: "عيل" }
+    speak: { m: "عيل", f: "عيل" }
+    board: people
+    row: 2
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: neighbor
+    category: person
+    color: fitz-person
+    gloss_en: neighbor
+    agreement: true
+    display: { m: "جاري", f: "جارتي" }
+    speak: { m: "جاري", f: "جارتي" }
+    board: people
+    row: 2
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: classmate
+    category: person
+    color: fitz-person
+    gloss_en: classmate
+    agreement: true
+    display: { m: "زميلي", f: "زميلتي" }
+    speak: { m: "زميلي", f: "زميلتي" }
+    board: people
+    row: 2
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: nurse
+    category: person
+    color: fitz-person
+    gloss_en: nurse
+    agreement: true
+    display: { m: "ممرّض", f: "ممرّضة" }
+    speak: { m: "ممرّض", f: "ممرّضة" }
+    board: people
+    row: 2
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: driver
+    category: person
+    color: fitz-person
+    gloss_en: driver
+    agreement: true
+    display: { m: "سواق", f: "سواقة" }
+    speak: { m: "سواق", f: "سواقة" }
+    board: people
+    row: 2
+    col: 4
+    reviewStatus: ai-draft
+  - vocabKey: guest
+    category: person
+    color: fitz-person
+    gloss_en: guest
+    agreement: true
+    display: { m: "ضيف", f: "ضيفة" }
+    speak: { m: "ضيف", f: "ضيفة" }
+    board: people
+    row: 3
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: seller
+    category: person
+    color: fitz-person
+    gloss_en: seller
+    agreement: true
+    display: { m: "بائع", f: "بائعة" }
+    speak: { m: "بائع", f: "بائعة" }
+    board: people
+    row: 3
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: coach
+    category: person
+    color: fitz-person
+    gloss_en: coach
+    agreement: true
+    display: { m: "مدرب", f: "مدربة" }
+    speak: { m: "مدرب", f: "مدربة" }
+    board: people
+    row: 3
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: helper
+    category: person
+    color: fitz-person
+    gloss_en: helper
+    agreement: true
+    display: { m: "مساعد", f: "مساعدة" }
+    speak: { m: "مساعد", f: "مساعدة" }
+    board: people
+    row: 3
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: brother
+    category: person
+    color: fitz-person
+    gloss_en: "my brother"
+    agreement: false
+    display: { m: "أخويا", f: "أخويا" }
+    speak: { m: "أخويا", f: "أخويا" }
+    board: family
+    row: 0
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: sister
+    category: person
+    color: fitz-person
+    gloss_en: "my sister"
+    agreement: false
+    display: { m: "أختي", f: "أختي" }
+    speak: { m: "أختي", f: "أختي" }
+    board: family
+    row: 0
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: grandma
+    category: person
+    color: fitz-person
+    gloss_en: grandma
+    agreement: false
+    display: { m: "تيتا", f: "تيتا" }
+    speak: { m: "تيتا", f: "تيتا" }
+    board: family
+    row: 0
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: grandpa
+    category: person
+    color: fitz-person
+    gloss_en: grandpa
+    agreement: false
+    display: { m: "جدو", f: "جدو" }
+    speak: { m: "جدو", f: "جدو" }
+    board: family
+    row: 0
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: uncle
+    category: person
+    color: fitz-person
+    gloss_en: "paternal uncle"
+    agreement: false
+    display: { m: "عمو", f: "عمو" }
+    speak: { m: "عمو", f: "عمو" }
+    board: family
+    row: 1
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: maternal-uncle
+    category: person
+    color: fitz-person
+    gloss_en: "maternal uncle"
+    agreement: false
+    display: { m: "خالو", f: "خالو" }
+    speak: { m: "خالو", f: "خالو" }
+    board: family
+    row: 1
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: aunt
+    category: person
+    color: fitz-person
+    gloss_en: "paternal aunt"
+    agreement: false
+    display: { m: "عمتي", f: "عمتي" }
+    speak: { m: "عمتي", f: "عمتي" }
+    board: family
+    row: 1
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: maternal-aunt
+    category: person
+    color: fitz-person
+    gloss_en: "maternal aunt"
+    agreement: false
+    display: { m: "خالتي", f: "خالتي" }
+    speak: { m: "خالتي", f: "خالتي" }
+    board: family
+    row: 1
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: cousin
+    category: person
+    color: fitz-person
+    gloss_en: cousin
+    agreement: true
+    display: { m: "قريبي", f: "قريبتي" }
+    speak: { m: "قريبي", f: "قريبتي" }
+    board: family
+    row: 2
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: twins
+    category: person
+    color: fitz-person
+    gloss_en: twins
+    agreement: false
+    display: { m: "توأم", f: "توأم" }
+    speak: { m: "توأم", f: "توأم" }
+    board: family
+    row: 2
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: my-family
+    category: person
+    color: fitz-person
+    gloss_en: "my family"
+    agreement: false
+    display: { m: "عيلتي", f: "عيلتي" }
+    speak: { m: "عيلتي", f: "عيلتي" }
+    board: family
+    row: 2
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: head
+    category: noun
+    color: fitz-noun
+    gloss_en: head
+    agreement: false
+    display: { m: "راس", f: "راس" }
+    speak: { m: "راس", f: "راس" }
+    board: body
+    row: 0
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: hair
+    category: noun
+    color: fitz-noun
+    gloss_en: hair
+    agreement: false
+    display: { m: "شعر", f: "شعر" }
+    speak: { m: "شعر", f: "شعر" }
+    board: body
+    row: 0
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: eye
+    category: noun
+    color: fitz-noun
+    gloss_en: eye
+    agreement: false
+    display: { m: "عين", f: "عين" }
+    speak: { m: "عين", f: "عين" }
+    board: body
+    row: 0
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: ear
+    category: noun
+    color: fitz-noun
+    gloss_en: ear
+    agreement: false
+    display: { m: "ودن", f: "ودن" }
+    speak: { m: "ودن", f: "ودن" }
+    board: body
+    row: 0
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: nose
+    category: noun
+    color: fitz-noun
+    gloss_en: nose
+    agreement: false
+    display: { m: "مناخير", f: "مناخير" }
+    speak: { m: "مناخير", f: "مناخير" }
+    board: body
+    row: 0
+    col: 4
+    reviewStatus: ai-draft
+  - vocabKey: mouth
+    category: noun
+    color: fitz-noun
+    gloss_en: mouth
+    agreement: false
+    display: { m: "بؤ", f: "بؤ" }
+    speak: { m: "بؤ", f: "بؤ" }
+    board: body
+    row: 1
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: tooth
+    category: noun
+    color: fitz-noun
+    gloss_en: tooth
+    agreement: false
+    display: { m: "سنة", f: "سنة" }
+    speak: { m: "سنة", f: "سنة" }
+    board: body
+    row: 1
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: tongue
+    category: noun
+    color: fitz-noun
+    gloss_en: tongue
+    agreement: false
+    display: { m: "لسان", f: "لسان" }
+    speak: { m: "لسان", f: "لسان" }
+    board: body
+    row: 1
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: hand
+    category: noun
+    color: fitz-noun
+    gloss_en: hand
+    agreement: false
+    display: { m: "إيد", f: "إيد" }
+    speak: { m: "إيد", f: "إيد" }
+    board: body
+    row: 1
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: finger
+    category: noun
+    color: fitz-noun
+    gloss_en: finger
+    agreement: false
+    display: { m: "صباع", f: "صباع" }
+    speak: { m: "صباع", f: "صباع" }
+    board: body
+    row: 1
+    col: 4
+    reviewStatus: ai-draft
+  - vocabKey: tummy
+    category: noun
+    color: fitz-noun
+    gloss_en: tummy
+    agreement: false
+    display: { m: "بطن", f: "بطن" }
+    speak: { m: "بطن", f: "بطن" }
+    board: body
+    row: 2
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: foot
+    category: noun
+    color: fitz-noun
+    gloss_en: foot
+    agreement: false
+    display: { m: "رجل", f: "رجل" }
+    speak: { m: "رجل", f: "رجل" }
+    board: body
+    row: 2
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: knee
+    category: noun
+    color: fitz-noun
+    gloss_en: knee
+    agreement: false
+    display: { m: "ركبة", f: "ركبة" }
+    speak: { m: "ركبة", f: "ركبة" }
+    board: body
+    row: 2
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: back
+    category: noun
+    color: fitz-noun
+    gloss_en: back
+    agreement: false
+    display: { m: "ضهر", f: "ضهر" }
+    speak: { m: "ضهر", f: "ضهر" }
+    board: body
+    row: 2
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: face
+    category: noun
+    color: fitz-noun
+    gloss_en: face
+    agreement: false
+    display: { m: "وش", f: "وش" }
+    speak: { m: "وش", f: "وش" }
+    board: body
+    row: 2
+    col: 4
+    reviewStatus: ai-draft
+  - vocabKey: neck
+    category: noun
+    color: fitz-noun
+    gloss_en: neck
+    agreement: false
+    display: { m: "رقبة", f: "رقبة" }
+    speak: { m: "رقبة", f: "رقبة" }
+    board: body
+    row: 3
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: shoulder
+    category: noun
+    color: fitz-noun
+    gloss_en: shoulder
+    agreement: false
+    display: { m: "كتف", f: "كتف" }
+    speak: { m: "كتف", f: "كتف" }
+    board: body
+    row: 3
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: chest
+    category: noun
+    color: fitz-noun
+    gloss_en: chest
+    agreement: false
+    display: { m: "صدر", f: "صدر" }
+    speak: { m: "صدر", f: "صدر" }
+    board: body
+    row: 3
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: body
+    category: noun
+    color: fitz-noun
+    gloss_en: body
+    agreement: false
+    display: { m: "جسم", f: "جسم" }
+    speak: { m: "جسم", f: "جسم" }
+    board: body
+    row: 3
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: thirsty
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: thirsty
+    agreement: true
+    display: { m: "عطشان", f: "عطشانة" }
+    speak: { m: "عطشان", f: "عطشانة" }
+    board: feelings
+    row: 0
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: sleepy
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: sleepy
+    agreement: true
+    display: { m: "نعسان", f: "نعسانة" }
+    speak: { m: "نعسان", f: "نعسانة" }
+    board: feelings
+    row: 0
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: hurt
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: "it hurts"
+    agreement: false
+    display: { m: "واجعني", f: "واجعني" }
+    speak: { m: "واجعني", f: "واجعني" }
+    board: feelings
+    row: 0
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: scared
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: scared
+    agreement: true
+    display: { m: "خايف", f: "خايفة" }
+    speak: { m: "خايف", f: "خايفة" }
+    board: feelings
+    row: 0
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: angry
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: angry
+    agreement: true
+    display: { m: "متعصب", f: "متعصبة" }
+    speak: { m: "متعصب", f: "متعصبة" }
+    board: feelings
+    row: 1
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: bored
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: bored
+    agreement: true
+    display: { m: "زهقان", f: "زهقانة" }
+    speak: { m: "زهقان", f: "زهقانة" }
+    board: feelings
+    row: 1
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: sick
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: sick
+    agreement: true
+    display: { m: "عيان", f: "عيانة" }
+    speak: { m: "عيان", f: "عيانة" }
+    board: feelings
+    row: 1
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: lonely
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: lonely
+    agreement: true
+    display: { m: "وحيد", f: "وحيدة" }
+    speak: { m: "وحيد", f: "وحيدة" }
+    board: feelings
+    row: 1
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: excited
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: excited
+    agreement: true
+    display: { m: "متحمّس", f: "متحمّسة" }
+    speak: { m: "متحمّس", f: "متحمّسة" }
+    board: feelings
+    row: 2
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: shy
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: shy
+    agreement: true
+    display: { m: "خجول", f: "خجولة" }
+    speak: { m: "خجول", f: "خجولة" }
+    board: feelings
+    row: 2
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: proud
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: proud
+    agreement: true
+    display: { m: "فخور", f: "فخورة" }
+    speak: { m: "فخور", f: "فخورة" }
+    board: feelings
+    row: 2
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: calm
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: calm
+    agreement: true
+    display: { m: "هادي", f: "هادية" }
+    speak: { m: "هادي", f: "هادية" }
+    board: feelings
+    row: 2
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: worried
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: worried
+    agreement: true
+    display: { m: "قلقان", f: "قلقانة" }
+    speak: { m: "قلقان", f: "قلقانة" }
+    board: feelings
+    row: 3
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: jealous
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: jealous
+    agreement: true
+    display: { m: "غيران", f: "غيرانة" }
+    speak: { m: "غيران", f: "غيرانة" }
+    board: feelings
+    row: 3
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: confused
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: confused
+    agreement: true
+    display: { m: "تايه", f: "تايهة" }
+    speak: { m: "تايه", f: "تايهة" }
+    board: feelings
+    row: 3
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: eat
+    category: verb
+    color: fitz-verb
+    gloss_en: "I eat"
+    agreement: false
+    display: { m: "آكل", f: "آكل" }
+    speak: { m: "آكل", f: "آكل" }
+    board: actions
+    row: 0
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: drinking
+    category: verb
+    color: fitz-verb
+    gloss_en: "I drink"
+    agreement: false
+    display: { m: "أشرب", f: "أشرب" }
+    speak: { m: "أشرب", f: "أشرب" }
+    board: actions
+    row: 0
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: sleeping
+    category: verb
+    color: fitz-verb
+    gloss_en: "I sleep"
+    agreement: false
+    display: { m: "أنام", f: "أنام" }
+    speak: { m: "أنام", f: "أنام" }
+    board: actions
+    row: 0
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: sit
+    category: verb
+    color: fitz-verb
+    gloss_en: "I sit"
+    agreement: false
+    display: { m: "أقعد", f: "أقعد" }
+    speak: { m: "أقعد", f: "أقعد" }
+    board: actions
+    row: 0
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: stand
+    category: verb
+    color: fitz-verb
+    gloss_en: "I stand up"
+    agreement: false
+    display: { m: "أقوم", f: "أقوم" }
+    speak: { m: "أقوم", f: "أقوم" }
+    board: actions
+    row: 0
+    col: 4
+    reviewStatus: ai-draft
+  - vocabKey: walk
+    category: verb
+    color: fitz-verb
+    gloss_en: "I walk"
+    agreement: false
+    display: { m: "أمشي", f: "أمشي" }
+    speak: { m: "أمشي", f: "أمشي" }
+    board: actions
+    row: 0
+    col: 5
+    reviewStatus: ai-draft
+  - vocabKey: run
+    category: verb
+    color: fitz-verb
+    gloss_en: "I run"
+    agreement: false
+    display: { m: "أجري", f: "أجري" }
+    speak: { m: "أجري", f: "أجري" }
+    board: actions
+    row: 1
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: play
+    category: verb
+    color: fitz-verb
+    gloss_en: "I play"
+    agreement: false
+    display: { m: "ألعب", f: "ألعب" }
+    speak: { m: "ألعب", f: "ألعب" }
+    board: actions
+    row: 1
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: open
+    category: verb
+    color: fitz-verb
+    gloss_en: "I open"
+    agreement: false
+    display: { m: "أفتح", f: "أفتح" }
+    speak: { m: "أفتح", f: "أفتح" }
+    board: actions
+    row: 1
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: close
+    category: verb
+    color: fitz-verb
+    gloss_en: "I close"
+    agreement: false
+    display: { m: "أقفل", f: "أقفل" }
+    speak: { m: "أقفل", f: "أقفل" }
+    board: actions
+    row: 1
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: give
+    category: verb
+    color: fitz-verb
+    gloss_en: "I give"
+    agreement: false
+    display: { m: "أدي", f: "أدي" }
+    speak: { m: "أدي", f: "أدي" }
+    board: actions
+    row: 1
+    col: 4
+    reviewStatus: ai-draft
+  - vocabKey: take
+    category: verb
+    color: fitz-verb
+    gloss_en: "I take"
+    agreement: false
+    display: { m: "آخد", f: "آخد" }
+    speak: { m: "آخد", f: "آخد" }
+    board: actions
+    row: 1
+    col: 5
+    reviewStatus: ai-draft
+  - vocabKey: put
+    category: verb
+    color: fitz-verb
+    gloss_en: "I put"
+    agreement: false
+    display: { m: "أحط", f: "أحط" }
+    speak: { m: "أحط", f: "أحط" }
+    board: actions
+    row: 2
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: wash
+    category: verb
+    color: fitz-verb
+    gloss_en: "I wash"
+    agreement: false
+    display: { m: "أغسل", f: "أغسل" }
+    speak: { m: "أغسل", f: "أغسل" }
+    board: actions
+    row: 2
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: wear
+    category: verb
+    color: fitz-verb
+    gloss_en: "I wear"
+    agreement: false
+    display: { m: "ألبس", f: "ألبس" }
+    speak: { m: "ألبس", f: "ألبس" }
+    board: actions
+    row: 2
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: see
+    category: verb
+    color: fitz-verb
+    gloss_en: "I see"
+    agreement: false
+    display: { m: "أشوف", f: "أشوف" }
+    speak: { m: "أشوف", f: "أشوف" }
+    board: actions
+    row: 2
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: hear
+    category: verb
+    color: fitz-verb
+    gloss_en: "I hear"
+    agreement: false
+    display: { m: "أسمع", f: "أسمع" }
+    speak: { m: "أسمع", f: "أسمع" }
+    board: actions
+    row: 2
+    col: 4
+    reviewStatus: ai-draft
+  - vocabKey: say
+    category: verb
+    color: fitz-verb
+    gloss_en: "I say"
+    agreement: false
+    display: { m: "أقول", f: "أقول" }
+    speak: { m: "أقول", f: "أقول" }
+    board: actions
+    row: 2
+    col: 5
+    reviewStatus: ai-draft
+  - vocabKey: know
+    category: verb
+    color: fitz-verb
+    gloss_en: "I know"
+    agreement: true
+    display: { m: "عارف", f: "عارفة" }
+    speak: { m: "عارف", f: "عارفة" }
+    board: actions
+    row: 3
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: like
+    category: verb
+    color: fitz-verb
+    gloss_en: "I like"
+    agreement: false
+    display: { m: "بحب", f: "بحب" }
+    speak: { m: "بحب", f: "بحب" }
+    board: actions
+    row: 3
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: finish
+    category: verb
+    color: fitz-verb
+    gloss_en: "I finished"
+    agreement: false
+    display: { m: "خلّصت", f: "خلّصت" }
+    speak: { m: "خلّصت", f: "خلّصت" }
+    board: actions
+    row: 3
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: wait
+    category: verb
+    color: fitz-verb
+    gloss_en: wait
+    agreement: true
+    display: { m: "استنى", f: "استني" }
+    speak: { m: "استنى", f: "استني" }
+    board: actions
+    row: 3
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: read
+    category: verb
+    color: fitz-verb
+    gloss_en: "I read"
+    agreement: false
+    display: { m: "أقرا", f: "أقرا" }
+    speak: { m: "أقرا", f: "أقرا" }
+    board: actions
+    row: 3
+    col: 4
+    reviewStatus: ai-draft
+  - vocabKey: write
+    category: verb
+    color: fitz-verb
+    gloss_en: "I write"
+    agreement: false
+    display: { m: "أكتب", f: "أكتب" }
+    speak: { m: "أكتب", f: "أكتب" }
+    board: actions
+    row: 3
+    col: 5
+    reviewStatus: ai-draft
+  - vocabKey: draw
+    category: verb
+    color: fitz-verb
+    gloss_en: "I draw"
+    agreement: false
+    display: { m: "أرسم", f: "أرسم" }
+    speak: { m: "أرسم", f: "أرسم" }
+    board: actions
+    row: 4
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: sing
+    category: verb
+    color: fitz-verb
+    gloss_en: "I sing"
+    agreement: false
+    display: { m: "أغنّي", f: "أغنّي" }
+    speak: { m: "أغنّي", f: "أغنّي" }
+    board: actions
+    row: 4
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: turn-on
+    category: verb
+    color: fitz-verb
+    gloss_en: "I turn on"
+    agreement: false
+    display: { m: "أولّع", f: "أولّع" }
+    speak: { m: "أولّع", f: "أولّع" }
+    board: actions
+    row: 4
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: turn-off
+    category: verb
+    color: fitz-verb
+    gloss_en: "I turn off"
+    agreement: false
+    display: { m: "أطفي", f: "أطفي" }
+    speak: { m: "أطفي", f: "أطفي" }
+    board: actions
+    row: 4
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: up
+    category: verb
+    color: fitz-verb
+    gloss_en: "going up"
+    agreement: true
+    display: { m: "طالع", f: "طالعة" }
+    speak: { m: "طالع", f: "طالعة" }
+    board: actions
+    row: 4
+    col: 4
+    reviewStatus: ai-draft
+  - vocabKey: down
+    category: verb
+    color: fitz-verb
+    gloss_en: "going down"
+    agreement: true
+    display: { m: "نازل", f: "نازلة" }
+    speak: { m: "نازل", f: "نازلة" }
+    board: actions
+    row: 4
+    col: 5
+    reviewStatus: ai-draft
+  - vocabKey: enter
+    category: verb
+    color: fitz-verb
+    gloss_en: "going in"
+    agreement: true
+    display: { m: "داخل", f: "داخلة" }
+    speak: { m: "داخل", f: "داخلة" }
+    board: actions
+    row: 5
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: exit
+    category: verb
+    color: fitz-verb
+    gloss_en: "going out"
+    agreement: true
+    display: { m: "خارج", f: "خارجة" }
+    speak: { m: "خارج", f: "خارجة" }
+    board: actions
+    row: 5
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: hold
+    category: verb
+    color: fitz-verb
+    gloss_en: "I hold"
+    agreement: false
+    display: { m: "أمسك", f: "أمسك" }
+    speak: { m: "أمسك", f: "أمسك" }
+    board: actions
+    row: 5
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: throw
+    category: verb
+    color: fitz-verb
+    gloss_en: "I throw"
+    agreement: false
+    display: { m: "أرمي", f: "أرمي" }
+    speak: { m: "أرمي", f: "أرمي" }
+    board: actions
+    row: 5
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: bring
+    category: verb
+    color: fitz-verb
+    gloss_en: "I bring"
+    agreement: false
+    display: { m: "أجيب", f: "أجيب" }
+    speak: { m: "أجيب", f: "أجيب" }
+    board: actions
+    row: 5
+    col: 4
+    reviewStatus: ai-draft
+  - vocabKey: big
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: big
+    agreement: true
+    display: { m: "كبير", f: "كبيرة" }
+    speak: { m: "كبير", f: "كبيرة" }
+    board: describe
+    row: 0
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: small
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: small
+    agreement: true
+    display: { m: "صغير", f: "صغيرة" }
+    speak: { m: "صغير", f: "صغيرة" }
+    board: describe
+    row: 0
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: hot
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: hot
+    agreement: true
+    display: { m: "سخن", f: "سخنة" }
+    speak: { m: "سخن", f: "سخنة" }
+    board: describe
+    row: 0
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: cold
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: cold
+    agreement: true
+    display: { m: "ساقع", f: "ساقعة" }
+    speak: { m: "ساقع", f: "ساقعة" }
+    board: describe
+    row: 0
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: clean
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: clean
+    agreement: true
+    display: { m: "نظيف", f: "نظيفة" }
+    speak: { m: "نظيف", f: "نظيفة" }
+    board: describe
+    row: 0
+    col: 4
+    reviewStatus: ai-draft
+  - vocabKey: dirty
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: dirty
+    agreement: true
+    display: { m: "وسخ", f: "وسخة" }
+    speak: { m: "وسخ", f: "وسخة" }
+    board: describe
+    row: 1
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: new
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: new
+    agreement: true
+    display: { m: "جديد", f: "جديدة" }
+    speak: { m: "جديد", f: "جديدة" }
+    board: describe
+    row: 1
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: old
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: old
+    agreement: true
+    display: { m: "قديم", f: "قديمة" }
+    speak: { m: "قديم", f: "قديمة" }
+    board: describe
+    row: 1
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: long
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: long
+    agreement: true
+    display: { m: "طويل", f: "طويلة" }
+    speak: { m: "طويل", f: "طويلة" }
+    board: describe
+    row: 1
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: short
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: short
+    agreement: true
+    display: { m: "قصير", f: "قصيرة" }
+    speak: { m: "قصير", f: "قصيرة" }
+    board: describe
+    row: 1
+    col: 4
+    reviewStatus: ai-draft
+  - vocabKey: fast
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: fast
+    agreement: true
+    display: { m: "سريع", f: "سريعة" }
+    speak: { m: "سريع", f: "سريعة" }
+    board: describe
+    row: 2
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: slow
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: slow
+    agreement: true
+    display: { m: "بطيء", f: "بطيئة" }
+    speak: { m: "بطيء", f: "بطيئة" }
+    board: describe
+    row: 2
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: heavy
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: heavy
+    agreement: true
+    display: { m: "تقيل", f: "تقيلة" }
+    speak: { m: "تقيل", f: "تقيلة" }
+    board: describe
+    row: 2
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: light
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: light
+    agreement: true
+    display: { m: "خفيف", f: "خفيفة" }
+    speak: { m: "خفيف", f: "خفيفة" }
+    board: describe
+    row: 2
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: good
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: nice
+    agreement: true
+    display: { m: "حلو", f: "حلوة" }
+    speak: { m: "حلو", f: "حلوة" }
+    board: describe
+    row: 2
+    col: 4
+    reviewStatus: ai-draft
+  - vocabKey: bad
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: bad
+    agreement: true
+    display: { m: "وحش", f: "وحشة" }
+    speak: { m: "وحش", f: "وحشة" }
+    board: describe
+    row: 3
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: hard
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: hard
+    agreement: true
+    display: { m: "صعب", f: "صعبة" }
+    speak: { m: "صعب", f: "صعبة" }
+    board: describe
+    row: 3
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: easy
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: easy
+    agreement: true
+    display: { m: "سهل", f: "سهلة" }
+    speak: { m: "سهل", f: "سهلة" }
+    board: describe
+    row: 3
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: many
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: many
+    agreement: false
+    display: { m: "كتير", f: "كتير" }
+    speak: { m: "كتير", f: "كتير" }
+    board: describe
+    row: 3
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: little
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: "a little"
+    agreement: false
+    display: { m: "شوية", f: "شوية" }
+    speak: { m: "شوية", f: "شوية" }
+    board: describe
+    row: 3
+    col: 4
+    reviewStatus: ai-draft
+  - vocabKey: loud
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: loud
+    agreement: true
+    display: { m: "عالي", f: "عالية" }
+    speak: { m: "عالي", f: "عالية" }
+    board: describe
+    row: 4
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: quiet
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: quiet
+    agreement: true
+    display: { m: "واطي", f: "واطية" }
+    speak: { m: "واطي", f: "واطية" }
+    board: describe
+    row: 4
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: red
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: red
+    agreement: true
+    display: { m: "أحمر", f: "حمرا" }
+    speak: { m: "أحمر", f: "حمرا" }
+    board: describe
+    row: 4
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: blue
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: blue
+    agreement: true
+    display: { m: "أزرق", f: "زرقا" }
+    speak: { m: "أزرق", f: "زرقا" }
+    board: describe
+    row: 4
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: green
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: green
+    agreement: true
+    display: { m: "أخضر", f: "خضرا" }
+    speak: { m: "أخضر", f: "خضرا" }
+    board: describe
+    row: 4
+    col: 4
+    reviewStatus: ai-draft
+  - vocabKey: yellow
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: yellow
+    agreement: true
+    display: { m: "أصفر", f: "صفرا" }
+    speak: { m: "أصفر", f: "صفرا" }
+    board: describe
+    row: 5
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: white
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: white
+    agreement: true
+    display: { m: "أبيض", f: "بيضا" }
+    speak: { m: "أبيض", f: "بيضا" }
+    board: describe
+    row: 5
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: black
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: black
+    agreement: true
+    display: { m: "أسود", f: "سودا" }
+    speak: { m: "أسود", f: "سودا" }
+    board: describe
+    row: 5
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: pink
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: pink
+    agreement: false
+    display: { m: "بمبي", f: "بمبي" }
+    speak: { m: "بمبي", f: "بمبي" }
+    board: describe
+    row: 5
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: house
+    category: noun
+    color: fitz-noun
+    gloss_en: house
+    agreement: false
+    display: { m: "بيت", f: "بيت" }
+    speak: { m: "بيت", f: "بيت" }
+    board: places
+    row: 0
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: school
+    category: noun
+    color: fitz-noun
+    gloss_en: school
+    agreement: false
+    display: { m: "مدرسة", f: "مدرسة" }
+    speak: { m: "مدرسة", f: "مدرسة" }
+    board: places
+    row: 0
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: bathroom
+    category: noun
+    color: fitz-noun
+    gloss_en: bathroom
+    agreement: false
+    display: { m: "حمّام", f: "حمّام" }
+    speak: { m: "حمّام", f: "حمّام" }
+    board: places
+    row: 0
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: room
+    category: noun
+    color: fitz-noun
+    gloss_en: room
+    agreement: false
+    display: { m: "أوضة", f: "أوضة" }
+    speak: { m: "أوضة", f: "أوضة" }
+    board: places
+    row: 0
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: mosque
+    category: noun
+    color: fitz-noun
+    gloss_en: mosque
+    agreement: false
+    display: { m: "جامع", f: "جامع" }
+    speak: { m: "جامع", f: "جامع" }
+    board: places
+    row: 1
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: shop
+    category: noun
+    color: fitz-noun
+    gloss_en: shop
+    agreement: false
+    display: { m: "محل", f: "محل" }
+    speak: { m: "محل", f: "محل" }
+    board: places
+    row: 1
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: street
+    category: noun
+    color: fitz-noun
+    gloss_en: street
+    agreement: false
+    display: { m: "شارع", f: "شارع" }
+    speak: { m: "شارع", f: "شارع" }
+    board: places
+    row: 1
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: park
+    category: noun
+    color: fitz-noun
+    gloss_en: park
+    agreement: false
+    display: { m: "جنينة", f: "جنينة" }
+    speak: { m: "جنينة", f: "جنينة" }
+    board: places
+    row: 1
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: beach
+    category: noun
+    color: fitz-noun
+    gloss_en: "beach / sea"
+    agreement: false
+    display: { m: "بحر", f: "بحر" }
+    speak: { m: "بحر", f: "بحر" }
+    board: places
+    row: 2
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: hospital
+    category: noun
+    color: fitz-noun
+    gloss_en: hospital
+    agreement: false
+    display: { m: "مستشفى", f: "مستشفى" }
+    speak: { m: "مستشفى", f: "مستشفى" }
+    board: places
+    row: 2
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: classroom
+    category: noun
+    color: fitz-noun
+    gloss_en: classroom
+    agreement: false
+    display: { m: "فصل", f: "فصل" }
+    speak: { m: "فصل", f: "فصل" }
+    board: places
+    row: 2
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: playground
+    category: noun
+    color: fitz-noun
+    gloss_en: playground
+    agreement: false
+    display: { m: "ملعب", f: "ملعب" }
+    speak: { m: "ملعب", f: "ملعب" }
+    board: places
+    row: 2
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: market
+    category: noun
+    color: fitz-noun
+    gloss_en: market
+    agreement: false
+    display: { m: "سوق", f: "سوق" }
+    speak: { m: "سوق", f: "سوق" }
+    board: places
+    row: 3
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: club
+    category: noun
+    color: fitz-noun
+    gloss_en: club
+    agreement: false
+    display: { m: "نادي", f: "نادي" }
+    speak: { m: "نادي", f: "نادي" }
+    board: places
+    row: 3
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: upstairs
+    category: noun
+    color: fitz-noun
+    gloss_en: upstairs
+    agreement: false
+    display: { m: "فوق", f: "فوق" }
+    speak: { m: "فوق", f: "فوق" }
+    board: places
+    row: 3
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: book
+    category: noun
+    color: fitz-noun
+    gloss_en: book
+    agreement: false
+    display: { m: "كتاب", f: "كتاب" }
+    speak: { m: "كتاب", f: "كتاب" }
+    board: school
+    row: 0
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: notebook
+    category: noun
+    color: fitz-noun
+    gloss_en: notebook
+    agreement: false
+    display: { m: "كراسة", f: "كراسة" }
+    speak: { m: "كراسة", f: "كراسة" }
+    board: school
+    row: 0
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: pen
+    category: noun
+    color: fitz-noun
+    gloss_en: pen
+    agreement: false
+    display: { m: "قلم", f: "قلم" }
+    speak: { m: "قلم", f: "قلم" }
+    board: school
+    row: 0
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: pencil
+    category: noun
+    color: fitz-noun
+    gloss_en: pencil
+    agreement: false
+    display: { m: "قلم رصاص", f: "قلم رصاص" }
+    speak: { m: "قلم رصاص", f: "قلم رصاص" }
+    board: school
+    row: 0
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: eraser
+    category: noun
+    color: fitz-noun
+    gloss_en: eraser
+    agreement: false
+    display: { m: "أستيكة", f: "أستيكة" }
+    speak: { m: "أستيكة", f: "أستيكة" }
+    board: school
+    row: 1
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: ruler
+    category: noun
+    color: fitz-noun
+    gloss_en: ruler
+    agreement: false
+    display: { m: "مسطرة", f: "مسطرة" }
+    speak: { m: "مسطرة", f: "مسطرة" }
+    board: school
+    row: 1
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: school-bag
+    category: noun
+    color: fitz-noun
+    gloss_en: "school bag"
+    agreement: false
+    display: { m: "شنطة", f: "شنطة" }
+    speak: { m: "شنطة", f: "شنطة" }
+    board: school
+    row: 1
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: scissors
+    category: noun
+    color: fitz-noun
+    gloss_en: scissors
+    agreement: false
+    display: { m: "مقص", f: "مقص" }
+    speak: { m: "مقص", f: "مقص" }
+    board: school
+    row: 1
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: glue
+    category: noun
+    color: fitz-noun
+    gloss_en: glue
+    agreement: false
+    display: { m: "صمغ", f: "صمغ" }
+    speak: { m: "صمغ", f: "صمغ" }
+    board: school
+    row: 2
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: paper
+    category: noun
+    color: fitz-noun
+    gloss_en: paper
+    agreement: false
+    display: { m: "ورقة", f: "ورقة" }
+    speak: { m: "ورقة", f: "ورقة" }
+    board: school
+    row: 2
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: sharpener
+    category: noun
+    color: fitz-noun
+    gloss_en: sharpener
+    agreement: false
+    display: { m: "براية", f: "براية" }
+    speak: { m: "براية", f: "براية" }
+    board: school
+    row: 2
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: crayon
+    category: noun
+    color: fitz-noun
+    gloss_en: crayons
+    agreement: false
+    display: { m: "أقلام ألوان", f: "أقلام ألوان" }
+    speak: { m: "أقلام ألوان", f: "أقلام ألوان" }
+    board: school
+    row: 2
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: homework
+    category: noun
+    color: fitz-noun
+    gloss_en: homework
+    agreement: false
+    display: { m: "واجب", f: "واجب" }
+    speak: { m: "واجب", f: "واجب" }
+    board: school
+    row: 3
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: recess
+    category: noun
+    color: fitz-noun
+    gloss_en: recess
+    agreement: false
+    display: { m: "فسحة", f: "فسحة" }
+    speak: { m: "فسحة", f: "فسحة" }
+    board: school
+    row: 3
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: lesson
+    category: noun
+    color: fitz-noun
+    gloss_en: lesson
+    agreement: false
+    display: { m: "حصة", f: "حصة" }
+    speak: { m: "حصة", f: "حصة" }
+    board: school
+    row: 3
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: toy
+    category: noun
+    color: fitz-noun
+    gloss_en: toy
+    agreement: false
+    display: { m: "لعبة", f: "لعبة" }
+    speak: { m: "لعبة", f: "لعبة" }
+    board: objects
+    row: 0
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: door
+    category: noun
+    color: fitz-noun
+    gloss_en: door
+    agreement: false
+    display: { m: "باب", f: "باب" }
+    speak: { m: "باب", f: "باب" }
+    board: objects
+    row: 0
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: window
+    category: noun
+    color: fitz-noun
+    gloss_en: window
+    agreement: false
+    display: { m: "شبّاك", f: "شبّاك" }
+    speak: { m: "شبّاك", f: "شبّاك" }
+    board: objects
+    row: 0
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: chair
+    category: noun
+    color: fitz-noun
+    gloss_en: chair
+    agreement: false
+    display: { m: "كرسي", f: "كرسي" }
+    speak: { m: "كرسي", f: "كرسي" }
+    board: objects
+    row: 0
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: table
+    category: noun
+    color: fitz-noun
+    gloss_en: table
+    agreement: false
+    display: { m: "ترابيزة", f: "ترابيزة" }
+    speak: { m: "ترابيزة", f: "ترابيزة" }
+    board: objects
+    row: 0
+    col: 4
+    reviewStatus: ai-draft
+  - vocabKey: tv
+    category: noun
+    color: fitz-noun
+    gloss_en: TV
+    agreement: false
+    display: { m: "تلفزيون", f: "تلفزيون" }
+    speak: { m: "تلفزيون", f: "تلفزيون" }
+    board: objects
+    row: 1
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: phone
+    category: noun
+    color: fitz-noun
+    gloss_en: phone
+    agreement: false
+    display: { m: "موبايل", f: "موبايل" }
+    speak: { m: "موبايل", f: "موبايل" }
+    board: objects
+    row: 1
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: car
+    category: noun
+    color: fitz-noun
+    gloss_en: car
+    agreement: false
+    display: { m: "عربيّة", f: "عربيّة" }
+    speak: { m: "عربيّة", f: "عربيّة" }
+    board: objects
+    row: 1
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: bed
+    category: noun
+    color: fitz-noun
+    gloss_en: bed
+    agreement: false
+    display: { m: "سرير", f: "سرير" }
+    speak: { m: "سرير", f: "سرير" }
+    board: objects
+    row: 1
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: pillow
+    category: noun
+    color: fitz-noun
+    gloss_en: pillow
+    agreement: false
+    display: { m: "مخدة", f: "مخدة" }
+    speak: { m: "مخدة", f: "مخدة" }
+    board: objects
+    row: 1
+    col: 4
+    reviewStatus: ai-draft
+  - vocabKey: blanket
+    category: noun
+    color: fitz-noun
+    gloss_en: blanket
+    agreement: false
+    display: { m: "بطانية", f: "بطانية" }
+    speak: { m: "بطانية", f: "بطانية" }
+    board: objects
+    row: 2
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: lamp
+    category: noun
+    color: fitz-noun
+    gloss_en: light
+    agreement: false
+    display: { m: "نور", f: "نور" }
+    speak: { m: "نور", f: "نور" }
+    board: objects
+    row: 2
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: fan
+    category: noun
+    color: fitz-noun
+    gloss_en: fan
+    agreement: false
+    display: { m: "مروحة", f: "مروحة" }
+    speak: { m: "مروحة", f: "مروحة" }
+    board: objects
+    row: 2
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: remote
+    category: noun
+    color: fitz-noun
+    gloss_en: remote
+    agreement: false
+    display: { m: "ريموت", f: "ريموت" }
+    speak: { m: "ريموت", f: "ريموت" }
+    board: objects
+    row: 2
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: keys
+    category: noun
+    color: fitz-noun
+    gloss_en: keys
+    agreement: false
+    display: { m: "مفاتيح", f: "مفاتيح" }
+    speak: { m: "مفاتيح", f: "مفاتيح" }
+    board: objects
+    row: 2
+    col: 4
+    reviewStatus: ai-draft
+  - vocabKey: cup
+    category: noun
+    color: fitz-noun
+    gloss_en: cup
+    agreement: false
+    display: { m: "كوباية", f: "كوباية" }
+    speak: { m: "كوباية", f: "كوباية" }
+    board: objects
+    row: 3
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: plate
+    category: noun
+    color: fitz-noun
+    gloss_en: plate
+    agreement: false
+    display: { m: "طبق", f: "طبق" }
+    speak: { m: "طبق", f: "طبق" }
+    board: objects
+    row: 3
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: spoon
+    category: noun
+    color: fitz-noun
+    gloss_en: spoon
+    agreement: false
+    display: { m: "معلقة", f: "معلقة" }
+    speak: { m: "معلقة", f: "معلقة" }
+    board: objects
+    row: 3
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: clock
+    category: noun
+    color: fitz-noun
+    gloss_en: clock
+    agreement: false
+    display: { m: "ساعة", f: "ساعة" }
+    speak: { m: "ساعة", f: "ساعة" }
+    board: objects
+    row: 3
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: ball
+    category: noun
+    color: fitz-noun
+    gloss_en: ball
+    agreement: false
+    display: { m: "كورة", f: "كورة" }
+    speak: { m: "كورة", f: "كورة" }
+    board: objects
+    row: 3
+    col: 4
+    reviewStatus: ai-draft
+  - vocabKey: box
+    category: noun
+    color: fitz-noun
+    gloss_en: box
+    agreement: false
+    display: { m: "علبة", f: "علبة" }
+    speak: { m: "علبة", f: "علبة" }
+    board: objects
+    row: 4
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: photo
+    category: noun
+    color: fitz-noun
+    gloss_en: photo
+    agreement: false
+    display: { m: "صورة", f: "صورة" }
+    speak: { m: "صورة", f: "صورة" }
+    board: objects
+    row: 4
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: soap
+    category: noun
+    color: fitz-noun
+    gloss_en: soap
+    agreement: false
+    display: { m: "صابون", f: "صابون" }
+    speak: { m: "صابون", f: "صابون" }
+    board: objects
+    row: 4
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: towel
+    category: noun
+    color: fitz-noun
+    gloss_en: towel
+    agreement: false
+    display: { m: "فوطة", f: "فوطة" }
+    speak: { m: "فوطة", f: "فوطة" }
+    board: objects
+    row: 4
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: shirt
+    category: noun
+    color: fitz-noun
+    gloss_en: T-shirt
+    agreement: false
+    display: { m: "تيشيرت", f: "تيشيرت" }
+    speak: { m: "تيشيرت", f: "تيشيرت" }
+    board: clothes
+    row: 0
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: pants
+    category: noun
+    color: fitz-noun
+    gloss_en: pants
+    agreement: false
+    display: { m: "بنطلون", f: "بنطلون" }
+    speak: { m: "بنطلون", f: "بنطلون" }
+    board: clothes
+    row: 0
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: dress
+    category: noun
+    color: fitz-noun
+    gloss_en: dress
+    agreement: false
+    display: { m: "فستان", f: "فستان" }
+    speak: { m: "فستان", f: "فستان" }
+    board: clothes
+    row: 0
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: shoes
+    category: noun
+    color: fitz-noun
+    gloss_en: shoes
+    agreement: false
+    display: { m: "جزمة", f: "جزمة" }
+    speak: { m: "جزمة", f: "جزمة" }
+    board: clothes
+    row: 0
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: socks
+    category: noun
+    color: fitz-noun
+    gloss_en: socks
+    agreement: false
+    display: { m: "شرابات", f: "شرابات" }
+    speak: { m: "شرابات", f: "شرابات" }
+    board: clothes
+    row: 1
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: jacket
+    category: noun
+    color: fitz-noun
+    gloss_en: jacket
+    agreement: false
+    display: { m: "جاكت", f: "جاكت" }
+    speak: { m: "جاكت", f: "جاكت" }
+    board: clothes
+    row: 1
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: hat
+    category: noun
+    color: fitz-noun
+    gloss_en: hat
+    agreement: false
+    display: { m: "طاقية", f: "طاقية" }
+    speak: { m: "طاقية", f: "طاقية" }
+    board: clothes
+    row: 1
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: pajamas
+    category: noun
+    color: fitz-noun
+    gloss_en: pajamas
+    agreement: false
+    display: { m: "بيجامة", f: "بيجامة" }
+    speak: { m: "بيجامة", f: "بيجامة" }
+    board: clothes
+    row: 1
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: diaper
+    category: noun
+    color: fitz-noun
+    gloss_en: diaper
+    agreement: false
+    display: { m: "حفّاضة", f: "حفّاضة" }
+    speak: { m: "حفّاضة", f: "حفّاضة" }
+    board: clothes
+    row: 2
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: scarf
+    category: noun
+    color: fitz-noun
+    gloss_en: scarf
+    agreement: false
+    display: { m: "إيشارب", f: "إيشارب" }
+    speak: { m: "إيشارب", f: "إيشارب" }
+    board: clothes
+    row: 2
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: glasses
+    category: noun
+    color: fitz-noun
+    gloss_en: glasses
+    agreement: false
+    display: { m: "نضارة", f: "نضارة" }
+    speak: { m: "نضارة", f: "نضارة" }
+    board: clothes
+    row: 2
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: button
+    category: noun
+    color: fitz-noun
+    gloss_en: button
+    agreement: false
+    display: { m: "زرار", f: "زرار" }
+    speak: { m: "زرار", f: "زرار" }
+    board: clothes
+    row: 2
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: pocket
+    category: noun
+    color: fitz-noun
+    gloss_en: pocket
+    agreement: false
+    display: { m: "جيب", f: "جيب" }
+    speak: { m: "جيب", f: "جيب" }
+    board: clothes
+    row: 3
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: clothes
+    category: noun
+    color: fitz-noun
+    gloss_en: clothes
+    agreement: false
+    display: { m: "هدوم", f: "هدوم" }
+    speak: { m: "هدوم", f: "هدوم" }
+    board: clothes
+    row: 3
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: slippers
+    category: noun
+    color: fitz-noun
+    gloss_en: slippers
+    agreement: false
+    display: { m: "شبشب", f: "شبشب" }
+    speak: { m: "شبشب", f: "شبشب" }
+    board: clothes
+    row: 3
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: dog
+    category: noun
+    color: fitz-noun
+    gloss_en: dog
+    agreement: false
+    display: { m: "كلب", f: "كلب" }
+    speak: { m: "كلب", f: "كلب" }
+    board: animals
+    row: 0
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: cat
+    category: noun
+    color: fitz-noun
+    gloss_en: cat
+    agreement: false
+    display: { m: "قطة", f: "قطة" }
+    speak: { m: "قطة", f: "قطة" }
+    board: animals
+    row: 0
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: bird
+    category: noun
+    color: fitz-noun
+    gloss_en: bird
+    agreement: false
+    display: { m: "عصفور", f: "عصفور" }
+    speak: { m: "عصفور", f: "عصفور" }
+    board: animals
+    row: 0
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: horse
+    category: noun
+    color: fitz-noun
+    gloss_en: horse
+    agreement: false
+    display: { m: "حصان", f: "حصان" }
+    speak: { m: "حصان", f: "حصان" }
+    board: animals
+    row: 0
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: cow
+    category: noun
+    color: fitz-noun
+    gloss_en: cow
+    agreement: false
+    display: { m: "بقرة", f: "بقرة" }
+    speak: { m: "بقرة", f: "بقرة" }
+    board: animals
+    row: 1
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: sheep
+    category: noun
+    color: fitz-noun
+    gloss_en: sheep
+    agreement: false
+    display: { m: "خروف", f: "خروف" }
+    speak: { m: "خروف", f: "خروف" }
+    board: animals
+    row: 1
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: duck
+    category: noun
+    color: fitz-noun
+    gloss_en: duck
+    agreement: false
+    display: { m: "بطة", f: "بطة" }
+    speak: { m: "بطة", f: "بطة" }
+    board: animals
+    row: 1
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: rabbit
+    category: noun
+    color: fitz-noun
+    gloss_en: rabbit
+    agreement: false
+    display: { m: "أرنب", f: "أرنب" }
+    speak: { m: "أرنب", f: "أرنب" }
+    board: animals
+    row: 1
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: lion
+    category: noun
+    color: fitz-noun
+    gloss_en: lion
+    agreement: false
+    display: { m: "أسد", f: "أسد" }
+    speak: { m: "أسد", f: "أسد" }
+    board: animals
+    row: 2
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: monkey
+    category: noun
+    color: fitz-noun
+    gloss_en: monkey
+    agreement: false
+    display: { m: "قرد", f: "قرد" }
+    speak: { m: "قرد", f: "قرد" }
+    board: animals
+    row: 2
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: turtle
+    category: noun
+    color: fitz-noun
+    gloss_en: turtle
+    agreement: false
+    display: { m: "سلحفاة", f: "سلحفاة" }
+    speak: { m: "سلحفاة", f: "سلحفاة" }
+    board: animals
+    row: 2
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: donkey
+    category: noun
+    color: fitz-noun
+    gloss_en: donkey
+    agreement: false
+    display: { m: "حمار", f: "حمار" }
+    speak: { m: "حمار", f: "حمار" }
+    board: animals
+    row: 2
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: camel
+    category: noun
+    color: fitz-noun
+    gloss_en: camel
+    agreement: false
+    display: { m: "جمل", f: "جمل" }
+    speak: { m: "جمل", f: "جمل" }
+    board: animals
+    row: 3
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: goat
+    category: noun
+    color: fitz-noun
+    gloss_en: goat
+    agreement: false
+    display: { m: "معزة", f: "معزة" }
+    speak: { m: "معزة", f: "معزة" }
+    board: animals
+    row: 3
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: mouse
+    category: noun
+    color: fitz-noun
+    gloss_en: mouse
+    agreement: false
+    display: { m: "فار", f: "فار" }
+    speak: { m: "فار", f: "فار" }
+    board: animals
+    row: 3
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: what
+    category: question
+    color: fitz-question
+    gloss_en: what
+    agreement: false
+    display: { m: "إيه", f: "إيه" }
+    speak: { m: "إيه", f: "إيه" }
+    board: questions
+    row: 0
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: where
+    category: question
+    color: fitz-question
+    gloss_en: where
+    agreement: false
+    display: { m: "فين", f: "فين" }
+    speak: { m: "فين", f: "فين" }
+    board: questions
+    row: 0
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: who
+    category: question
+    color: fitz-question
+    gloss_en: who
+    agreement: false
+    display: { m: "مين", f: "مين" }
+    speak: { m: "مين", f: "مين" }
+    board: questions
+    row: 0
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: when
+    category: question
+    color: fitz-question
+    gloss_en: when
+    agreement: false
+    display: { m: "إمتى", f: "إمتى" }
+    speak: { m: "إمتى", f: "إمتى" }
+    board: questions
+    row: 0
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: why
+    category: question
+    color: fitz-question
+    gloss_en: why
+    agreement: false
+    display: { m: "ليه", f: "ليه" }
+    speak: { m: "ليه", f: "ليه" }
+    board: questions
+    row: 1
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: how
+    category: question
+    color: fitz-question
+    gloss_en: how
+    agreement: false
+    display: { m: "إزاي", f: "إزاي" }
+    speak: { m: "إزاي", f: "إزاي" }
+    board: questions
+    row: 1
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: which
+    category: question
+    color: fitz-question
+    gloss_en: which
+    agreement: true
+    display: { m: "أنهو", f: "أنهي" }
+    speak: { m: "أنهو", f: "أنهي" }
+    board: questions
+    row: 1
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: how-many
+    category: question
+    color: fitz-question
+    gloss_en: "how many"
+    agreement: false
+    display: { m: "كام", f: "كام" }
+    speak: { m: "كام", f: "كام" }
+    board: questions
+    row: 1
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: whose
+    category: question
+    color: fitz-question
+    gloss_en: whose
+    agreement: true
+    display: { m: "بتاع مين", f: "بتاعة مين" }
+    speak: { m: "بتاع مين", f: "بتاعة مين" }
+    board: questions
+    row: 2
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: what-this
+    category: question
+    color: fitz-question
+    gloss_en: "what is this"
+    agreement: false
+    display: { m: "إيه ده", f: "إيه ده" }
+    speak: { m: "إيه ده", f: "إيه ده" }
+    board: questions
+    row: 2
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: how-are
+    category: question
+    color: fitz-question
+    gloss_en: "how are you"
+    agreement: true
+    display: { m: "عامل إيه", f: "عاملة إيه" }
+    speak: { m: "عامل إيه", f: "عاملة إيه" }
+    board: questions
+    row: 2
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: hi
+    category: social
+    color: fitz-social
+    gloss_en: hi
+    agreement: false
+    display: { m: "أهلاً", f: "أهلاً" }
+    speak: { m: "أهلاً", f: "أهلاً" }
+    board: social
+    row: 0
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: bye
+    category: social
+    color: fitz-social
+    gloss_en: bye
+    agreement: false
+    display: { m: "باي", f: "باي" }
+    speak: { m: "باي", f: "باي" }
+    board: social
+    row: 0
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: sorry
+    category: social
+    color: fitz-social
+    gloss_en: sorry
+    agreement: true
+    display: { m: "آسف", f: "آسفة" }
+    speak: { m: "آسف", f: "آسفة" }
+    board: social
+    row: 0
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: morning
+    category: social
+    color: fitz-social
+    gloss_en: "good morning"
+    agreement: false
+    display: { m: "صباح الخير", f: "صباح الخير" }
+    speak: { m: "صباح الخير", f: "صباح الخير" }
+    board: social
+    row: 0
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: night
+    category: social
+    color: fitz-social
+    gloss_en: "good night"
+    agreement: false
+    display: { m: "تصبح على خير", f: "تصبح على خير" }
+    speak: { m: "تصبح على خير", f: "تصبح على خير" }
+    board: social
+    row: 1
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: excuse
+    category: social
+    color: fitz-social
+    gloss_en: "excuse me"
+    agreement: true
+    display: { m: "بعد إذنك", f: "بعد إذنكِ" }
+    speak: { m: "بعد إذنك", f: "بعد إذنكِ" }
+    board: social
+    row: 1
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: welcome
+    category: social
+    color: fitz-social
+    gloss_en: welcome
+    agreement: false
+    display: { m: "أهلاً", f: "أهلاً" }
+    speak: { m: "أهلاً", f: "أهلاً" }
+    board: social
+    row: 1
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: bravo
+    category: social
+    color: fitz-social
+    gloss_en: "well done"
+    agreement: false
+    display: { m: "برافو", f: "برافو" }
+    speak: { m: "برافو", f: "برافو" }
+    board: social
+    row: 1
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: wow
+    category: social
+    color: fitz-social
+    gloss_en: wow
+    agreement: false
+    display: { m: "واو", f: "واو" }
+    speak: { m: "واو", f: "واو" }
+    board: social
+    row: 2
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: ok
+    category: social
+    color: fitz-social
+    gloss_en: ok
+    agreement: false
+    display: { m: "ماشي", f: "ماشي" }
+    speak: { m: "ماشي", f: "ماشي" }
+    board: social
+    row: 2
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: alright
+    category: social
+    color: fitz-social
+    gloss_en: alright
+    agreement: false
+    display: { m: "تمام", f: "تمام" }
+    speak: { m: "تمام", f: "تمام" }
+    board: social
+    row: 2
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: love-you
+    category: social
+    color: fitz-social
+    gloss_en: "I love you"
+    agreement: false
+    display: { m: "بحبّك", f: "بحبّك" }
+    speak: { m: "بحبّك", f: "بحبّك" }
+    board: social
+    row: 2
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: bless
+    category: social
+    color: fitz-social
+    gloss_en: "bless you"
+    agreement: true
+    display: { m: "تسلم", f: "تسلمي" }
+    speak: { m: "تسلم", f: "تسلمي" }
+    board: social
+    row: 3
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: hello
+    category: social
+    color: fitz-social
+    gloss_en: hello
+    agreement: false
+    display: { m: "السلام عليكم", f: "السلام عليكم" }
+    speak: { m: "السلام عليكم", f: "السلام عليكم" }
+    board: social
+    row: 3
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: goodbye
+    category: social
+    color: fitz-social
+    gloss_en: goodbye
+    agreement: false
+    display: { m: "مع السلامة", f: "مع السلامة" }
+    speak: { m: "مع السلامة", f: "مع السلامة" }
+    board: social
+    row: 3
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: today
+    category: noun
+    color: fitz-noun
+    gloss_en: today
+    agreement: false
+    display: { m: "النهارده", f: "النهارده" }
+    speak: { m: "النهارده", f: "النهارده" }
+    board: time
+    row: 0
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: tomorrow
+    category: noun
+    color: fitz-noun
+    gloss_en: tomorrow
+    agreement: false
+    display: { m: "بكرة", f: "بكرة" }
+    speak: { m: "بكرة", f: "بكرة" }
+    board: time
+    row: 0
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: yesterday
+    category: noun
+    color: fitz-noun
+    gloss_en: yesterday
+    agreement: false
+    display: { m: "إمبارح", f: "إمبارح" }
+    speak: { m: "إمبارح", f: "إمبارح" }
+    board: time
+    row: 0
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: daytime
+    category: noun
+    color: fitz-noun
+    gloss_en: "morning time"
+    agreement: false
+    display: { m: "الصبح", f: "الصبح" }
+    speak: { m: "الصبح", f: "الصبح" }
+    board: time
+    row: 0
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: nighttime
+    category: noun
+    color: fitz-noun
+    gloss_en: "at night"
+    agreement: false
+    display: { m: "بالليل", f: "بالليل" }
+    speak: { m: "بالليل", f: "بالليل" }
+    board: time
+    row: 1
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: later
+    category: noun
+    color: fitz-noun
+    gloss_en: later
+    agreement: false
+    display: { m: "بعدين", f: "بعدين" }
+    speak: { m: "بعدين", f: "بعدين" }
+    board: time
+    row: 1
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: before
+    category: noun
+    color: fitz-noun
+    gloss_en: before
+    agreement: false
+    display: { m: "قبل كده", f: "قبل كده" }
+    speak: { m: "قبل كده", f: "قبل كده" }
+    board: time
+    row: 1
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: day
+    category: noun
+    color: fitz-noun
+    gloss_en: day
+    agreement: false
+    display: { m: "يوم", f: "يوم" }
+    speak: { m: "يوم", f: "يوم" }
+    board: time
+    row: 1
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: week
+    category: noun
+    color: fitz-noun
+    gloss_en: week
+    agreement: false
+    display: { m: "أسبوع", f: "أسبوع" }
+    speak: { m: "أسبوع", f: "أسبوع" }
+    board: time
+    row: 2
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: hour
+    category: noun
+    color: fitz-noun
+    gloss_en: hour
+    agreement: false
+    display: { m: "ساعة", f: "ساعة" }
+    speak: { m: "ساعة", f: "ساعة" }
+    board: time
+    row: 2
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: always
+    category: noun
+    color: fitz-noun
+    gloss_en: always
+    agreement: false
+    display: { m: "دايماً", f: "دايماً" }
+    speak: { m: "دايماً", f: "دايماً" }
+    board: time
+    row: 2
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: never
+    category: noun
+    color: fitz-noun
+    gloss_en: never
+    agreement: false
+    display: { m: "أبداً", f: "أبداً" }
+    speak: { m: "أبداً", f: "أبداً" }
+    board: time
+    row: 2
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: soon
+    category: noun
+    color: fitz-noun
+    gloss_en: soon
+    agreement: false
+    display: { m: "قريب", f: "قريب" }
+    speak: { m: "قريب", f: "قريب" }
+    board: time
+    row: 3
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: first
+    category: noun
+    color: fitz-noun
+    gloss_en: first
+    agreement: false
+    display: { m: "الأول", f: "الأول" }
+    speak: { m: "الأول", f: "الأول" }
+    board: time
+    row: 3
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: then
+    category: noun
+    color: fitz-noun
+    gloss_en: "and then"
+    agreement: false
+    display: { m: "وبعدين", f: "وبعدين" }
+    speak: { m: "وبعدين", f: "وبعدين" }
+    board: time
+    row: 3
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: sleep
+    category: noun
+    color: fitz-noun
+    gloss_en: sleep
+    agreement: false
+    display: { m: "نوم", f: "نوم" }
+    speak: { m: "نوم", f: "نوم" }
+    board: routines
+    row: 0
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: wake
+    category: verb
+    color: fitz-verb
+    gloss_en: "I wake up"
+    agreement: false
+    display: { m: "أصحى", f: "أصحى" }
+    speak: { m: "أصحى", f: "أصحى" }
+    board: routines
+    row: 0
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: breakfast
+    category: noun
+    color: fitz-noun
+    gloss_en: breakfast
+    agreement: false
+    display: { m: "فطار", f: "فطار" }
+    speak: { m: "فطار", f: "فطار" }
+    board: routines
+    row: 0
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: lunch
+    category: noun
+    color: fitz-noun
+    gloss_en: lunch
+    agreement: false
+    display: { m: "غدا", f: "غدا" }
+    speak: { m: "غدا", f: "غدا" }
+    board: routines
+    row: 0
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: dinner
+    category: noun
+    color: fitz-noun
+    gloss_en: dinner
+    agreement: false
+    display: { m: "عشا", f: "عشا" }
+    speak: { m: "عشا", f: "عشا" }
+    board: routines
+    row: 0
+    col: 4
+    reviewStatus: ai-draft
+  - vocabKey: snack
+    category: noun
+    color: fitz-noun
+    gloss_en: snack
+    agreement: false
+    display: { m: "تسالية", f: "تسالية" }
+    speak: { m: "تسالية", f: "تسالية" }
+    board: routines
+    row: 1
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: bath
+    category: verb
+    color: fitz-verb
+    gloss_en: "I bathe"
+    agreement: false
+    display: { m: "أستحمى", f: "أستحمى" }
+    speak: { m: "أستحمى", f: "أستحمى" }
+    board: routines
+    row: 1
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: brush
+    category: verb
+    color: fitz-verb
+    gloss_en: "I brush my teeth"
+    agreement: false
+    display: { m: "أسناني", f: "أسناني" }
+    speak: { m: "أسناني", f: "أسناني" }
+    board: routines
+    row: 1
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: story
+    category: noun
+    color: fitz-noun
+    gloss_en: story
+    agreement: false
+    display: { m: "حدوتة", f: "حدوتة" }
+    speak: { m: "حدوتة", f: "حدوتة" }
+    board: routines
+    row: 1
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: prayer
+    category: verb
+    color: fitz-verb
+    gloss_en: "I pray"
+    agreement: false
+    display: { m: "أصلي", f: "أصلي" }
+    speak: { m: "أصلي", f: "أصلي" }
+    board: routines
+    row: 1
+    col: 4
+    reviewStatus: ai-draft
+  - vocabKey: nap
+    category: noun
+    color: fitz-noun
+    gloss_en: nap
+    agreement: false
+    display: { m: "قيلولة", f: "قيلولة" }
+    speak: { m: "قيلولة", f: "قيلولة" }
+    board: routines
+    row: 2
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: wash-hands
+    category: verb
+    color: fitz-verb
+    gloss_en: "I wash my hands"
+    agreement: false
+    display: { m: "أغسل إيدي", f: "أغسل إيدي" }
+    speak: { m: "أغسل إيدي", f: "أغسل إيدي" }
+    board: routines
+    row: 2
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: wash-face
+    category: verb
+    color: fitz-verb
+    gloss_en: "I wash my face"
+    agreement: false
+    display: { m: "أغسل وشي", f: "أغسل وشي" }
+    speak: { m: "أغسل وشي", f: "أغسل وشي" }
+    board: routines
+    row: 2
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: change
+    category: verb
+    color: fitz-verb
+    gloss_en: "I get changed"
+    agreement: false
+    display: { m: "أغيّر", f: "أغيّر" }
+    speak: { m: "أغيّر", f: "أغيّر" }
+    board: routines
+    row: 2
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: rest
+    category: verb
+    color: fitz-verb
+    gloss_en: "I rest"
+    agreement: false
+    display: { m: "أرتاح", f: "أرتاح" }
+    speak: { m: "أرتاح", f: "أرتاح" }
+    board: routines
+    row: 2
+    col: 4
+    reviewStatus: ai-draft
+  - vocabKey: ready
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: ready
+    agreement: true
+    display: { m: "جاهز", f: "جاهزة" }
+    speak: { m: "جاهز", f: "جاهزة" }
+    board: routines
+    row: 3
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: done
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: "all done"
+    agreement: true
+    display: { m: "خلصان", f: "خلصانة" }
+    speak: { m: "خلصان", f: "خلصانة" }
+    board: routines
+    row: 3
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: again
+    category: function
+    color: fitz-function
+    gloss_en: again
+    agreement: false
+    display: { m: "تاني", f: "تاني" }
+    speak: { m: "تاني", f: "تاني" }
+    board: routines
+    row: 3
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: watch
+    category: verb
+    color: fitz-verb
+    gloss_en: "I watch"
+    agreement: false
+    display: { m: "أتفرج", f: "أتفرج" }
+    speak: { m: "أتفرج", f: "أتفرج" }
+    board: routines
+    row: 3
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: medicine
+    category: noun
+    color: fitz-noun
+    gloss_en: medicine
+    agreement: false
+    display: { m: "دوا", f: "دوا" }
+    speak: { m: "دوا", f: "دوا" }
+    board: health
+    row: 0
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: fever
+    category: noun
+    color: fitz-noun
+    gloss_en: fever
+    agreement: false
+    display: { m: "سخونية", f: "سخونية" }
+    speak: { m: "سخونية", f: "سخونية" }
+    board: health
+    row: 0
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: cough
+    category: noun
+    color: fitz-noun
+    gloss_en: cough
+    agreement: false
+    display: { m: "كحة", f: "كحة" }
+    speak: { m: "كحة", f: "كحة" }
+    board: health
+    row: 0
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: tummy-ache
+    category: noun
+    color: fitz-noun
+    gloss_en: "tummy ache"
+    agreement: false
+    display: { m: "بطني", f: "بطني" }
+    speak: { m: "بطني", f: "بطني" }
+    board: health
+    row: 0
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: headache
+    category: noun
+    color: fitz-noun
+    gloss_en: headache
+    agreement: false
+    display: { m: "راسي", f: "راسي" }
+    speak: { m: "راسي", f: "راسي" }
+    board: health
+    row: 1
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: plaster
+    category: noun
+    color: fitz-noun
+    gloss_en: plaster
+    agreement: false
+    display: { m: "بلاستر", f: "بلاستر" }
+    speak: { m: "بلاستر", f: "بلاستر" }
+    board: health
+    row: 1
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: cream
+    category: noun
+    color: fitz-noun
+    gloss_en: ointment
+    agreement: false
+    display: { m: "مرهم", f: "مرهم" }
+    speak: { m: "مرهم", f: "مرهم" }
+    board: health
+    row: 1
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: pharmacy
+    category: noun
+    color: fitz-noun
+    gloss_en: pharmacy
+    agreement: false
+    display: { m: "صيدلية", f: "صيدلية" }
+    speak: { m: "صيدلية", f: "صيدلية" }
+    board: health
+    row: 1
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: ouch
+    category: social
+    color: fitz-social
+    gloss_en: ouch
+    agreement: false
+    display: { m: "آه", f: "آه" }
+    speak: { m: "آه", f: "آه" }
+    board: health
+    row: 2
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: fine
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: "I feel fine"
+    agreement: true
+    display: { m: "كويس", f: "كويسة" }
+    speak: { m: "كويس", f: "كويسة" }
+    board: health
+    row: 2
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: dizzy
+    category: noun
+    color: fitz-noun
+    gloss_en: dizziness
+    agreement: false
+    display: { m: "دوخان", f: "دوخان" }
+    speak: { m: "دوخان", f: "دوخان" }
+    board: health
+    row: 2
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: sun
+    category: noun
+    color: fitz-noun
+    gloss_en: sun
+    agreement: false
+    display: { m: "شمس", f: "شمس" }
+    speak: { m: "شمس", f: "شمس" }
+    board: outside
+    row: 0
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: moon
+    category: noun
+    color: fitz-noun
+    gloss_en: moon
+    agreement: false
+    display: { m: "قمر", f: "قمر" }
+    speak: { m: "قمر", f: "قمر" }
+    board: outside
+    row: 0
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: rain
+    category: noun
+    color: fitz-noun
+    gloss_en: rain
+    agreement: false
+    display: { m: "مطر", f: "مطر" }
+    speak: { m: "مطر", f: "مطر" }
+    board: outside
+    row: 0
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: tree
+    category: noun
+    color: fitz-noun
+    gloss_en: tree
+    agreement: false
+    display: { m: "شجرة", f: "شجرة" }
+    speak: { m: "شجرة", f: "شجرة" }
+    board: outside
+    row: 0
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: flower
+    category: noun
+    color: fitz-noun
+    gloss_en: flower
+    agreement: false
+    display: { m: "وردة", f: "وردة" }
+    speak: { m: "وردة", f: "وردة" }
+    board: outside
+    row: 1
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: sky
+    category: noun
+    color: fitz-noun
+    gloss_en: sky
+    agreement: false
+    display: { m: "سما", f: "سما" }
+    speak: { m: "سما", f: "سما" }
+    board: outside
+    row: 1
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: cloud
+    category: noun
+    color: fitz-noun
+    gloss_en: cloud
+    agreement: false
+    display: { m: "سحاب", f: "سحاب" }
+    speak: { m: "سحاب", f: "سحاب" }
+    board: outside
+    row: 1
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: wind
+    category: noun
+    color: fitz-noun
+    gloss_en: wind
+    agreement: false
+    display: { m: "هوا", f: "هوا" }
+    speak: { m: "هوا", f: "هوا" }
+    board: outside
+    row: 1
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: grass
+    category: noun
+    color: fitz-noun
+    gloss_en: grass
+    agreement: false
+    display: { m: "نجيلة", f: "نجيلة" }
+    speak: { m: "نجيلة", f: "نجيلة" }
+    board: outside
+    row: 2
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: stone
+    category: noun
+    color: fitz-noun
+    gloss_en: stone
+    agreement: false
+    display: { m: "حجر", f: "حجر" }
+    speak: { m: "حجر", f: "حجر" }
+    board: outside
+    row: 2
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: bus
+    category: noun
+    color: fitz-noun
+    gloss_en: bus
+    agreement: false
+    display: { m: "أتوبيس", f: "أتوبيس" }
+    speak: { m: "أتوبيس", f: "أتوبيس" }
+    board: outside
+    row: 2
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: bike
+    category: noun
+    color: fitz-noun
+    gloss_en: bike
+    agreement: false
+    display: { m: "عجلة", f: "عجلة" }
+    speak: { m: "عجلة", f: "عجلة" }
+    board: outside
+    row: 2
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: swing
+    category: noun
+    color: fitz-noun
+    gloss_en: swing
+    agreement: false
+    display: { m: "مرجيحة", f: "مرجيحة" }
+    speak: { m: "مرجيحة", f: "مرجيحة" }
+    board: outside
+    row: 3
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: slide
+    category: noun
+    color: fitz-noun
+    gloss_en: slide
+    agreement: false
+    display: { m: "زحليقة", f: "زحليقة" }
+    speak: { m: "زحليقة", f: "زحليقة" }
+    board: outside
+    row: 3
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: sand
+    category: noun
+    color: fitz-noun
+    gloss_en: sand
+    agreement: false
+    display: { m: "رملة", f: "رملة" }
+    speak: { m: "رملة", f: "رملة" }
+    board: outside
+    row: 3
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: fridge
+    category: noun
+    color: fitz-noun
+    gloss_en: fridge
+    agreement: false
+    display: { m: "تلاجة", f: "تلاجة" }
+    speak: { m: "تلاجة", f: "تلاجة" }
+    board: kitchen
+    row: 0
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: stove
+    category: noun
+    color: fitz-noun
+    gloss_en: stove
+    agreement: false
+    display: { m: "بوتاجاز", f: "بوتاجاز" }
+    speak: { m: "بوتاجاز", f: "بوتاجاز" }
+    board: kitchen
+    row: 0
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: oven
+    category: noun
+    color: fitz-noun
+    gloss_en: oven
+    agreement: false
+    display: { m: "فرن", f: "فرن" }
+    speak: { m: "فرن", f: "فرن" }
+    board: kitchen
+    row: 0
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: sink
+    category: noun
+    color: fitz-noun
+    gloss_en: sink
+    agreement: false
+    display: { m: "حوض", f: "حوض" }
+    speak: { m: "حوض", f: "حوض" }
+    board: kitchen
+    row: 0
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: pot
+    category: noun
+    color: fitz-noun
+    gloss_en: pot
+    agreement: false
+    display: { m: "حلة", f: "حلة" }
+    speak: { m: "حلة", f: "حلة" }
+    board: kitchen
+    row: 1
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: pan
+    category: noun
+    color: fitz-noun
+    gloss_en: pan
+    agreement: false
+    display: { m: "طاسة", f: "طاسة" }
+    speak: { m: "طاسة", f: "طاسة" }
+    board: kitchen
+    row: 1
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: knife
+    category: noun
+    color: fitz-noun
+    gloss_en: knife
+    agreement: false
+    display: { m: "سكينة", f: "سكينة" }
+    speak: { m: "سكينة", f: "سكينة" }
+    board: kitchen
+    row: 1
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: fork
+    category: noun
+    color: fitz-noun
+    gloss_en: fork
+    agreement: false
+    display: { m: "شوكة", f: "شوكة" }
+    speak: { m: "شوكة", f: "شوكة" }
+    board: kitchen
+    row: 1
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: bottle
+    category: noun
+    color: fitz-noun
+    gloss_en: bottle
+    agreement: false
+    display: { m: "إزازة", f: "إزازة" }
+    speak: { m: "إزازة", f: "إزازة" }
+    board: kitchen
+    row: 2
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: tap
+    category: noun
+    color: fitz-noun
+    gloss_en: tap
+    agreement: false
+    display: { m: "حنفية", f: "حنفية" }
+    speak: { m: "حنفية", f: "حنفية" }
+    board: kitchen
+    row: 2
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: bowl
+    category: noun
+    color: fitz-noun
+    gloss_en: bowl
+    agreement: false
+    display: { m: "بولة", f: "بولة" }
+    speak: { m: "بولة", f: "بولة" }
+    board: kitchen
+    row: 2
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: kettle
+    category: noun
+    color: fitz-noun
+    gloss_en: kettle
+    agreement: false
+    display: { m: "كنكة", f: "كنكة" }
+    speak: { m: "كنكة", f: "كنكة" }
+    board: kitchen
+    row: 2
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: napkin
+    category: noun
+    color: fitz-noun
+    gloss_en: napkin
+    agreement: false
+    display: { m: "منديل", f: "منديل" }
+    speak: { m: "منديل", f: "منديل" }
+    board: kitchen
+    row: 3
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: oil
+    category: noun
+    color: fitz-noun
+    gloss_en: oil
+    agreement: false
+    display: { m: "زيت", f: "زيت" }
+    speak: { m: "زيت", f: "زيت" }
+    board: kitchen
+    row: 3
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: salt
+    category: noun
+    color: fitz-noun
+    gloss_en: salt
+    agreement: false
+    display: { m: "ملح", f: "ملح" }
+    speak: { m: "ملح", f: "ملح" }
+    board: kitchen
+    row: 3
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: doll
+    category: noun
+    color: fitz-noun
+    gloss_en: doll
+    agreement: false
+    display: { m: "عروسة", f: "عروسة" }
+    speak: { m: "عروسة", f: "عروسة" }
+    board: play
+    row: 0
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: blocks
+    category: noun
+    color: fitz-noun
+    gloss_en: blocks
+    agreement: false
+    display: { m: "مكعبات", f: "مكعبات" }
+    speak: { m: "مكعبات", f: "مكعبات" }
+    board: play
+    row: 0
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: puzzle
+    category: noun
+    color: fitz-noun
+    gloss_en: puzzle
+    agreement: false
+    display: { m: "بازل", f: "بازل" }
+    speak: { m: "بازل", f: "بازل" }
+    board: play
+    row: 0
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: cards
+    category: noun
+    color: fitz-noun
+    gloss_en: cards
+    agreement: false
+    display: { m: "كوتشينة", f: "كوتشينة" }
+    speak: { m: "كوتشينة", f: "كوتشينة" }
+    board: play
+    row: 0
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: balloon
+    category: noun
+    color: fitz-noun
+    gloss_en: balloon
+    agreement: false
+    display: { m: "بالونة", f: "بالونة" }
+    speak: { m: "بالونة", f: "بالونة" }
+    board: play
+    row: 1
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: bubbles
+    category: noun
+    color: fitz-noun
+    gloss_en: bubbles
+    agreement: false
+    display: { m: "فقاعات", f: "فقاعات" }
+    speak: { m: "فقاعات", f: "فقاعات" }
+    board: play
+    row: 1
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: music
+    category: noun
+    color: fitz-noun
+    gloss_en: music
+    agreement: false
+    display: { m: "موسيقى", f: "موسيقى" }
+    speak: { m: "موسيقى", f: "موسيقى" }
+    board: play
+    row: 1
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: song
+    category: noun
+    color: fitz-noun
+    gloss_en: song
+    agreement: false
+    display: { m: "أغنية", f: "أغنية" }
+    speak: { m: "أغنية", f: "أغنية" }
+    board: play
+    row: 1
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: dance
+    category: verb
+    color: fitz-verb
+    gloss_en: "I dance"
+    agreement: false
+    display: { m: "أرقص", f: "أرقص" }
+    speak: { m: "أرقص", f: "أرقص" }
+    board: play
+    row: 2
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: tablet
+    category: noun
+    color: fitz-noun
+    gloss_en: tablet
+    agreement: false
+    display: { m: "تابلت", f: "تابلت" }
+    speak: { m: "تابلت", f: "تابلت" }
+    board: play
+    row: 2
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: video
+    category: noun
+    color: fitz-noun
+    gloss_en: video
+    agreement: false
+    display: { m: "فيديو", f: "فيديو" }
+    speak: { m: "فيديو", f: "فيديو" }
+    board: play
+    row: 2
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: clay
+    category: noun
+    color: fitz-noun
+    gloss_en: clay
+    agreement: false
+    display: { m: "صلصال", f: "صلصال" }
+    speak: { m: "صلصال", f: "صلصال" }
+    board: play
+    row: 2
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: drum
+    category: noun
+    color: fitz-noun
+    gloss_en: drum
+    agreement: false
+    display: { m: "طبلة", f: "طبلة" }
+    speak: { m: "طبلة", f: "طبلة" }
+    board: play
+    row: 3
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: paints
+    category: noun
+    color: fitz-noun
+    gloss_en: paints
+    agreement: false
+    display: { m: "ألوان", f: "ألوان" }
+    speak: { m: "ألوان", f: "ألوان" }
+    board: play
+    row: 3
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: teddy
+    category: noun
+    color: fitz-noun
+    gloss_en: teddy
+    agreement: false
+    display: { m: "دبدوب", f: "دبدوب" }
+    speak: { m: "دبدوب", f: "دبدوب" }
+    board: play
+    row: 3
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: want
+    category: verb
+    color: fitz-verb
+    gloss_en: want
+    agreement: true
+    display: { m: "عايز", f: "عايزة" }
+    speak: { m: "عايز", f: "عايزة" }
+    board: quick
+    row: 0
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: hungry
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: hungry
+    agreement: true
+    display: { m: "جعان", f: "جعانة" }
+    speak: { m: "جعان", f: "جعانة" }
+    board: quick
+    row: 0
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: tired
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: tired
+    agreement: true
+    display: { m: "تعبان", f: "تعبانة" }
+    speak: { m: "تعبان", f: "تعبانة" }
+    board: quick
+    row: 0
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: happy
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: happy
+    agreement: true
+    display: { m: "مبسوط", f: "مبسوطة" }
+    speak: { m: "مبسوط", f: "مبسوطة" }
+    board: quick
+    row: 0
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: sad
+    category: descriptor
+    color: fitz-descriptor
+    gloss_en: "sad / upset"
+    agreement: true
+    display: { m: "زعلان", f: "زعلانة" }
+    speak: { m: "زعلان", f: "زعلانة" }
+    board: quick
+    row: 0
+    col: 4
+    reviewStatus: ai-draft
+  - vocabKey: need
+    category: verb
+    color: fitz-verb
+    gloss_en: "I need"
+    agreement: true
+    display: { m: "محتاج", f: "محتاجة" }
+    speak: { m: "محتاج", f: "محتاجة" }
+    board: quick
+    row: 1
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: enough
+    category: function
+    color: fitz-function
+    gloss_en: enough
+    agreement: false
+    display: { m: "كفاية", f: "كفاية" }
+    speak: { m: "كفاية", f: "كفاية" }
+    board: quick
+    row: 1
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: hurry
+    category: function
+    color: fitz-function
+    gloss_en: hurry
+    agreement: false
+    display: { m: "بسرعة", f: "بسرعة" }
+    speak: { m: "بسرعة", f: "بسرعة" }
+    board: quick
+    row: 1
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: my-turn
+    category: function
+    color: fitz-function
+    gloss_en: "my turn"
+    agreement: false
+    display: { m: "دوري", f: "دوري" }
+    speak: { m: "دوري", f: "دوري" }
+    board: quick
+    row: 1
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: your-turn
+    category: function
+    color: fitz-function
+    gloss_en: "your turn"
+    agreement: true
+    display: { m: "دورك", f: "دوركِ" }
+    speak: { m: "دورك", f: "دوركِ" }
+    board: quick
+    row: 1
+    col: 4
+    reviewStatus: ai-draft
+  - vocabKey: together
+    category: function
+    color: fitz-function
+    gloss_en: together
+    agreement: false
+    display: { m: "مع بعض", f: "مع بعض" }
+    speak: { m: "مع بعض", f: "مع بعض" }
+    board: quick
+    row: 2
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: alone
+    category: function
+    color: fitz-function
+    gloss_en: "by myself"
+    agreement: false
+    display: { m: "لوحدي", f: "لوحدي" }
+    speak: { m: "لوحدي", f: "لوحدي" }
+    board: quick
+    row: 2
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: careful
+    category: function
+    color: fitz-function
+    gloss_en: "careful / slowly"
+    agreement: false
+    display: { m: "بالراحة", f: "بالراحة" }
+    speak: { m: "بالراحة", f: "بالراحة" }
+    board: quick
+    row: 2
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: come-here
+    category: verb
+    color: fitz-verb
+    gloss_en: "come here"
+    agreement: true
+    display: { m: "تعالى", f: "تعالي" }
+    speak: { m: "تعالى", f: "تعالي" }
+    board: quick
+    row: 2
+    col: 3
+    reviewStatus: ai-draft
+  - vocabKey: look
+    category: verb
+    color: fitz-verb
+    gloss_en: look
+    agreement: true
+    display: { m: "بص", f: "بصي" }
+    speak: { m: "بص", f: "بصي" }
+    board: quick
+    row: 2
+    col: 4
+    reviewStatus: ai-draft
+  - vocabKey: listen
+    category: verb
+    color: fitz-verb
+    gloss_en: listen
+    agreement: true
+    display: { m: "اسمع", f: "اسمعي" }
+    speak: { m: "اسمع", f: "اسمعي" }
+    board: quick
+    row: 3
+    col: 0
+    reviewStatus: ai-draft
+  - vocabKey: share
+    category: verb
+    color: fitz-verb
+    gloss_en: "let's share"
+    agreement: false
+    display: { m: "نتقاسم", f: "نتقاسم" }
+    speak: { m: "نتقاسم", f: "نتقاسم" }
+    board: quick
+    row: 3
+    col: 1
+    reviewStatus: ai-draft
+  - vocabKey: hug
+    category: noun
+    color: fitz-noun
+    gloss_en: hug
+    agreement: false
+    display: { m: "حضن", f: "حضن" }
+    speak: { m: "حضن", f: "حضن" }
+    board: quick
+    row: 3
+    col: 2
+    reviewStatus: ai-draft
+  - vocabKey: break
+    category: noun
+    color: fitz-noun
+    gloss_en: "a break"
+    agreement: false
+    display: { m: "استراحة", f: "استراحة" }
+    speak: { m: "استراحة", f: "استراحة" }
+    board: quick
+    row: 3
+    col: 3
+    reviewStatus: ai-draft
