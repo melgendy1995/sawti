@@ -1,0 +1,64 @@
+// Global styles for Sawti (P0.3 shell).
+// RTL-first: logical properties only. No physical left/right or text-align:left|right.
+
+// --- Self-hosted fonts (OFL). No Google Fonts / CDN. Files ship at /fonts/*.woff2.
+// IBM Plex Sans Arabic is the primary face (complete, non-subset build: keeps all
+// Arabic ranges, Presentation Forms-A/B and GSUB/GPOS shaping features).
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/IBMPlexSansArabic-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'IBM Plex Sans Arabic';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/IBMPlexSansArabic-Medium.woff2') format('woff2');
+}
+
+// Noto Sans Arabic is the fallback for any glyph Plex lacks. This is the Arabic
+// subset (keeps U+0600-06FF, Supplement, Extended-A/B, Presentation Forms-A/B and
+// shaping features). Latin is left to Plex, which covers it fully.
+@font-face {
+  font-family: 'Noto Sans Arabic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/NotoSansArabic-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Noto Sans Arabic';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/NotoSansArabic-Medium.woff2') format('woff2');
+}
+
+:root {
+  --font-ui: 'IBM Plex Sans Arabic', 'Noto Sans Arabic', system-ui, sans-serif;
+
+  // Minimal shell palette.
+  --color-bg: #fbfbfd;
+  --color-surface: #ffffff;
+  --color-text: #1a1a1a;
+  --color-muted: #666;
+  --color-accent: #0a7d6b;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-block-size: 100%;
+}
+
+body {
+  font-family: var(--font-ui);
+  background: var(--color-bg);
+  color: var(--color-text);
+  text-align: start;
+  -webkit-font-smoothing: antialiased;
+}
