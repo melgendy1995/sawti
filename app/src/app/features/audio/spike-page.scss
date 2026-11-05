@@ -1,0 +1,34 @@
+.spike-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-inline-size: 52rem;
+  margin-inline: auto;
+  padding-block: 1.25rem;
+  padding-inline: 1rem;
+
+  &__title {
+    margin-block: 0;
+    color: var(--color-accent);
+    font-size: 2rem;
+  }
+
+  &__note,
+  &__status {
+    margin-block: 0;
+    color: var(--color-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+  }
+
+  &__link {
+    color: var(--color-accent);
+    font-size: 1.05rem;
+  }
+}

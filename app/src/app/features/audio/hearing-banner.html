@@ -1,0 +1,28 @@
+<section class="hearing" aria-label="حالة الصوت">
+  @for (warning of warnings(); track warning.code) {
+    <p
+      class="hearing__text"
+      [class.hearing__text--alert]="warning.alert"
+      [attr.role]="warning.alert ? 'alert' : 'status'"
+    >
+      {{ warning.arabic }}
+      <bdi class="hearing__en">{{ warning.english }}</bdi>
+    </p>
+  }
+  @if (hearing() === 'sound' && warnings().length === 0) {
+    <p class="hearing__text" role="status">
+      تم تأكيد سماع الصوت. إن انقطع الصوت فاختر «لا أسمع شيئاً».
+      <bdi class="hearing__en">Sound confirmed. If it stops, choose “I hear nothing”.</bdi>
+    </p>
+  }
+  <div class="hearing__actions">
+    <button type="button" class="hearing__choice" (click)="choose('sound')">
+      أسمع الصوت
+      <bdi class="hearing__en">I hear sound</bdi>
+    </button>
+    <button type="button" class="hearing__choice" (click)="choose('nothing')">
+      لا أسمع شيئاً
+      <bdi class="hearing__en">I hear nothing</bdi>
+    </button>
+  </div>
+</section>
