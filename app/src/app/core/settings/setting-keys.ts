@@ -16,6 +16,12 @@ export const SETTING_SPEAK_MODE = 'speakMode';
 export const SETTING_ACCESS_TIMING = 'accessTiming';
 
 /**
+ * ISO-8601 time of the last export the caregiver acknowledged and downloaded.
+ * Missing means the weekly backup reminder is due.
+ */
+export const SETTING_LAST_SUCCESSFUL_BACKUP = 'lastSuccessfulBackupAt';
+
+/**
  * `{ salt, hash }`. `salt` is 16 random bytes as lower-case hex.
  * `hash` is SHA-256 hex of the UTF-8 string `${salt}:${pin}`.
  * The PIN itself is never stored.

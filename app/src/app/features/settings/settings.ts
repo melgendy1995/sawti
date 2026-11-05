@@ -5,6 +5,7 @@ import { CaregiverGate } from '../../core/access/caregiver-gate';
 import { AppSettings, type SpeakModeSetting } from '../../core/settings/app-settings';
 import { ProfileDirectory } from '../../core/settings/profile-directory';
 import type { ProfileGender } from '../../core/settings/setting-keys';
+import { BACKUP_NOW, isBackupReminderDue } from '../../core/storage/backup-reminder';
 
 /**
  * Caregiver preferences. Grid size is a preferred default for a later reader.
@@ -22,6 +23,7 @@ export class SettingsPage {
   private readonly profiles = inject(ProfileDirectory);
   private readonly gate = inject(CaregiverGate);
   private readonly router = inject(Router);
+  private readonly now = inject(BACKUP_NOW);
 
   protected readonly gender = signal<ProfileGender>('m');
   protected readonly rows = signal(4);
@@ -31,6 +33,7 @@ export class SettingsPage {
   protected readonly debounceMs = signal(0);
   protected readonly activation = signal<AccessTiming['activation']>('release');
   protected readonly status = signal('');
+  protected readonly backupReminder = signal(false);
 
   constructor() {
     void this.load();
@@ -117,6 +120,8 @@ export class SettingsPage {
       const active = listed.find((row) => row.id === activeId);
       const gender = active ? this.profiles.genderOf(active) : null;
       if (gender) this.gender.set(gender);
+      const lastBackup = await this.settings.readLastSuccessfulBackupAt();
+      this.backupReminder.set(isBackupReminderDue(lastBackup, this.now()));
     } catch {
       this.status.set('تعذر القراءة');
     }

@@ -4,8 +4,16 @@
   <nav class="settings-page__nav" aria-label="تنقل الإعدادات">
     <a routerLink="/speak">العودة إلى الكلام</a>
     <a routerLink="/profiles">الملفات</a>
+    <a routerLink="/backup">النسخ الاحتياطي</a>
     <button type="button" data-testid="caregiver-lock" (click)="lock()">قفل</button>
   </nav>
+
+  @if (backupReminder()) {
+    <p class="settings-page__reminder" role="status" data-testid="backup-reminder">
+      لم تُحفظ نسخة احتياطية منذ أسبوع.
+      <a routerLink="/backup">تصدير نسخة</a>
+    </p>
+  }
 
   <form class="settings-page__form" (submit)="onSubmit($event)">
     <fieldset>
