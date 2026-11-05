@@ -9,7 +9,7 @@ import type { CapacitorConfig } from '@capacitor/cli';
  */
 const config: CapacitorConfig = {
   appId: 'app.sawti',
-  appName: 'Sawti',
+  appName: 'صوتي',
   webDir: 'dist/sawti/browser',
 };
 
