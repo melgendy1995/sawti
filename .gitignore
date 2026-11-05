@@ -1,0 +1,20 @@
+# Created before P0.3 so generated junk cannot be committed by accident.
+# P0.2 (CI agent) will expand this to the full ignore set.
+node_modules/
+dist/
+.angular/
+.DS_Store
+*.env
+*.env.*
+!.env.example
+*.jks
+*.p12
+*.keystore
+android/local.properties
+android/.gradle/
+android/app/build/
+android/build/
+android/captures/
+coverage/
+test-results/
+playwright-report/
