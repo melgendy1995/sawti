@@ -1,0 +1,134 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://sawti.app/schemas/board.schema.json",
+  "title": "Sawti board document",
+  "description": "A single AAC board (plan v1.1 §2.6). v1.0 shape with per-cell `rev` removed: the board-level `rev` is the only concurrency token. Unknown fields are preserved by domain code, so additionalProperties is allowed at the board and cell level.",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "id",
+    "profileId",
+    "title",
+    "rows",
+    "cols",
+    "layoutLocked",
+    "cells",
+    "parked",
+    "rev"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "schemaVersion": { "type": "integer", "minimum": 1 },
+    "id": { "type": "string" },
+    "profileId": { "type": "string" },
+    "title": { "$ref": "#/$defs/localizedText" },
+    "rows": { "type": "integer", "minimum": 1, "maximum": 12 },
+    "cols": { "type": "integer", "minimum": 1, "maximum": 12 },
+    "layoutLocked": { "type": "boolean" },
+    "cells": {
+      "type": "object",
+      "description": "Cells keyed by cell id. Hidden cells keep their slot.",
+      "additionalProperties": { "$ref": "#/$defs/cell" }
+    },
+    "parked": {
+      "type": "array",
+      "description": "Cells that ended up outside the grid after a resize. Kept, never deleted or auto-replaced; each keeps its id and last row/col.",
+      "items": { "$ref": "#/$defs/parkedCell" }
+    },
+    "rev": { "type": "integer", "minimum": 0 }
+  },
+  "$defs": {
+    "localizedText": {
+      "type": "object",
+      "description": "Strings keyed by language tag. `ar` is required; other locales are preserved.",
+      "required": ["ar"],
+      "additionalProperties": { "type": "string" }
+    },
+    "symbolRef": {
+      "type": "object",
+      "required": ["pack", "key"],
+      "additionalProperties": true,
+      "properties": {
+        "pack": { "type": "string" },
+        "key": { "type": "string" }
+      }
+    },
+    "audioSource": {
+      "type": "object",
+      "required": ["kind"],
+      "additionalProperties": true,
+      "properties": {
+        "kind": { "enum": ["pack", "media", "tts"] },
+        "sha256": { "type": "string" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "kind": { "const": "media" } } },
+          "then": { "required": ["sha256"] }
+        }
+      ]
+    },
+    "cell": {
+      "type": "object",
+      "required": [
+        "row",
+        "col",
+        "label",
+        "vocabKey",
+        "spoken",
+        "symbol",
+        "audio",
+        "linkBoardId",
+        "color",
+        "hidden"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "row": { "type": "integer", "minimum": 0 },
+        "col": { "type": "integer", "minimum": 0 },
+        "label": { "type": "string" },
+        "vocabKey": { "type": ["string", "null"] },
+        "spoken": { "type": ["string", "null"] },
+        "symbol": {
+          "oneOf": [{ "$ref": "#/$defs/symbolRef" }, { "type": "null" }]
+        },
+        "audio": { "$ref": "#/$defs/audioSource" },
+        "linkBoardId": { "type": ["string", "null"] },
+        "color": { "type": "string" },
+        "hidden": { "type": "boolean" }
+      }
+    },
+    "parkedCell": {
+      "type": "object",
+      "required": [
+        "id",
+        "row",
+        "col",
+        "label",
+        "vocabKey",
+        "spoken",
+        "symbol",
+        "audio",
+        "linkBoardId",
+        "color",
+        "hidden"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "id": { "type": "string" },
+        "row": { "type": "integer", "minimum": 0 },
+        "col": { "type": "integer", "minimum": 0 },
+        "label": { "type": "string" },
+        "vocabKey": { "type": ["string", "null"] },
+        "spoken": { "type": ["string", "null"] },
+        "symbol": {
+          "oneOf": [{ "$ref": "#/$defs/symbolRef" }, { "type": "null" }]
+        },
+        "audio": { "$ref": "#/$defs/audioSource" },
+        "linkBoardId": { "type": ["string", "null"] },
+        "color": { "type": "string" },
+        "hidden": { "type": "boolean" }
+      }
+    }
+  }
+}

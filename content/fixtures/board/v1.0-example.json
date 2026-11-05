@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "0193b0c2-7d1e-7c41-9f7e-2b1d3a4c5e6f",
+  "profileId": "0193b0c2-aaaa-7c41-9f7e-2b1d3a4c5e6f",
+  "title": { "ar": "أكل", "en": "Food" },
+  "rows": 4,
+  "cols": 5,
+  "layoutLocked": true,
+  "cells": {
+    "0193b0c3-bbbb-7c41-9f7e-2b1d3a4c5e6f": {
+      "row": 0,
+      "col": 0,
+      "label": "مية",
+      "vocabKey": "water",
+      "spoken": null,
+      "symbol": { "pack": "arasaac", "key": "2248" },
+      "audio": { "kind": "pack" },
+      "linkBoardId": null,
+      "color": "fitz-noun",
+      "hidden": false
+    }
+  },
+  "parked": [],
+  "rev": 42
+}
