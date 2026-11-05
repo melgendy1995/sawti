@@ -28,6 +28,14 @@
     padding: 0;
   }
 
+  &__reminder {
+    margin: 0;
+    padding-block: 0.6rem;
+    padding-inline: 0.75rem;
+    border: 1px solid var(--color-accent);
+    border-radius: 0.5rem;
+  }
+
   a,
   button {
     color: var(--color-accent);

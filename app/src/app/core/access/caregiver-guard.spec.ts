@@ -37,6 +37,9 @@ describe('caregiverGateGuard', () => {
     await harness.navigateByUrl('/profiles');
     expect(router.url).toBe('/speak');
 
+    await harness.navigateByUrl('/backup');
+    expect(router.url).toBe('/speak');
+
     const gate = TestBed.inject(CaregiverGate);
     expect(await gate.submitPin('1357', '1357')).toBe(true);
 
@@ -46,6 +49,10 @@ describe('caregiverGateGuard', () => {
 
     await harness.navigateByUrl('/profiles');
     expect(router.url).toBe('/profiles');
+
+    await harness.navigateByUrl('/backup');
+    expect(router.url).toBe('/backup');
+    expect(harness.routeNativeElement?.querySelector('h1')?.textContent).toContain('النسخ الاحتياطي');
 
     gate.lock();
     await harness.navigateByUrl('/settings');

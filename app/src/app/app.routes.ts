@@ -5,6 +5,7 @@ import { caregiverGateGuard } from './core/access/caregiver-guard';
  * Feature routes are lazy-loaded. `speak` is the default route.
  * `/storage` is the P0.6 iOS storage soak page (lazy, so speak budgets hold).
  * `/voice` is the P0.5 anonymous rating page (lazy, same reason).
+ * `/backup` is the P1.11 export/import page, behind the same caregiver gate as settings.
  */
 export const routes: Routes = [
   {
@@ -36,6 +37,11 @@ export const routes: Routes = [
     path: 'profiles',
     canActivate: [caregiverGateGuard],
     loadComponent: () => import('./features/profiles/profiles').then((m) => m.ProfilesPage),
+  },
+  {
+    path: 'backup',
+    canActivate: [caregiverGateGuard],
+    loadComponent: () => import('./features/backup/backup').then((m) => m.BackupPage),
   },
   { path: '', pathMatch: 'full', redirectTo: 'speak' },
   { path: '**', redirectTo: 'speak' },

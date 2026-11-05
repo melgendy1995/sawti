@@ -8,6 +8,7 @@ import {
   SETTING_ACCESS_TIMING,
   SETTING_ACTIVE_PROFILE,
   SETTING_GRID_SIZE,
+  SETTING_LAST_SUCCESSFUL_BACKUP,
   SETTING_SPEAK_MODE,
   type GridSizeSetting,
 } from './setting-keys';
@@ -56,6 +57,15 @@ export class AppSettings {
   async applySavedAccessTiming(): Promise<void> {
     const saved = await this.readAccessTiming();
     if (saved) applyAccessTiming(saved);
+  }
+
+  async readLastSuccessfulBackupAt(): Promise<string | null> {
+    const value = (await this.settings.get(SETTING_LAST_SUCCESSFUL_BACKUP))?.value;
+    return typeof value === 'string' && value.length > 0 ? value : null;
+  }
+
+  writeLastSuccessfulBackupAt(iso: string): Promise<void> {
+    return this.writeValue(SETTING_LAST_SUCCESSFUL_BACKUP, iso);
   }
 
   async readActiveProfileId(): Promise<string | null> {

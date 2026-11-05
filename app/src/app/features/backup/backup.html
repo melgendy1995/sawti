@@ -1,0 +1,106 @@
+<section class="backup-page">
+  <h1>النسخ الاحتياطي</h1>
+
+  <nav class="backup-page__nav" aria-label="تنقل النسخ">
+    <a routerLink="/settings">الإعدادات</a>
+    <a routerLink="/speak">الكلام</a>
+  </nav>
+
+  @if (reminder()) {
+    <p class="backup-page__reminder" role="status" data-testid="backup-reminder">
+      لم تُحفظ نسخة احتياطية منذ أسبوع. صدّر نسخة واحتفظ بها في مكان آمن.
+    </p>
+  }
+
+  <form class="backup-page__form" (submit)="$event.preventDefault()">
+    <label>
+      <input
+        type="checkbox"
+        data-testid="encrypt-toggle"
+        [checked]="encrypt()"
+        (change)="onEncrypt($event)"
+      />
+      حماية الملف بكلمة سر
+    </label>
+
+    @if (encrypt()) {
+      <p data-testid="passphrase-loss-warning">
+        {{ passphraseLossAr }}
+        <span lang="en">{{ passphraseLossEn }}</span>
+      </p>
+      <label>
+        كلمة السر
+        <input
+          type="password"
+          autocomplete="new-password"
+          data-testid="passphrase"
+          (input)="onPassphrase($event)"
+        />
+      </label>
+    }
+
+    <button type="button" data-testid="export-button" [disabled]="busy()" (click)="requestExport()">
+      تصدير
+    </button>
+  </form>
+
+  @if (warningOpen()) {
+    <div
+      class="backup-page__dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="share-warning-title"
+      data-testid="share-warning"
+    >
+      <h2 id="share-warning-title">قبل المشاركة</h2>
+      <p data-testid="share-warning-ar">{{ shareWarningAr }}</p>
+      <p lang="en" data-testid="share-warning-en">{{ shareWarningEn }}</p>
+      <button type="button" data-testid="share-cancel" (click)="cancelShare()">رجوع</button>
+      <button type="button" data-testid="share-ack" (click)="acknowledgeShare()">
+        أفهم، نزّل الملف
+      </button>
+    </div>
+  }
+
+  <h2>استيراد</h2>
+  <label>
+    ملف ‎.sawti
+    <input type="file" accept=".sawti,application/octet-stream" data-testid="import-file" (change)="onFile($event)" />
+  </label>
+
+  @if (importKind() === 'encrypted') {
+    <label>
+      كلمة سر الملف
+      <input
+        type="password"
+        autocomplete="current-password"
+        data-testid="import-passphrase"
+        (input)="onImportPassphrase($event)"
+      />
+    </label>
+    <button type="button" data-testid="import-preview" [disabled]="busy()" (click)="loadPreview()">
+      عرض المحتوى
+    </button>
+  }
+
+  @if (preview(); as view) {
+    <div data-testid="import-preview-panel">
+      <p>
+        {{ view.encrypted ? 'ملف محمي بكلمة سر' : 'ملف بدون كلمة سر' }}
+      </p>
+      <ul>
+        @for (name of view.profileNames; track $index) {
+          <li>{{ name }}</li>
+        }
+      </ul>
+      <p data-testid="preview-boards">لوحات: {{ view.boardCount }}</p>
+      <p data-testid="preview-media">وسائط: {{ view.mediaCount }}</p>
+      <button type="button" data-testid="import-confirm" [disabled]="busy()" (click)="confirmImport()">
+        استبدال البيانات بهذه النسخة
+      </button>
+    </div>
+  }
+
+  <p data-testid="backup-error" role="alert">{{ errorText() }}</p>
+  <p data-testid="backup-status" role="status">{{ status() }}</p>
+</section>
