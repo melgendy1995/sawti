@@ -1,0 +1,50 @@
+<div
+  class="pin-dialog"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="caregiver-pin-title"
+  data-testid="caregiver-pin-dialog"
+>
+  <h2 id="caregiver-pin-title">رمز مقدم الرعاية</h2>
+
+  @if (gate.pinMode() === 'create') {
+    <p>اختر رمزاً رقمياً من 4 إلى 8 أرقام. لن يُحفظ الرمز نفسه.</p>
+  }
+
+  <label for="caregiver-pin">الرمز</label>
+  <input
+    id="caregiver-pin"
+    type="password"
+    inputmode="numeric"
+    autocomplete="off"
+    spellcheck="false"
+    data-testid="caregiver-pin-input"
+    [value]="pin()"
+    (input)="onPin($event)"
+  />
+
+  @if (gate.pinMode() === 'create') {
+    <label for="caregiver-pin-confirm">تأكيد الرمز</label>
+    <input
+      id="caregiver-pin-confirm"
+      type="password"
+      inputmode="numeric"
+      autocomplete="off"
+      spellcheck="false"
+      data-testid="caregiver-pin-confirm"
+      [value]="confirmPin()"
+      (input)="onConfirm($event)"
+    />
+  }
+
+  @if (gate.pinError(); as error) {
+    <p data-testid="caregiver-pin-error" role="alert">{{ error }}</p>
+  }
+
+  <div class="pin-dialog__actions">
+    <button type="button" data-testid="caregiver-pin-submit" (click)="submit()">
+      {{ gate.pinMode() === 'create' ? 'حفظ الرمز' : 'فتح' }}
+    </button>
+    <button type="button" data-testid="caregiver-pin-cancel" (click)="gate.dismissPrompt()">إلغاء</button>
+  </div>
+</div>

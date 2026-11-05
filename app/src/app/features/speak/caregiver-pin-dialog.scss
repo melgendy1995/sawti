@@ -1,0 +1,36 @@
+.pin-dialog {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-block: 1rem;
+  padding-inline: 1rem;
+  border-radius: 12px;
+  background: var(--color-surface);
+  text-align: start;
+
+  h2 {
+    margin-block: 0;
+    font-size: 1.4rem;
+  }
+
+  input {
+    font: inherit;
+    font-size: 1.25rem;
+    max-inline-size: 16rem;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+  }
+
+  button {
+    border: 0;
+    background: transparent;
+    color: var(--color-accent);
+    font: inherit;
+    font-size: 1.05rem;
+    cursor: pointer;
+  }
+}

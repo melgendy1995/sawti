@@ -1,8 +1,11 @@
 import { ChangeDetectionStrategy, Component, effect, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { CaregiverGate } from '../../core/access/caregiver-gate';
+import { CaregiverHold } from '../../core/access/caregiver-hold';
 import { AudioService } from '../../core/audio/audio-service';
 import type { SpeakableCell } from '../../core/audio/audio-ports';
 import { BoardSession } from './board-session';
+import { CaregiverPinDialog } from './caregiver-pin-dialog';
 import { SentenceStrip } from './sentence-strip';
 import { SpeakBoard } from './speak-board';
 import { SpeakController } from './speak-controller';
@@ -16,7 +19,7 @@ import { spokenText, type CellPhase } from './speak-contract';
 @Component({
   selector: 'app-speak',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, SpeakBoard, SentenceStrip],
+  imports: [RouterLink, SpeakBoard, SentenceStrip, CaregiverHold, CaregiverPinDialog],
   templateUrl: './speak.html',
   styleUrl: './speak.scss',
 })
@@ -24,6 +27,7 @@ export class Speak {
   protected readonly session = inject(BoardSession);
   protected readonly controller = inject(SpeakController);
   protected readonly audio = inject(AudioService);
+  protected readonly gate = inject(CaregiverGate);
 
   constructor() {
     effect(() => {

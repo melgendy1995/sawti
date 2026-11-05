@@ -1,5 +1,8 @@
 <section class="speak-shell">
-  <h1 class="speak-shell__title">صوتي</h1>
+  <h1 class="speak-shell__title" appCaregiverHold data-testid="caregiver-target">صوتي</h1>
+  @if (gate.promptOpen()) {
+    <app-caregiver-pin-dialog />
+  }
   <p class="speak-shell__subtitle">
     <bdi>{{ session.board().title['ar'] }}</bdi>
   </p>
@@ -26,6 +29,12 @@
     <a class="speak-shell__link" routerLink="/audio/diagnostics">تشخيص الصوت</a>
     <a class="speak-shell__link" routerLink="/storage">التخزين</a>
     <a class="speak-shell__link" routerLink="/voice">تقييم الصوت</a>
+    @if (gate.unlocked()) {
+      <a class="speak-shell__link" routerLink="/settings" data-testid="settings-link">الإعدادات</a>
+      <button type="button" class="speak-shell__lock" data-testid="caregiver-lock" (click)="gate.lock()">
+        قفل
+      </button>
+    }
   </nav>
 
   <!-- Egyptian test sentence, isolated so mixed scripts/digits never reorder it. -->

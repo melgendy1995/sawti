@@ -1,0 +1,54 @@
+<section class="profiles-page">
+  <h1>الملفات</h1>
+  <p><a routerLink="/settings">العودة إلى الإعدادات</a></p>
+  <p data-testid="profiles-status" role="status">{{ status() }}</p>
+
+  <ul class="profiles-page__list">
+    @for (profile of profiles(); track profile.id) {
+      <li [attr.data-testid]="profile.id === activeId() ? 'active-profile' : null">
+        <bdi>{{ profile.name['ar'] }}</bdi>
+        <button type="button" data-testid="profile-activate" (click)="activate(profile.id)">اختيار</button>
+        <button type="button" data-testid="profile-delete" (click)="askDelete(profile.id)">حذف</button>
+        @if (pendingDelete() === profile.id) {
+          <button type="button" data-testid="profile-delete-confirm" (click)="confirmDelete(profile.id)">
+            تأكيد الحذف
+          </button>
+        }
+      </li>
+    }
+  </ul>
+
+  <form class="profiles-page__create" (submit)="onSubmit($event)">
+    <label>
+      الاسم
+      <input
+        type="text"
+        data-testid="profile-name"
+        placeholder="أحمد"
+        [value]="name()"
+        (input)="onName($event)"
+      />
+    </label>
+    <label>
+      <input
+        type="radio"
+        name="new-gender"
+        data-testid="new-gender-m"
+        [checked]="gender() === 'm'"
+        (change)="setGender('m')"
+      />
+      ذكر
+    </label>
+    <label>
+      <input
+        type="radio"
+        name="new-gender"
+        data-testid="new-gender-f"
+        [checked]="gender() === 'f'"
+        (change)="setGender('f')"
+      />
+      أنثى
+    </label>
+    <button type="submit" data-testid="profile-create">إضافة</button>
+  </form>
+</section>

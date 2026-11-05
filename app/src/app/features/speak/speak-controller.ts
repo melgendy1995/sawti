@@ -1,4 +1,4 @@
-import { Injectable, inject, signal } from '@angular/core';
+import { Injectable, Injector, inject, signal } from '@angular/core';
 import { ACCESS_TIMING, PointerAccessFilter } from '../../core/access';
 import { BoardSession } from './board-session';
 import { CELL_SPEAKER } from './cell-speaker';
@@ -14,10 +14,15 @@ export class SpeakController {
   private readonly session = inject(BoardSession);
   private readonly store = inject(SentenceStore);
   private readonly speaker = inject(CELL_SPEAKER);
+  private readonly injector = inject(Injector);
   private readonly modeState = signal<SpeakMode>('tap');
   private readonly filter = new PointerAccessFilter(inject(ACCESS_TIMING), (id) => {
     this.accept(id);
   });
+
+  constructor() {
+    void this.restoreSavedSettings();
+  }
 
   readonly mode = this.modeState.asReadonly();
   readonly sentence = this.store.parts;
@@ -45,6 +50,24 @@ export class SpeakController {
 
   clearSentence(): void {
     this.store.clear();
+  }
+
+  /**
+   * When IndexedDB has a saved speak mode or access timing, apply them.
+   * The import is dynamic so Dexie stays out of the speak chunk until then.
+   * Unit tests under jsdom have no IndexedDB; defaults stay.
+   */
+  private async restoreSavedSettings(): Promise<void> {
+    if (typeof indexedDB === 'undefined') return;
+    try {
+      const { AppSettings } = await import('../../core/settings/app-settings');
+      const settings = this.injector.get(AppSettings);
+      await settings.applySavedAccessTiming();
+      const mode = await settings.readSpeakMode();
+      if (mode === 'tap' || mode === 'sentence') this.modeState.set(mode);
+    } catch {
+      // Private mode or a test environment without a usable database.
+    }
   }
 
   private accept(cellId: string): void {

@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { caregiverGateGuard } from './core/access/caregiver-guard';
 
 /**
  * Feature routes are lazy-loaded. `speak` is the default route.
@@ -25,6 +26,16 @@ export const routes: Routes = [
   {
     path: 'voice',
     loadComponent: () => import('./features/voice/voice').then((m) => m.VoicePage),
+  },
+  {
+    path: 'settings',
+    canActivate: [caregiverGateGuard],
+    loadComponent: () => import('./features/settings/settings').then((m) => m.SettingsPage),
+  },
+  {
+    path: 'profiles',
+    canActivate: [caregiverGateGuard],
+    loadComponent: () => import('./features/profiles/profiles').then((m) => m.ProfilesPage),
   },
   { path: '', pathMatch: 'full', redirectTo: 'speak' },
   { path: '**', redirectTo: 'speak' },
