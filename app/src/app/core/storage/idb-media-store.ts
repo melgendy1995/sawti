@@ -15,6 +15,12 @@ export class IndexedDbMediaStore implements MediaStore {
   readonly backend = 'idb' as const;
   private dbPromise: Promise<IDBDatabase> | null = null;
 
+  /**
+   * Defaults to the soak database. The app passes `sawti-media-idb` so the
+   * soak page's clear() cannot wipe user blobs.
+   */
+  constructor(private readonly dbName: string = DB_NAME) {}
+
   isSupported(): boolean {
     return typeof indexedDB !== 'undefined';
   }
@@ -49,7 +55,7 @@ export class IndexedDbMediaStore implements MediaStore {
   private open(): Promise<IDBDatabase> {
     if (this.dbPromise) return this.dbPromise;
     this.dbPromise = new Promise<IDBDatabase>((resolve, reject) => {
-      const request = indexedDB.open(DB_NAME, DB_VERSION);
+      const request = indexedDB.open(this.dbName, DB_VERSION);
       request.onupgradeneeded = () => {
         const db = request.result;
         if (!db.objectStoreNames.contains(STORE)) db.createObjectStore(STORE);

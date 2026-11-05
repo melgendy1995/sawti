@@ -11,6 +11,12 @@ const DIR_NAME = 'sawti-soak-opfs';
 export class OpfsMediaStore implements MediaStore {
   readonly backend = 'opfs' as const;
 
+  /**
+   * Defaults to the soak directory. The app passes `sawti-media-opfs` so the
+   * soak page's clear() cannot wipe user blobs.
+   */
+  constructor(private readonly dirName: string = DIR_NAME) {}
+
   isSupported(): boolean {
     return (
       typeof navigator !== 'undefined' &&
@@ -68,7 +74,7 @@ export class OpfsMediaStore implements MediaStore {
 
   private async dir(): Promise<FileSystemDirectoryHandle> {
     const root = await navigator.storage.getDirectory();
-    return root.getDirectoryHandle(DIR_NAME, { create: true });
+    return root.getDirectoryHandle(this.dirName, { create: true });
   }
 }
 

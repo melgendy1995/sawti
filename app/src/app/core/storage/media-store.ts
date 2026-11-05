@@ -1,18 +1,19 @@
 // MediaStore: the minimal blob-by-key interface behind which P0.6 tests two
 // iOS storage backends (plan v1.1 decision 14 / ADR-02, §3.1).
 //
-//   WebMediaStore  = IndexedDB blobs, the default on web.
-//   OpfsMediaStore = Origin Private File System, the fallback selected when
-//                    this soak (or a runtime self-test) shows IDB blobs
-//                    unreliable on iOS (R-02: WebKit IndexedDB blob bugs).
+//   idb  = IndexedDB blobs.
+//   opfs = Origin Private File System, compared when this soak (or a runtime
+//          self-test) shows IDB blobs unreliable on iOS
+//          (R-02: WebKit IndexedDB blob bugs).
 //
-// NativeMediaStore (Capacitor Filesystem) is explicitly NOT part of this spike.
+// P0.6 compares idb and opfs only. P1.2 adds 'native' (Capacitor Filesystem),
+// implemented under core/platform so this module stays free of Capacitor.
 // This module is pure of Angular/Capacitor so core-layer lint rules hold.
 
 import { sha256Hex, hashesMatch } from './sha256';
 
-/** The two backends P0.6 compares. */
-export type MediaBackend = 'idb' | 'opfs';
+/** P0.6 compares 'idb' and 'opfs'. P1.2 adds 'native'. */
+export type MediaBackend = 'idb' | 'opfs' | 'native';
 
 /** Blob storage keyed by an opaque string. Enough for the soak, no more. */
 export interface MediaStore {
