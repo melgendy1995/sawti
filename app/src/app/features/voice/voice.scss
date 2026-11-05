@@ -1,0 +1,175 @@
+// P0.5 anonymous voice-rating page. Logical properties only.
+
+.voice-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-inline-size: 52rem;
+  margin-inline: auto;
+  padding-block: 1.25rem;
+  padding-inline: 1rem;
+
+  &__title {
+    margin-block: 0;
+    color: var(--color-accent);
+    font-size: 2rem;
+  }
+
+  &__h2 {
+    margin-block: 0.5rem 0;
+    font-size: 1.3rem;
+  }
+
+  &__warn {
+    margin-block: 0;
+    padding-block: 0.75rem;
+    padding-inline: 1rem;
+    border-inline-start: 4px solid #9a3412;
+    border-radius: 12px;
+    background: #fff4ed;
+    color: #7c2d12;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  &__note {
+    margin-block: 0;
+    color: var(--color-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+
+    &--warn {
+      color: #7c2d12;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+  }
+
+  &__link {
+    color: var(--color-accent);
+    font-size: 1.05rem;
+  }
+
+  &__how {
+    padding-block: 0.6rem;
+    padding-inline: 0.75rem;
+    border-radius: 12px;
+    background: var(--color-surface);
+    line-height: 1.7;
+
+    p {
+      margin-block: 0.5rem 0;
+    }
+  }
+}
+
+.voice-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+
+  button {
+    touch-action: manipulation;
+    padding-block: 0.7rem;
+    padding-inline: 1rem;
+    border: 1px solid #d7e4e1;
+    border-radius: 999px;
+    background: var(--color-surface);
+    font: inherit;
+    font-size: 1.05rem;
+  }
+}
+
+.voice-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.voice-words {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-block: 0;
+  padding-inline: 0;
+
+  li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__label {
+    min-inline-size: 8rem;
+    font-size: 1.15rem;
+  }
+
+  button {
+    touch-action: manipulation;
+    padding-block: 0.45rem;
+    padding-inline: 0.75rem;
+    border: 1px solid #d7e4e1;
+    border-radius: 999px;
+    background: var(--color-surface);
+    font: inherit;
+  }
+}
+
+.voice-score {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  min-inline-size: 0;
+  margin-inline: 0;
+  padding-block: 0.5rem;
+  padding-inline: 0;
+  border: 0;
+
+  legend {
+    padding-inline: 0;
+    font-size: 1.05rem;
+  }
+
+  label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 1.15rem;
+  }
+}
+
+.voice-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+
+  select,
+  textarea {
+    padding-block: 0.5rem;
+    padding-inline: 0.6rem;
+    border: 1px solid #d7e4e1;
+    border-radius: 12px;
+    background: var(--color-surface);
+    color: inherit;
+    font: inherit;
+  }
+}
+
+.voice-report {
+  margin-block: 0;
+  padding-block: 0.75rem;
+  padding-inline: 0.75rem;
+  border-radius: 12px;
+  background: var(--color-surface);
+  overflow: auto;
+  font-size: 0.85rem;
+  white-space: pre-wrap;
+}

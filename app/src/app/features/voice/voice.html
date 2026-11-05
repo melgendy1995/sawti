@@ -1,0 +1,163 @@
+<section class="voice-page">
+  <h1 class="voice-page__title">تقييم الصوت — Voice rating</h1>
+
+  <p class="voice-page__warn" role="note">
+    <strong>ليست استمارة حيّة.</strong>
+    التقييمات تُجمع فقط بعد نشر إشعار الخصوصية (P0.10). لا تشارك هذه الصفحة مع أسر التجربة الآن.
+    إذا تأخر الإشعار، يقيّم فقط متطوّعون بالغون ناطقون بالمصري وليسوا من أسر التجربة، وينتقل تقييم
+    أولياء الأمور إلى التجربة الميدانية. لا بيانات أطفال: لا اسم طفل، ولا عمر، ولا صور، ولا تسجيلات،
+    ولا مدرسة، ولا ملاحظات طبية.
+    <bdi dir="ltr">Not a live survey. Ratings are collected only after the P0.10 privacy notice is
+    published. Do not share this page with pilot families yet. If the notice slips, only adult
+    native-speaker volunteers who are not pilot families may rate, and parent ratings move to the
+    pilot. No child data: no child's name, age, photos, recordings, school, or medical notes.</bdi>
+  </p>
+
+  <nav class="voice-page__links" aria-label="صفحات التجربة">
+    <a class="voice-page__link" routerLink="/speak">الكلام</a>
+    <a class="voice-page__link" routerLink="/audio">تجربة الصوت</a>
+    <a class="voice-page__link" routerLink="/audio/diagnostics">تشخيص الصوت</a>
+    <a class="voice-page__link" routerLink="/storage">التخزين</a>
+  </nav>
+
+  <details class="voice-page__how" [open]="clipsReady() !== true">
+    <summary>كيف تُولَّد المقاطع — How clips are generated</summary>
+    <p>
+      إن لم تسمع صوتاً، فالمقاطع غير موجودة بعد في <bdi dir="ltr">app/public/voice-spike/</bdi>.
+      من جذر المستودع، تجربة بلا شبكة:
+      <bdi dir="ltr">node scripts/voice-spike/render.mjs --dry-run</bdi>.
+      التوليد الحقيقي لاحقاً، بعد قراءة شروط Azure (P0.1) ووضع المفتاح في
+      <bdi dir="ltr">.env</bdi> فقط:
+      <bdi dir="ltr">node scripts/voice-spike/render.mjs</bdi>.
+      السكربت يكتب الملفات في ذلك المجلد. إن وُلدت على جهاز آخر، انسخ ملفات
+      <bdi dir="ltr">mp3</bdi> إليه. لا ترفع المقاطع ولا المفتاح إلى Git.
+    </p>
+    <p>
+      <bdi dir="ltr">If you hear nothing, the clips are not in app/public/voice-spike/ yet.
+      From the repo root: node scripts/voice-spike/render.mjs --dry-run (no network).
+      A real render is later, after you read the Azure terms (P0.1) and put the key only in .env:
+      node scripts/voice-spike/render.mjs. The script writes the MP3s there. If they were made on
+      another machine, copy the mp3 files into that folder. Do not commit clips or the key.</bdi>
+    </p>
+  </details>
+
+  <div class="voice-actions">
+    @if (playing()) {
+      <button type="button" (click)="stop()">إيقاف — Stop</button>
+    } @else {
+      <button type="button" (click)="playAll()">شغّل المتاح — Play all available</button>
+    }
+  </div>
+  @if (playError()) {
+    <p class="voice-page__note voice-page__note--warn" role="status">
+      تعذّر تشغيل هذا المقطع. غالباً الملف غير موجود.
+      <bdi dir="ltr">This clip did not play. The file is probably missing.</bdi>
+    </p>
+  }
+
+  @for (voice of voices; track voice.id) {
+    <section class="voice-block" [attr.aria-label]="voice.labelEn">
+      <h2 class="voice-page__h2">{{ voice.labelAr }} — <bdi dir="ltr">{{ voice.labelEn }}</bdi></h2>
+      <p class="voice-page__note"><bdi dir="ltr">{{ voice.id }}</bdi></p>
+      <ul class="voice-words">
+        @for (word of words; track word.key) {
+          <li>
+            <span class="voice-words__label">
+              @if (word.m === word.f) {
+                {{ word.m }}
+              } @else {
+                {{ word.m }} / {{ word.f }}
+              }
+            </span>
+            <button type="button" (click)="playOne(word.key, 'm', voice.id)">مذكّر <bdi>{{ word.m }}</bdi></button>
+            <button type="button" (click)="playOne(word.key, 'f', voice.id)">مؤنّث <bdi>{{ word.f }}</bdi></button>
+          </li>
+        }
+      </ul>
+    </section>
+  }
+
+  <h2 class="voice-page__h2">الدرجة — Scores</h2>
+  <p class="voice-page__note">
+    الدرجتان معروضتان فقط. هذه الصفحة لا تختار صوت الإصدار ١٫٠. الاختيار قرار محمود لاحقاً.
+    <bdi dir="ltr">Both scores are shown. This page does not choose the v1.0 voice. Mahmoud decides later.</bdi>
+  </p>
+
+  <fieldset class="voice-score">
+    <legend>درجة سلمى من ١ إلى ٥ — <bdi dir="ltr">Salma, 1 to 5</bdi></legend>
+    @for (score of scores; track score) {
+      <label>
+        <input
+          type="radio"
+          name="salma"
+          [value]="score"
+          [attr.data-score]="score"
+          [checked]="draft().salma === score"
+          (change)="setScore('salma', score)"
+        />
+        <bdi>{{ score }}</bdi>
+      </label>
+    }
+  </fieldset>
+
+  <fieldset class="voice-score">
+    <legend>درجة شاكر من ١ إلى ٥ — <bdi dir="ltr">Shakir, 1 to 5</bdi></legend>
+    @for (score of scores; track score) {
+      <label>
+        <input
+          type="radio"
+          name="shakir"
+          [value]="score"
+          [attr.data-score]="score"
+          [checked]="draft().shakir === score"
+          (change)="setScore('shakir', score)"
+        />
+        <bdi>{{ score }}</bdi>
+      </label>
+    }
+  </fieldset>
+
+  <label class="voice-field" for="rater-role">
+    الدور (اختياري، بدون اسم) — <bdi dir="ltr">Role (optional, no name)</bdi>
+    <select id="rater-role" autocomplete="off" [value]="draft().role" (change)="setRole(controlValue($event))">
+      <option value="">—</option>
+      @for (role of roles; track role) {
+        <option [value]="role">{{ roleLabels[role] }}</option>
+      }
+    </select>
+  </label>
+
+  <label class="voice-field" for="voice-comment">
+    ملاحظة عن الصوت فقط (اختياري). لا تكتب اسم أي شخص ولا تفاصيل طفل.
+    <bdi dir="ltr">Optional note about the voice only. Do not write anyone's name or a child's details.</bdi>
+    <textarea
+      #commentBox
+      id="voice-comment"
+      maxlength="500"
+      rows="4"
+      autocomplete="off"
+      [value]="initialComment"
+      (input)="setComment(controlValue($event))"
+    ></textarea>
+  </label>
+
+  <div class="voice-actions">
+    <button type="button" (click)="copyReport()">انسخ التقرير — Copy report</button>
+    <button type="button" (click)="clearDraft()">امسح المسودة المحلية — Clear local draft</button>
+  </div>
+  <p class="voice-page__note" role="status">
+    @if (copyNote() === 'copied') {
+      نُسخ التقرير. الصقه في ملاحظاتك. لا يُرسل شيء عبر الشبكة.
+      <bdi dir="ltr">Copied. Paste it into your notes. Nothing is sent over the network.</bdi>
+    } @else if (copyNote() === 'manual') {
+      تعذّر النسخ الآلي. انسخ النص أدناه يدوياً.
+      <bdi dir="ltr">Automatic copy failed. Select the text below.</bdi>
+    } @else {
+      التقرير يبقى في هذا المتصفح فقط (<bdi dir="ltr">localStorage</bdi>).
+      <bdi dir="ltr">The draft stays in this browser only.</bdi>
+    }
+  </p>
+  @if (reportText()) {
+    <pre class="voice-report" dir="ltr">{{ reportText() }}</pre>
+  }
+</section>

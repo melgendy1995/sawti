@@ -75,3 +75,10 @@ app/android/app/src/main/assets/public/
 app/android/app/src/main/assets/capacitor.config.json
 app/android/app/src/main/assets/capacitor.plugins.json
 app/android/app/src/main/res/xml/config.xml
+
+# P0.5 voice spike. Generated clips and the TTS cache stay local.
+# Never commit MP3s, partial encodes, or cache files (they are not secrets,
+# but they are Azure output and must not be redistributed from git).
+app/public/voice-spike/*
+!app/public/voice-spike/README.md
+scripts/voice-spike/out/
