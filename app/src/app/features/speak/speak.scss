@@ -21,6 +21,9 @@
     font-size: 3rem;
     font-weight: 600;
     color: var(--color-accent);
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
   }
 
   &__subtitle {
@@ -39,6 +42,16 @@
   &__link {
     color: var(--color-accent);
     font-size: 1.05rem;
+  }
+
+  &__lock {
+    border: 0;
+    padding: 0;
+    background: transparent;
+    color: var(--color-accent);
+    font: inherit;
+    font-size: 1.05rem;
+    cursor: pointer;
   }
 
   &__sentence {

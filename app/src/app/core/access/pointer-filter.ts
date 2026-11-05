@@ -8,16 +8,32 @@ export interface AccessTiming {
   activation: 'press' | 'release';
 }
 
-/** Defaults until the profile settings screen (P1.10). A zero hold is a normal tap. */
+/** Defaults until the caregiver changes them (P1.10). A zero hold is a normal tap. */
 export const DEFAULT_ACCESS_TIMING: AccessTiming = {
   holdMs: 0,
   debounceMs: 0,
   activation: 'release',
 };
 
+/**
+ * Singleton the filter reads on each pointer event. Settings copy saved
+ * caregiver values onto these fields. Do not replace the object.
+ */
+export const accessTimingLive: AccessTiming = {
+  holdMs: DEFAULT_ACCESS_TIMING.holdMs,
+  debounceMs: DEFAULT_ACCESS_TIMING.debounceMs,
+  activation: DEFAULT_ACCESS_TIMING.activation,
+};
+
+export function applyAccessTiming(next: AccessTiming): void {
+  accessTimingLive.holdMs = next.holdMs;
+  accessTimingLive.debounceMs = next.debounceMs;
+  accessTimingLive.activation = next.activation;
+}
+
 export const ACCESS_TIMING = new InjectionToken<AccessTiming>('ACCESS_TIMING', {
   providedIn: 'root',
-  factory: () => DEFAULT_ACCESS_TIMING,
+  factory: () => accessTimingLive,
 });
 
 interface Press {

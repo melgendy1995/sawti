@@ -1,0 +1,124 @@
+<section class="settings-page">
+  <h1>الإعدادات</h1>
+
+  <nav class="settings-page__nav" aria-label="تنقل الإعدادات">
+    <a routerLink="/speak">العودة إلى الكلام</a>
+    <a routerLink="/profiles">الملفات</a>
+    <button type="button" data-testid="caregiver-lock" (click)="lock()">قفل</button>
+  </nav>
+
+  <form class="settings-page__form" (submit)="onSubmit($event)">
+    <fieldset>
+      <legend>الجنس</legend>
+      <label>
+        <input
+          type="radio"
+          name="gender"
+          data-testid="gender-m"
+          [checked]="gender() === 'm'"
+          (change)="setGender('m')"
+        />
+        ذكر
+      </label>
+      <label>
+        <input
+          type="radio"
+          name="gender"
+          data-testid="gender-f"
+          [checked]="gender() === 'f'"
+          (change)="setGender('f')"
+        />
+        أنثى
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>حجم الشبكة المفضّل</legend>
+      <p>يُحفظ كحجم مقترح. لا يغيّر لوحة الكلام الحالية.</p>
+      <label>
+        الصفوف
+        <input
+          type="number"
+          min="1"
+          max="12"
+          step="1"
+          data-testid="grid-rows"
+          [value]="rows()"
+          (input)="onRows($event)"
+        />
+      </label>
+      <label>
+        الأعمدة
+        <input
+          type="number"
+          min="1"
+          max="12"
+          step="1"
+          data-testid="grid-cols"
+          [value]="cols()"
+          (input)="onCols($event)"
+        />
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>وضع الكلام</legend>
+      <label>
+        <input
+          type="radio"
+          name="speak-mode"
+          data-testid="speak-mode-tap"
+          [checked]="speakMode() === 'tap'"
+          (change)="setSpeakMode('tap')"
+        />
+        نطق مباشر
+      </label>
+      <label>
+        <input
+          type="radio"
+          name="speak-mode"
+          data-testid="speak-mode-sentence"
+          [checked]="speakMode() === 'sentence'"
+          (change)="setSpeakMode('sentence')"
+        />
+        جملة
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>توقيت الوصول</legend>
+      <label>
+        مدة الثبات (مللي ثانية)
+        <input
+          type="number"
+          min="0"
+          step="1"
+          data-testid="hold-ms"
+          [value]="holdMs()"
+          (input)="onHold($event)"
+        />
+      </label>
+      <label>
+        المهلة بين الضغطات (مللي ثانية)
+        <input
+          type="number"
+          min="0"
+          step="1"
+          data-testid="debounce-ms"
+          [value]="debounceMs()"
+          (input)="onDebounce($event)"
+        />
+      </label>
+      <label>
+        التفعيل
+        <select data-testid="activation" [value]="activation()" (change)="onActivation($event)">
+          <option value="press">عند الضغط</option>
+          <option value="release">عند الإفلات</option>
+        </select>
+      </label>
+    </fieldset>
+
+    <button type="submit" data-testid="settings-save">حفظ</button>
+    <p data-testid="settings-status" role="status">{{ status() }}</p>
+  </form>
+</section>

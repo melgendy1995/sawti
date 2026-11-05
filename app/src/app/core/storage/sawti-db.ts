@@ -27,7 +27,10 @@ export class SawtiDb extends Dexie {
   usage!: Table<UsageRow, [string, string, string, number]>; // P5 — do not create in version(1)
 
   constructor(name = 'sawti') {
-    super(name);
+    // Bind the IndexedDB that exists now. Dexie otherwise keeps the one it saw
+    // when its module was first imported, which is empty in unit tests if
+    // fake-indexeddb is installed later.
+    super(name, bindLiveIndexedDb());
     this.version(1)
       .stores({
         profiles: 'id, updatedAt',
@@ -41,4 +44,15 @@ export class SawtiDb extends Dexie {
       .upgrade((tx) => snapshotBeforeUpgrade(tx));
     // version(2) adds outbox, conflicts (P4); version(3) adds usage (P5)
   }
+}
+
+function bindLiveIndexedDb():
+  | { indexedDB: IDBFactory; IDBKeyRange: typeof globalThis.IDBKeyRange }
+  | undefined {
+  const indexedDB = globalThis.indexedDB;
+  const IDBKeyRange = globalThis.IDBKeyRange;
+  if (!indexedDB || !IDBKeyRange) return undefined;
+  Dexie.dependencies.indexedDB = indexedDB;
+  Dexie.dependencies.IDBKeyRange = IDBKeyRange;
+  return { indexedDB, IDBKeyRange };
 }
