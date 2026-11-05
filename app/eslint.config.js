@@ -95,21 +95,67 @@ module.exports = defineConfig([
               message:
                 'Only core/platform/ may import @capacitor/*. Wrap native APIs behind a platform adapter.',
             },
+            {
+              group: ['dexie', 'dexie/*'],
+              message:
+                'Only the data layer in core/storage/ may import dexie. Features talk to repositories.',
+            },
           ],
         },
       ],
     },
   },
 
-  // Everything else under src/app (core except platform, shared, app root)
-  // may not import @capacitor/*. domain/ and features/ have their own blocks
-  // above; core/platform/ is the single place allowed to touch @capacitor/*.
+  // core/platform/ is the only tree allowed to import @capacitor/*. It still
+  // must not talk to Dexie; repositories own the database.
+  {
+    files: ['src/app/core/platform/**/*.ts'],
+    rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            {
+              group: ['dexie', 'dexie/*'],
+              message:
+                'Only the data layer in core/storage/ may import dexie. Platform code stays free of it.',
+            },
+          ],
+        },
+      ],
+    },
+  },
+
+  // core/storage/ is the Dexie data layer (db, live queries, repositories,
+  // snapshots). It must not import @capacitor/* — native I/O stays in platform/.
+  {
+    files: ['src/app/core/storage/**/*.ts'],
+    rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            {
+              group: ['@capacitor/*', '@capacitor/**'],
+              message:
+                'Only core/platform/ may import @capacitor/*. Wrap native APIs behind a platform adapter.',
+            },
+          ],
+        },
+      ],
+    },
+  },
+
+  // Everything else under src/app (shared, app root, core except platform
+  // and storage) may not import @capacitor/* or dexie. domain/ and features/
+  // have their own blocks above.
   {
     files: ['src/app/**/*.ts'],
     ignores: [
       'src/app/domain/**/*.ts',
       'src/app/features/**/*.ts',
       'src/app/core/platform/**/*.ts',
+      'src/app/core/storage/**/*.ts',
     ],
     rules: {
       'no-restricted-imports': [
@@ -120,6 +166,11 @@ module.exports = defineConfig([
               group: ['@capacitor/*', '@capacitor/**'],
               message:
                 'Only core/platform/ may import @capacitor/*. Wrap native APIs behind a platform adapter.',
+            },
+            {
+              group: ['dexie', 'dexie/*'],
+              message:
+                'Only the data layer in core/storage/ may import dexie. Other code uses repositories.',
             },
           ],
         },

@@ -23,6 +23,9 @@ import {
 
 type Phase = 'idle' | 'writing' | 'verifying';
 
+/** P0.6 only compares these two. `'native'` is the Capacitor store and is not a soak target. */
+type SoakBackend = Exclude<MediaBackend, 'native'>;
+
 // iOS Safari exposes a non-standard navigator.standalone flag.
 interface IosNavigator {
   standalone?: boolean;
@@ -46,11 +49,11 @@ interface IosNavigator {
 })
 export class StoragePage {
   private readonly doc = inject(DOCUMENT);
-  private readonly stores: Record<MediaBackend, MediaStore> = {
+  private readonly stores: Record<SoakBackend, MediaStore> = {
     idb: new IndexedDbMediaStore(),
     opfs: new OpfsMediaStore(),
   };
-  protected readonly backend = signal<MediaBackend>('idb');
+  protected readonly backend = signal<SoakBackend>('idb');
   protected readonly plan = defaultSoakPlan();
   protected readonly phase = signal<Phase>('idle');
   protected readonly progress = signal(0);
@@ -84,7 +87,7 @@ export class StoragePage {
     return this.stores[this.backend()];
   }
 
-  protected setBackend(backend: MediaBackend): void {
+  protected setBackend(backend: SoakBackend): void {
     if (this.busy()) return;
     this.backend.set(backend);
     this.clearResults();
