@@ -1,6 +1,16 @@
 <section class="speak-shell">
   <h1 class="speak-shell__title">صوتي</h1>
-  <p class="speak-shell__subtitle">هيكل التطبيق — شاشة مؤقتة</p>
+  <p class="speak-shell__subtitle">
+    <bdi>{{ session.board().title['ar'] }}</bdi>
+  </p>
+
+  <app-sentence-strip />
+
+  <app-speak-board
+    class="speak-shell__board"
+    [board]="session.board()"
+    (phase)="onPhase($event)"
+  />
 
   <nav class="speak-shell__links" aria-label="صفحات التجربة">
     <a class="speak-shell__link" routerLink="/audio">تجربة الصوت</a>

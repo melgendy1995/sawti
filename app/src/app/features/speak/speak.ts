@@ -1,25 +1,32 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { BoardSession } from './board-session';
+import { SentenceStrip } from './sentence-strip';
+import { SpeakBoard } from './speak-board';
+import { SpeakController } from './speak-controller';
+import type { CellPhase } from './speak-contract';
 
 /**
- * Speak route placeholder (P0.3 app skeleton).
- *
- * This is NOT the full speak grid (that arrives in P1). It exists only to prove
- * the RTL shell: it renders a fixed Egyptian test sentence so Arabic joining
- * (lam-alef, tashkeel) can be checked on device and in the shaping test.
- *
- * The sentence is wrapped in <bdi> so a mixed Arabic/Latin/digit context never
- * reorders it (see also unicode-bidi: isolate in the stylesheet).
+ * Speak screen (P1.7). The grid is positioned from the board document.
+ * The sentence strip is memory-only. Spike links and the Egyptian test
+ * sentence stay reachable for device checks.
  */
 @Component({
   selector: 'app-speak',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink],
+  imports: [RouterLink, SpeakBoard, SentenceStrip],
   templateUrl: './speak.html',
   styleUrl: './speak.scss',
 })
 export class Speak {
-  /** Exact Egyptian test sentence required by P0.3 acceptance criteria. */
+  protected readonly session = inject(BoardSession);
+  protected readonly controller = inject(SpeakController);
+
+  /** Exact Egyptian test sentence required by the P0.3 acceptance criteria. */
   protected readonly testSentence =
     'السَّلام عليكم، أنا عايز الميّة والأكل من المدرسة. لا، لأ، لأنّ، الله. هى عايزة تروح.';
+
+  protected onPhase(phase: CellPhase): void {
+    this.controller.onPhase(phase);
+  }
 }
